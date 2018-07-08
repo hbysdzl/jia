@@ -1,0 +1,2380 @@
+[ 2018-06-28T09:22:55+08:00 ] 127.0.0.1 /admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005001s ]
+
+[ 2018-06-28T09:22:55+08:00 ] 127.0.0.1 /index.php/Admin/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.063004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.063004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2018-06-28T09:22:55+08:00 ] 127.0.0.1 /index.php/Admin/Login/code.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.007001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007001s ]
+
+[ 2018-06-28T09:22:56+08:00 ] 127.0.0.1 /index.php/Admin/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005001s ]
+
+[ 2018-06-28T09:23:03+08:00 ] 127.0.0.1 /index.php/Admin/Login/code/0.345628735136323
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2018-06-28T09:23:08+08:00 ] 127.0.0.1 /index.php/Admin/Login/ajaxLogin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0750s ]
+NOTIC: [8] Undefined index: auto D:\UPUPW_NP5.4\htdocs\test\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT * FROM `jia_admin` WHERE `username` = 'root' LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `jia_admin` SET `lastdate`='1530148988',`lastip`='127.0.0.1' WHERE `username` = 'root' [ RunTime:0.0010s ]
+SQL: UPDATE `jia_admin` SET `count`=count+1 WHERE `username` = 'root' [ RunTime:0.0000s ]
+
+[ 2018-06-28T09:23:08+08:00 ] 127.0.0.1 /index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0450s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.051003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.051003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005001s ]
+
+[ 2018-06-28T09:23:10+08:00 ] 127.0.0.1 /index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005001s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2018-06-28T09:23:20+08:00 ] 127.0.0.1 /index.php/Admin/Category/cateList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_category` [ RunTime:0.0640s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jia_category` LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: cat_title D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Controller\CategoryController.class.php 第 20 行.
+SQL: SELECT * FROM `jia_category`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: page D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\2fd35acb806049b5e181282c611b8c37.php 第 362 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.041002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2018-06-28T09:23:20+08:00 ] 127.0.0.1 /index.php/Admin/Category/cateList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007001s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_category` [ RunTime:0.0050s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jia_category` LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: cat_title D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Controller\CategoryController.class.php 第 20 行.
+SQL: SELECT * FROM `jia_category`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: page D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\2fd35acb806049b5e181282c611b8c37.php 第 362 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2018-06-28T09:23:23+08:00 ] 127.0.0.1 /index.php/Admin/User/userlis
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM jia_admin a left join jia_role as b on a.role_id=b.role_id   [ RunTime:0.0350s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: title D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\52952749df1bd700dca83d20b0030d5b.php 第 11 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.053003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.053003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004001s ]
+
+[ 2018-06-28T09:23:23+08:00 ] 127.0.0.1 /index.php/Admin/User/userlis
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0050s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM jia_admin a left join jia_role as b on a.role_id=b.role_id   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: title D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\52952749df1bd700dca83d20b0030d5b.php 第 11 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004001s ]
+
+[ 2018-06-28T09:23:28+08:00 ] 127.0.0.1 /index.php/Admin/User/edit/admin_id/31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_role` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_role`  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: title D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\c5c8f88f4330c605468367c8bb60454a.php 第 11 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2018-06-28T09:23:29+08:00 ] 127.0.0.1 /index.php/Admin/User/edit/admin_id/31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_role` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `jia_role`  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: title D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\c5c8f88f4330c605468367c8bb60454a.php 第 11 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2018-06-28T09:23:35+08:00 ] 127.0.0.1 /index.php/Admin/User/edit/admin_id/31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_role` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_role`  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: title D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\c5c8f88f4330c605468367c8bb60454a.php 第 11 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2018-06-28T09:23:37+08:00 ] 127.0.0.1 /index.php/Admin/User/edit/admin_id/31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0050s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_role` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_role`  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: title D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\c5c8f88f4330c605468367c8bb60454a.php 第 11 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2018-06-28T09:23:37+08:00 ] 127.0.0.1 /index.php/Admin/User/edit/admin_id/31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_role` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `jia_role`  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: title D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\c5c8f88f4330c605468367c8bb60454a.php 第 11 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2018-06-28T09:23:44+08:00 ] 127.0.0.1 /index.php/Admin/User/edit/admin_id/31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_role` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `jia_role`  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: title D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\c5c8f88f4330c605468367c8bb60454a.php 第 11 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004001s ]
+
+[ 2018-06-28T09:24:25+08:00 ] 127.0.0.1 /index.php/Admin/Article/myDocumentLst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0390s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jia_document` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT a.*,b.title as act_title FROM jia_document a LEFT JOIN jia_category as b on a.category_id=b.id  ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0190s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.037003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2018-06-28T09:24:26+08:00 ] 127.0.0.1 /index.php/Admin/Article/myDocumentLst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0050s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jia_document` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT a.*,b.title as act_title FROM jia_document a LEFT JOIN jia_category as b on a.category_id=b.id  ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2018-06-28T09:24:27+08:00 ] 127.0.0.1 /index.php/Admin/Article/index/cat_id/40
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/40' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '40'  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '40' ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.049003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.049003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004001s ]
+
+[ 2018-06-28T09:24:28+08:00 ] 127.0.0.1 /index.php/Admin/Article/index/cat_id/40
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/40' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '40'  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '40' ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2018-06-28T09:24:29+08:00 ] 127.0.0.1 /index.php/Admin/Article/add/cat_id/40
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/40' LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.041002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004001s ]
+
+[ 2018-06-28T09:24:30+08:00 ] 127.0.0.1 /index.php/Admin/Article/add/cat_id/40
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0050s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/40' LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2018-06-28T09:25:56+08:00 ] 127.0.0.1 /index.php/Admin/Category/cateList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_category` [ RunTime:0.0050s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jia_category` LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: cat_title D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Controller\CategoryController.class.php 第 20 行.
+SQL: SELECT * FROM `jia_category`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: page D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\2fd35acb806049b5e181282c611b8c37.php 第 362 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2018-06-28T09:25:56+08:00 ] 127.0.0.1 /index.php/Admin/Category/cateList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_category` [ RunTime:0.0050s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jia_category` LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: cat_title D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Controller\CategoryController.class.php 第 20 行.
+SQL: SELECT * FROM `jia_category`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: page D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\2fd35acb806049b5e181282c611b8c37.php 第 362 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2018-06-28T09:25:59+08:00 ] 127.0.0.1 /index.php/Admin/Article/index/cat_id/40
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/40' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '40'  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '40' ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2018-06-28T09:25:59+08:00 ] 127.0.0.1 /index.php/Admin/Article/index/cat_id/40
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/40' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '40'  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '40' ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.037002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2018-06-28T09:26:04+08:00 ] 127.0.0.1 /index.php/Admin/Article/edit/cat_id/40/id/769
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/40' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_document` WHERE `id` = 769 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document_cimg` [ RunTime:0.0280s ]
+SQL: SELECT `imgurl` FROM `jia_document_cimg` WHERE `id` = 1001 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document_article` [ RunTime:0.1240s ]
+SQL: SELECT `content` FROM `jia_document_article` WHERE `id` = 769 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.045002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.045002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2018-06-28T09:26:04+08:00 ] 127.0.0.1 /index.php/Admin/Article/edit/cat_id/40/id/769
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005001s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/40' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `jia_document` WHERE `id` = 769 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document_cimg` [ RunTime:0.0040s ]
+SQL: SELECT `imgurl` FROM `jia_document_cimg` WHERE `id` = 1001 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_document_article` [ RunTime:0.0040s ]
+SQL: SELECT `content` FROM `jia_document_article` WHERE `id` = 769 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004001s ]
+
+[ 2018-06-28T09:28:04+08:00 ] 127.0.0.1 /index.php/Admin/Article/edit/cat_id/40/id/769
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/40' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `jia_document` WHERE `id` = 769 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document_cimg` [ RunTime:0.0050s ]
+SQL: SELECT `imgurl` FROM `jia_document_cimg` WHERE `id` = 1001 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document_article` [ RunTime:0.0040s ]
+SQL: SELECT `content` FROM `jia_document_article` WHERE `id` = 769 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.045003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2018-06-28T09:29:14+08:00 ] 127.0.0.1 /index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2018-06-28T09:29:15+08:00 ] 127.0.0.1 /index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005001s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2018-06-28T13:47:04+08:00 ] 127.0.0.1 /admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+
+[ 2018-06-28T13:47:04+08:00 ] 127.0.0.1 /index.php/Admin/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2018-06-28T13:47:04+08:00 ] 127.0.0.1 /index.php/Admin/Login/code.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2018-06-28T13:47:04+08:00 ] 127.0.0.1 /index.php/Admin/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2018-06-28T13:47:06+08:00 ] 127.0.0.1 /index.php/Admin/Login/code/0.16567867005920767
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2018-06-28T13:47:07+08:00 ] 127.0.0.1 /index.php/Admin/Login/code/0.6717860604626131
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2018-06-28T13:47:15+08:00 ] 127.0.0.1 /index.php/Admin/Login/ajaxLogin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0060s ]
+NOTIC: [8] Undefined index: auto D:\UPUPW_NP5.4\htdocs\test\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT * FROM `jia_admin` WHERE `username` = 'root' LIMIT 1   [ RunTime:0.0350s ]
+SQL: UPDATE `jia_admin` SET `lastdate`='1530164835',`lastip`='127.0.0.1' WHERE `username` = 'root' [ RunTime:0.0270s ]
+SQL: UPDATE `jia_admin` SET `count`=count+1 WHERE `username` = 'root' [ RunTime:0.0090s ]
+
+[ 2018-06-28T13:47:16+08:00 ] 127.0.0.1 /index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0170s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0060s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.049003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.049003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2018-06-28T13:47:16+08:00 ] 127.0.0.1 /index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004001s ]
+
+[ 2018-06-28T13:47:21+08:00 ] 127.0.0.1 /index.php/Admin/User/userlis
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM jia_admin a left join jia_role as b on a.role_id=b.role_id   [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: title D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\52952749df1bd700dca83d20b0030d5b.php 第 11 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.061003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.061003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004001s ]
+
+[ 2018-06-28T13:47:22+08:00 ] 127.0.0.1 /index.php/Admin/User/userlis
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0030s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM jia_admin a left join jia_role as b on a.role_id=b.role_id   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: title D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\52952749df1bd700dca83d20b0030d5b.php 第 11 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2018-06-28T13:47:56+08:00 ] 127.0.0.1 /index.php/Admin/Article/myDocumentLst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jia_document` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT a.*,b.title as act_title FROM jia_document a LEFT JOIN jia_category as b on a.category_id=b.id  ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0650s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005001s ]
+
+[ 2018-06-28T13:47:56+08:00 ] 127.0.0.1 /index.php/Admin/Article/myDocumentLst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jia_document` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT a.*,b.title as act_title FROM jia_document a LEFT JOIN jia_category as b on a.category_id=b.id  ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2018-06-28T13:47:57+08:00 ] 127.0.0.1 /index.php/Admin/Article/edit/cat_id/2/id/770
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0030s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/2' LIMIT 1   [ RunTime:0.0130s ]
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_document` WHERE `id` = 770 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document_cimg` [ RunTime:0.0040s ]
+SQL: SELECT `imgurl` FROM `jia_document_cimg` WHERE `id` = 1002 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_document_article` [ RunTime:0.0030s ]
+SQL: SELECT `content` FROM `jia_document_article` WHERE `id` = 770 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.040002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2018-06-28T13:47:58+08:00 ] 127.0.0.1 /index.php/Admin/Article/edit/cat_id/2/id/770
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/2' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_document` WHERE `id` = 770 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_document_cimg` [ RunTime:0.0030s ]
+SQL: SELECT `imgurl` FROM `jia_document_cimg` WHERE `id` = 1002 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_document_article` [ RunTime:0.0030s ]
+SQL: SELECT `content` FROM `jia_document_article` WHERE `id` = 770 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2018-06-28T13:48:03+08:00 ] 127.0.0.1 /index.php/Admin/Article/myDocumentLst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jia_document` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT a.*,b.title as act_title FROM jia_document a LEFT JOIN jia_category as b on a.category_id=b.id  ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2018-06-28T13:48:04+08:00 ] 127.0.0.1 /index.php/Admin/Article/edit/cat_id/45/id/767
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/45' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_document` WHERE `id` = 767 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_document_cimg` [ RunTime:0.0030s ]
+SQL: SELECT `imgurl` FROM `jia_document_cimg` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document_article` [ RunTime:0.0030s ]
+SQL: SELECT `content` FROM `jia_document_article` WHERE `id` = 767 LIMIT 1   [ RunTime:0.0150s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004001s ]
+
+[ 2018-06-28T13:48:04+08:00 ] 127.0.0.1 /index.php/Admin/Article/edit/cat_id/45/id/767
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/45' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_document` WHERE `id` = 767 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_document_cimg` [ RunTime:0.0030s ]
+SQL: SELECT `imgurl` FROM `jia_document_cimg` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document_article` [ RunTime:0.0030s ]
+SQL: SELECT `content` FROM `jia_document_article` WHERE `id` = 767 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2018-06-28T13:48:08+08:00 ] 127.0.0.1 /index.php/Admin/Article/ajaxEdit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0030s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0040s ]
+NOTIC: [8] Undefined index: validate D:\UPUPW_NP5.4\htdocs\test\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\UPUPW_NP5.4\htdocs\test\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+NOTIC: [8] Undefined variable: ret D:\UPUPW_NP5.4\htdocs\test\Application\Common\Common\function.php 第 36 行.
+SQL: UPDATE `jia_document` SET `category_id`='45',`cover_id`='0',`title`='装修半包和全包有什么区别？',`name`='',`description`='半包就是由业主购入主要材料，包括地板，地砖及电器等等。装修公司负责施工以及辅材。这种方式处于全包和清包之间，优缺点肯定就是两者的平均了。全包就是指所有材料人力均有装修公司来承担，业主也就是甲方仅需支付钱款即可，这种方式的最大的优点就是省心，一般都是有信誉的公司。',`type`='2',`view`='171',`display`='0',`status`='1',`level`='16',`uid`='31',`update_time`='1530164887' WHERE `id` = 767 [ RunTime:0.0290s ]
+SQL: SHOW COLUMNS FROM `jia_document_article` [ RunTime:0.0030s ]
+SQL: DELETE FROM `jia_document_article` WHERE ( id=767 ) [ RunTime:0.0350s ]
+SQL: INSERT INTO `jia_document_article` (`id`,`content`) VALUES ('767','&lt;p&gt;&lt;span style=&quot;;font-family:微软雅黑;font-size:14px&quot;&gt;&lt;span style=&quot;font-family:微软雅黑&quot;&gt;半包就是由业主购入主要材料，包括地板，地砖及电器等等。装修公司负责施工以及辅材。这种方式处于全包和清包之间，优缺点肯定就是两者的平均了。全包就是指所有材料人力均有装修公司来承担，业主也就是甲方仅需支付钱款即可，这种方式的最大的优点就是省心，一般都是有信誉的公司。&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;') [ RunTime:0.0090s ]
+
+[ 2018-06-28T13:48:11+08:00 ] 127.0.0.1 /index.php/Admin/Article/index/cat_id/45
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0030s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/45' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '45'  [ RunTime:0.0080s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '45' ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.050003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.050003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004001s ]
+
+[ 2018-06-28T13:48:11+08:00 ] 127.0.0.1 /index.php/Admin/Article/index/cat_id/45
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/45' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '45'  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '45' ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2018-06-28T13:48:14+08:00 ] 127.0.0.1 /index.php/Admin/Article/edit/cat_id/45/id/765
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0030s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/45' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_document` WHERE `id` = 765 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document_cimg` [ RunTime:0.0040s ]
+SQL: SELECT `imgurl` FROM `jia_document_cimg` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_document_article` [ RunTime:0.0030s ]
+SQL: SELECT `content` FROM `jia_document_article` WHERE `id` = 765 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005001s ]
+
+[ 2018-06-28T13:48:15+08:00 ] 127.0.0.1 /index.php/Admin/Article/edit/cat_id/45/id/765
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0030s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/45' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_document` WHERE `id` = 765 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document_cimg` [ RunTime:0.0040s ]
+SQL: SELECT `imgurl` FROM `jia_document_cimg` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_document_article` [ RunTime:0.0030s ]
+SQL: SELECT `content` FROM `jia_document_article` WHERE `id` = 765 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2018-06-28T13:48:21+08:00 ] 127.0.0.1 /index.php/Admin/Article/ajaxEdit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined index: validate D:\UPUPW_NP5.4\htdocs\test\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\UPUPW_NP5.4\htdocs\test\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+NOTIC: [8] Undefined variable: ret D:\UPUPW_NP5.4\htdocs\test\Application\Common\Common\function.php 第 36 行.
+SQL: UPDATE `jia_document` SET `category_id`='45',`cover_id`='0',`title`='网上找的装修公司靠谱吗？',`name`='',`description`='公司靠不靠谱最终还是需要到线下实体店去考察，当面沟通清楚，最好可以看一下在建工地和实际装修案例。家造网中山有11家体验店，工序都是按流程的，材料又是一线品牌，可以随时到门店和在建工地去考察，值得考虑。',`type`='2',`view`='136',`display`='0',`status`='1',`level`='16',`uid`='31',`update_time`='1530164901' WHERE `id` = 765 [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_document_article` [ RunTime:0.0030s ]
+SQL: DELETE FROM `jia_document_article` WHERE ( id=765 ) [ RunTime:0.0000s ]
+SQL: INSERT INTO `jia_document_article` (`id`,`content`) VALUES ('765','&lt;p&gt;&lt;span style=&quot;;font-family:微软雅黑;font-size:14px&quot;&gt;&lt;span style=&quot;font-family:微软雅黑&quot;&gt;公司靠不靠谱最终还是需要到线下实体店去考察，当面沟通清楚，最好可以看一下在建工地和实际装修案例。家造网中山有&lt;/span&gt;11家体验店，工序都是按流程的，材料又是一线品牌，可以随时到门店和在建工地去考察，值得考虑。&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;') [ RunTime:0.0010s ]
+
+[ 2018-06-28T13:48:24+08:00 ] 127.0.0.1 /index.php/Admin/Article/index/cat_id/45
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/45' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '45'  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '45' ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2018-06-28T13:48:24+08:00 ] 127.0.0.1 /index.php/Admin/Article/index/cat_id/45
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0030s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/45' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '45'  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '45' ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2018-06-28T13:48:29+08:00 ] 127.0.0.1 /index.php/Admin/Article/index/cat_id/40
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/40' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '40'  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '40' ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005001s ]
+
+[ 2018-06-28T13:48:29+08:00 ] 127.0.0.1 /index.php/Admin/Article/index/cat_id/40
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/40' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '40'  [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '40' ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.040002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2018-06-28T13:48:30+08:00 ] 127.0.0.1 /index.php/Admin/Article/edit/cat_id/40/id/748
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/40' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_document` WHERE `id` = 748 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_document_cimg` [ RunTime:0.0040s ]
+SQL: SELECT `imgurl` FROM `jia_document_cimg` WHERE `id` = 996 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document_article` [ RunTime:0.0040s ]
+SQL: SELECT `content` FROM `jia_document_article` WHERE `id` = 748 LIMIT 1   [ RunTime:0.0080s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2018-06-28T13:48:31+08:00 ] 127.0.0.1 /index.php/Admin/Article/edit/cat_id/40/id/748
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006001s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0030s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/40' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_document` WHERE `id` = 748 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document_cimg` [ RunTime:0.0030s ]
+SQL: SELECT `imgurl` FROM `jia_document_cimg` WHERE `id` = 996 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_document_article` [ RunTime:0.0030s ]
+SQL: SELECT `content` FROM `jia_document_article` WHERE `id` = 748 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2018-06-28T13:49:04+08:00 ] 127.0.0.1 /index.php/Admin/Article/ajaxEdit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0030s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0040s ]
+NOTIC: [8] Undefined index: validate D:\UPUPW_NP5.4\htdocs\test\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\UPUPW_NP5.4\htdocs\test\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\UPUPW_NP5.4\htdocs\test\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Use of undefined constant info - assumed 'info' D:\UPUPW_NP5.4\htdocs\test\Application\Common\Common\function.php 第 18 行.
+SQL: SHOW COLUMNS FROM `jia_document_cimg` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `jia_document_cimg` WHERE `id` = 996 LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2] unlink(./Public/Upload/): Permission denied D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 53 行.
+SQL: DELETE FROM `jia_document_cimg` WHERE `id` = 996 [ RunTime:0.0000s ]
+SQL: INSERT INTO `jia_document_cimg` (`imgurl`) VALUES ('Document/2018-06-28/5b3476d008f78.jpg') [ RunTime:0.0340s ]
+SQL: UPDATE `jia_document` SET `category_id`='40',`cover_id`='120',`title`='喜报！家造网荣获“金创奖”，中山互联网界最高奖项！',`name`='',`description`='喜报！热烈祝贺家造网获得中山互联网界最高奖项——金创奖。12月29日下午，由中山市互联网应用创新协会主办的“2017互联网应用创新（中山）高峰论坛暨首届金创奖颁奖典礼”在西区富业广场荣光国宴饭店隆重举行。',`type`='2',`view`='1268',`display`='0',`status`='1',`level`='238',`uid`='31',`update_time`='1530164943' WHERE `id` = 748 [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_document_article` [ RunTime:0.0130s ]
+SQL: DELETE FROM `jia_document_article` WHERE ( id=748 ) [ RunTime:0.0010s ]
+SQL: INSERT INTO `jia_document_article` (`id`,`content`) VALUES ('748','&lt;p&gt;喜报！热烈祝贺家造网获得中山互联网界最高奖项——金创奖。&lt;/p&gt;&lt;p&gt;12月29日下午，由中山市互联网应用创新协会主办的“2017互联网应用创新（中山）高峰论坛暨首届金创奖颁奖典礼”在西区富业广场荣光国宴饭店隆重举行。&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;/Uploads/Editor/2018-01-02/5a4b200e904aa.jpg&quot; title=&quot;微信图片_20180102103326.jpg&quot;/&gt;&lt;/p&gt;&lt;p&gt;家造网推广部经理周建龙代表参加了本次高峰论坛并上台领奖。家造网能获此殊荣，周经理表示十分感谢冯添全董事长长远战略思想的引导，同时感谢中山市互联网应用创新协会的认可与支持，家造网也将在2018年致力把互联网家装创新做到最前端。&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;/Uploads/Editor/2018-01-02/5a4b201fd552f.jpg&quot; title=&quot;微信图片_20180102103332.jpg&quot;/&gt;&lt;/p&gt;&lt;p&gt;据了解，“金创奖”主要是表彰中山互联网应用创新典型案例、创新人物，是中山市互联网应用创新协会策划的中山互联网界最高奖项。今年首届互联网“金创奖”表彰了10个互联网优秀案例和10名互联网创新人物，这些优秀案例和创新人物全部来自于中山，家造网便是其中优秀案例之一。&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;http://jiajoo.com/Uploads/Editor/2018-01-02/5a4b2055166a6.jpg&quot; title=&quot;3.jpg&quot; style=&quot;white-space: normal; float: none;&quot;/&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;http://jiajoo.com/Uploads/Editor/2018-01-02/5a4b20534352f.jpg&quot; title=&quot;2.jpg&quot; style=&quot;text-align: center; white-space: normal; float: none;&quot;/&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;/Uploads/Editor/2018-01-02/5a4b2034a13e7.jpg&quot; title=&quot;微信图片_20180102103318.jpg&quot;/&gt;&lt;/p&gt;&lt;p&gt;本次活动全面展示了2017年中山市互联网应用创新成果，推动中山互联网+产业融合、分享经济、电子商务、互联网生活服务等方面的快速发展。西区党工委书记关瑞麟、中山市科学技术学会秘书长海春生、中山市经济研究院院长、中山市发展改革研究会会长梁士伦以及相关部门、10多家互联网园区、电子商务产业园区负责人，300多家互联网企业和中山市各商协会代表们齐聚一堂，为中山互联网应用创新共谋发展。&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;/Uploads/Editor/2018-01-02/5a4b2052462ac.jpg&quot; style=&quot;float:none;&quot; title=&quot;1.jpg&quot;/&gt;&lt;/p&gt;&lt;p&gt;在本次高峰论坛上，来自北京的猪八戒网IT事业群副总裁刘猷韬和珠海金嘉国际集团总经理叶伟轩等嘉宾现场发表演讲，向中山的互联网创业者分享互联网创业创新经验。5位行业专家和大咖就“互联网的下半场中山如何实现弯道超车”进行交流探讨，为创业者指点迷津。&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(83, 83, 83); font-family: Calibri; font-size: 14px; text-align: center; text-indent: 28px;&quot;&gt;如果你在中山，刚好有套房子需要装修，登录家造网jiajoo.com或者关注家造网微信（微信号：jiajoo-w）免费量房、免费设计、免费报价！&lt;/span&gt;&lt;/p&gt;') [ RunTime:0.0010s ]
+
+[ 2018-06-28T13:49:07+08:00 ] 127.0.0.1 /index.php/Admin/Article/index/cat_id/40
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005001s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/40' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '40'  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '40' ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2018-06-28T13:49:07+08:00 ] 127.0.0.1 /index.php/Admin/Article/index/cat_id/40
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0030s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/40' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '40'  [ RunTime:0.0100s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '40' ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2018-06-28T13:49:09+08:00 ] 127.0.0.1 /index.php/Admin/Article/edit/cat_id/40/id/750
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0030s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/40' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_document` WHERE `id` = 750 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document_cimg` [ RunTime:0.0040s ]
+SQL: SELECT `imgurl` FROM `jia_document_cimg` WHERE `id` = 999 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document_article` [ RunTime:0.0030s ]
+SQL: SELECT `content` FROM `jia_document_article` WHERE `id` = 750 LIMIT 1   [ RunTime:0.0240s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2018-06-28T13:49:09+08:00 ] 127.0.0.1 /index.php/Admin/Article/edit/cat_id/40/id/750
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/40' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_document` WHERE `id` = 750 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_document_cimg` [ RunTime:0.0030s ]
+SQL: SELECT `imgurl` FROM `jia_document_cimg` WHERE `id` = 999 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_document_article` [ RunTime:0.0030s ]
+SQL: SELECT `content` FROM `jia_document_article` WHERE `id` = 750 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2018-06-28T13:49:22+08:00 ] 127.0.0.1 /index.php/Admin/Article/index/cat_id/40
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/40' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '40'  [ RunTime:0.0320s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '40' ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2018-06-28T13:49:22+08:00 ] 127.0.0.1 /index.php/Admin/Article/index/cat_id/40
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005001s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/40' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '40'  [ RunTime:0.0090s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '40' ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2018-06-28T13:49:24+08:00 ] 127.0.0.1 /index.php/Admin/Article/edit/cat_id/40/id/769
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/40' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_document` WHERE `id` = 769 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_document_cimg` [ RunTime:0.0030s ]
+SQL: SELECT `imgurl` FROM `jia_document_cimg` WHERE `id` = 1001 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document_article` [ RunTime:0.0040s ]
+SQL: SELECT `content` FROM `jia_document_article` WHERE `id` = 769 LIMIT 1   [ RunTime:0.0040s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004001s ]
+
+[ 2018-06-28T13:49:25+08:00 ] 127.0.0.1 /index.php/Admin/Article/edit/cat_id/40/id/769
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/40' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_document` WHERE `id` = 769 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document_cimg` [ RunTime:0.0030s ]
+SQL: SELECT `imgurl` FROM `jia_document_cimg` WHERE `id` = 1001 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_document_article` [ RunTime:0.0030s ]
+SQL: SELECT `content` FROM `jia_document_article` WHERE `id` = 769 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2018-06-28T13:49:28+08:00 ] 127.0.0.1 /index.php/Admin/Article/index/cat_id/40
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/40' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '40'  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '40' ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005001s ]
+
+[ 2018-06-28T13:49:31+08:00 ] 127.0.0.1 /index.php/Admin/Article/edit/cat_id/40/id/749
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/40' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_document` WHERE `id` = 749 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document_cimg` [ RunTime:0.0030s ]
+SQL: SELECT `imgurl` FROM `jia_document_cimg` WHERE `id` = 997 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document_article` [ RunTime:0.0030s ]
+SQL: SELECT `content` FROM `jia_document_article` WHERE `id` = 749 LIMIT 1   [ RunTime:0.0050s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2018-06-28T13:49:31+08:00 ] 127.0.0.1 /index.php/Admin/Article/edit/cat_id/40/id/749
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/40' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_document` WHERE `id` = 749 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_document_cimg` [ RunTime:0.0030s ]
+SQL: SELECT `imgurl` FROM `jia_document_cimg` WHERE `id` = 997 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_document_article` [ RunTime:0.0030s ]
+SQL: SELECT `content` FROM `jia_document_article` WHERE `id` = 749 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2018-06-28T13:49:34+08:00 ] 127.0.0.1 /index.php/Admin/Article/index/cat_id/40
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/40' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '40'  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '40' ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2018-06-28T13:49:35+08:00 ] 127.0.0.1 /index.php/Admin/Article/edit/cat_id/40/id/769
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/40' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_document` WHERE `id` = 769 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document_cimg` [ RunTime:0.0040s ]
+SQL: SELECT `imgurl` FROM `jia_document_cimg` WHERE `id` = 1001 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document_article` [ RunTime:0.0030s ]
+SQL: SELECT `content` FROM `jia_document_article` WHERE `id` = 769 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2018-06-28T13:49:36+08:00 ] 127.0.0.1 /index.php/Admin/Article/edit/cat_id/40/id/769
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/40' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_document` WHERE `id` = 769 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document_cimg` [ RunTime:0.0030s ]
+SQL: SELECT `imgurl` FROM `jia_document_cimg` WHERE `id` = 1001 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document_article` [ RunTime:0.0030s ]
+SQL: SELECT `content` FROM `jia_document_article` WHERE `id` = 769 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004001s ]
+
+[ 2018-06-28T13:49:41+08:00 ] 127.0.0.1 /index.php/Admin/Article/ajaxEdit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined index: validate D:\UPUPW_NP5.4\htdocs\test\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\UPUPW_NP5.4\htdocs\test\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\UPUPW_NP5.4\htdocs\test\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Use of undefined constant info - assumed 'info' D:\UPUPW_NP5.4\htdocs\test\Application\Common\Common\function.php 第 18 行.
+SQL: SHOW COLUMNS FROM `jia_document_cimg` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_document_cimg` WHERE `id` = 1001 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] unlink(./Public/Upload/): Permission denied D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 53 行.
+SQL: DELETE FROM `jia_document_cimg` WHERE `id` = 1001 [ RunTime:0.0000s ]
+SQL: INSERT INTO `jia_document_cimg` (`imgurl`) VALUES ('Document/2018-06-28/5b3476f520ec2.jpg') [ RunTime:0.0010s ]
+SQL: UPDATE `jia_document` SET `category_id`='40',`cover_id`='121',`title`='“感恩•共赢”家造网营销团队生命力培训暨4.22誓师大会圆满结束！',`name`='',`description`='个体是孤独的，只有和厉害的人一起才能创造不可能！学会感恩，拓宽视野，放大格局，无论是在人生道路上还是商海沉浮中，合作共赢才会是引领时代的代名词。',`type`='2',`view`='1462',`display`='0',`status`='1',`level`='271',`uid`='31',`update_time`='1530164981' WHERE `id` = 769 [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document_article` [ RunTime:0.0030s ]
+SQL: DELETE FROM `jia_document_article` WHERE ( id=769 ) [ RunTime:0.0000s ]
+SQL: INSERT INTO `jia_document_article` (`id`,`content`) VALUES ('769','&lt;p style=&quot;text-indent:28px&quot;&gt;&lt;span style=&quot;;font-family:宋体;font-size:14px&quot;&gt;3&lt;span style=&quot;font-family:宋体&quot;&gt;月&lt;/span&gt;&lt;span style=&quot;font-family:Calibri&quot;&gt;27&lt;/span&gt;&lt;span style=&quot;font-family:宋体&quot;&gt;日&lt;/span&gt;&lt;span style=&quot;font-family:Calibri&quot;&gt;-3&lt;/span&gt;&lt;span style=&quot;font-family:宋体&quot;&gt;月&lt;/span&gt;&lt;span style=&quot;font-family:Calibri&quot;&gt;28&lt;/span&gt;&lt;span style=&quot;font-family:宋体&quot;&gt;日家造网特聘国际职业注册培训师、素质体验式培训顶级教练海天老师，为全体营销团队进行了为期&lt;/span&gt;&lt;span style=&quot;font-family:Calibri&quot;&gt;2&lt;/span&gt;&lt;span style=&quot;font-family:宋体&quot;&gt;天&lt;/span&gt;&lt;span style=&quot;font-family:Calibri&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;font-family:宋体&quot;&gt;夜的团队生命力培训。经过专项的体验式培训，团队成员各个收获颇丰，拉近了彼此的距离，极大的增强了团队的凝聚力。通过感恩共赢大爱理念的洗礼，伙伴们在精神觉悟上均获得了一次质的蜕变！&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-indent:28px&quot;&gt;&lt;span style=&quot;;font-family:宋体;font-size:14px&quot;&gt;&lt;span style=&quot;font-family:宋体&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img data-src=&quot;/Uploads/Editor/2018-03-31/5abf0027c87a6.jpg&quot; style=&quot;float:none;&quot; title=&quot;IMG_20180328_170013.jpg&quot;/&gt;&lt;/p&gt;&lt;p style=&quot;text-indent:28px&quot;&gt;&lt;span style=&quot;font-family: 宋体; font-size: 14px;&quot;&gt;本次团队生命力培训暨&lt;/span&gt;&lt;span style=&quot;font-size: 14px; font-family: Calibri;&quot;&gt;4.22&lt;/span&gt;&lt;span style=&quot;font-family: 宋体; font-size: 14px;&quot;&gt;活动誓师大会召开之前，各门店销售人员参加了大尖山的徒步活动，活动中大家互帮互助，建立信任，消除隔阂，为本次培训召开奠定了团结热情的基调。&lt;/span&gt;&lt;span style=&quot;;font-family:宋体;font-size:14px&quot;&gt;&lt;span style=&quot;font-family:宋体&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-indent:28px&quot;&gt;&lt;span style=&quot;font-family: 宋体; font-size: 14px;&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img data-src=&quot;/Uploads/Editor/2018-03-31/5abf0049aca19.jpg&quot; style=&quot;float:none;&quot; title=&quot;IMG_20180326_141158.jpg&quot;/&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img data-src=&quot;/Uploads/Editor/2018-03-31/5abf004af01fb.jpg&quot; style=&quot;float:none;&quot; title=&quot;IMG_20180326_154507.jpg&quot;/&gt;&lt;/p&gt;&lt;p style=&quot;text-indent:28px&quot;&gt;&lt;span style=&quot;font-family: 宋体; font-size: 14px; text-indent: 14px;&quot;&gt;据了解，本次培训导师海天老师曾多年接受美国卡耐基训练体验式训练、培训过中联重科青岛啤酒、中国移动、中国联通、金六福、中国人寿、平安人寿、泰康人寿、华天酒店国窖&lt;/span&gt;&lt;span style=&quot;font-family: 宋体; font-size: 14px; text-indent: 14px;&quot;&gt;1573&lt;/span&gt;&lt;span style=&quot;font-family: 宋体; font-size: 14px; text-indent: 14px;&quot;&gt;、亚太动力、上海创赢、广州三星装饰等数百个不同类型的团队，被誉为中国最具潜质的生命丰盛教练之一！&lt;/span&gt;&lt;span style=&quot;font-family: 宋体; font-size: 14px;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-indent:28px&quot;&gt;&lt;span style=&quot;font-family: 宋体; font-size: 14px; text-indent: 14px;&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img data-src=&quot;/Uploads/Editor/2018-03-31/5abf007f40a77.jpg&quot; style=&quot;float:none;&quot; title=&quot;IMG_20180327_111226.jpg&quot;/&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img data-src=&quot;/Uploads/Editor/2018-03-31/5abf008007fb8.jpg&quot; style=&quot;float:none;&quot; title=&quot;IMG_20180327_143344.jpg&quot;/&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img data-src=&quot;/Uploads/Editor/2018-03-31/5abf008163d2e.jpg&quot; style=&quot;float:none;&quot; title=&quot;IMG_20180327_150733.jpg&quot;/&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img data-src=&quot;/Uploads/Editor/2018-03-31/5abf0082cf391.jpg&quot; style=&quot;float:none;&quot; title=&quot;IMG_20180327_172152.jpg&quot;/&gt;&lt;/p&gt;&lt;p style=&quot;text-indent: 14px; text-align: left;&quot;&gt;&lt;span style=&quot;;font-family:宋体;font-size:14px&quot;&gt;2&lt;span style=&quot;font-family:宋体&quot;&gt;天&lt;/span&gt;&lt;span style=&quot;font-family:Calibri&quot;&gt;3&lt;/span&gt;&lt;span style=&quot;font-family:宋体&quot;&gt;夜的培训分别通过“桃花朵朵开”“回忆历程释放自我”“红黑商战”“情景剧表演”“我的人生路”“穿越电网”等充满智慧的游戏环节组成，丰富又充满意义，让学员们充分的感受到时光的残酷，铭记当下，珍惜身边家人朋友，从思想觉悟上得到了突破。&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-indent: 14px; text-align: center;&quot;&gt;&lt;span style=&quot;;font-family:宋体;font-size:14px&quot;&gt;&lt;span style=&quot;font-family:宋体&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img data-src=&quot;/Uploads/Editor/2018-03-31/5abf00bac102a.jpg&quot; style=&quot;float:none;&quot; title=&quot;IMG_20180328_085543.jpg&quot;/&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img data-src=&quot;/Uploads/Editor/2018-03-31/5abf00bb80b15.jpg&quot; style=&quot;float:none;&quot; title=&quot;IMG_20180328_092230.jpg&quot;/&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img data-src=&quot;/Uploads/Editor/2018-03-31/5abf00bc472b5.jpg&quot; style=&quot;float:none;&quot; title=&quot;IMG_20180328_093409.jpg&quot;/&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img data-src=&quot;/Uploads/Editor/2018-03-31/5abf00bdc7dde.jpg&quot; style=&quot;float:none;&quot; title=&quot;IMG_20180328_093526.jpg&quot;/&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img data-src=&quot;/Uploads/Editor/2018-03-31/5abf00bf57b28.jpg&quot; style=&quot;float:none;&quot; title=&quot;IMG_20180328_093948.jpg&quot;/&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img data-src=&quot;/Uploads/Editor/2018-03-31/5abf00c1452ed.jpg&quot; style=&quot;float:none;&quot; title=&quot;IMG_20180328_094512.jpg&quot;/&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img data-src=&quot;/Uploads/Editor/2018-03-31/5abf00c2a4bff.jpg&quot; style=&quot;float:none;&quot; title=&quot;IMG_20180328_094959.jpg&quot;/&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img data-src=&quot;/Uploads/Editor/2018-03-31/5abf00c448329.jpg&quot; style=&quot;float:none;&quot; title=&quot;IMG_20180328_101512.jpg&quot;/&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img data-src=&quot;/Uploads/Editor/2018-03-31/5abf00c6713d9.jpg&quot; style=&quot;float:none;&quot; title=&quot;IMG_20180328_112612.jpg&quot;/&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img data-src=&quot;/Uploads/Editor/2018-03-31/5abf00c7a9992.jpg&quot; style=&quot;float:none;&quot; title=&quot;IMG_20180328_113450.jpg&quot;/&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img data-src=&quot;/Uploads/Editor/2018-03-31/5abf00c91cf30.jpg&quot; style=&quot;float:none;&quot; title=&quot;IMG_20180328_114403.jpg&quot;/&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img data-src=&quot;/Uploads/Editor/2018-03-31/5abf00cac0112.jpg&quot; style=&quot;float:none;&quot; title=&quot;IMG_20180328_143941.jpg&quot;/&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img data-src=&quot;/Uploads/Editor/2018-03-31/5abf00cd5da26.jpg&quot; style=&quot;float:none;&quot; title=&quot;IMG_20180328_151115.jpg&quot;/&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img data-src=&quot;/Uploads/Editor/2018-03-31/5abf00cf3c479.jpg&quot; style=&quot;float:none;&quot; title=&quot;IMG_20180328_151326.jpg&quot;/&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img data-src=&quot;/Uploads/Editor/2018-03-31/5abf00d151ce3.jpg&quot; style=&quot;float:none;&quot; title=&quot;IMG_20180328_154029.jpg&quot;/&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img data-src=&quot;/Uploads/Editor/2018-03-31/5abf00d299d50.jpg&quot; style=&quot;float:none;&quot; title=&quot;IMG_20180328_155113.jpg&quot;/&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img data-src=&quot;/Uploads/Editor/2018-03-31/5abf00d434510.jpg&quot; style=&quot;float:none;&quot; title=&quot;IMG_20180328_155320.jpg&quot;/&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img data-src=&quot;/Uploads/Editor/2018-03-31/5abf00d6c6f41.jpg&quot; style=&quot;float:none;&quot; title=&quot;IMG_20180328_155530.jpg&quot;/&gt;&lt;/p&gt;&lt;p style=&quot;text-indent:14px&quot;&gt;&lt;span style=&quot;;font-family:宋体;font-size:14px&quot;&gt;&lt;span style=&quot;font-family:宋体&quot;&gt;个体是孤独的，只有和厉害的人一起才能创造不可能！学员们在各个项目中团结一致拧成一条绳，团队的强大超乎想象。我们相信团队和家人永远每个奋斗者坚强的后盾，学会感恩，拓宽视野，放大格局，无论是在人生道路上还是商海沉浮中，合作共赢才会是引领时代的代名词。&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-indent:14px&quot;&gt;&lt;span style=&quot;;font-family:宋体;font-size:14px&quot;&gt;&lt;span style=&quot;font-family:宋体&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img data-src=&quot;/Uploads/Editor/2018-03-31/5abf0177e0511.jpg&quot; style=&quot;float:none;&quot; title=&quot;IMG_20180328_092553.jpg&quot;/&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img data-src=&quot;/Uploads/Editor/2018-03-31/5abf0178ae84e.jpg&quot; style=&quot;float:none;&quot; title=&quot;IMG_20180328_093526.jpg&quot;/&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img data-src=&quot;/Uploads/Editor/2018-03-31/5abf0179b1831.jpg&quot; style=&quot;float:none;&quot; title=&quot;IMG_20180328_094320.jpg&quot;/&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img data-src=&quot;/Uploads/Editor/2018-03-31/5abf017b52953.jpg&quot; style=&quot;float:none;&quot; title=&quot;IMG_20180328_095058.jpg&quot;/&gt;&lt;/p&gt;&lt;p style=&quot;text-indent:14px&quot;&gt;&lt;span style=&quot;;font-family:宋体;font-size:14px&quot;&gt;&lt;span style=&quot;font-family:宋体&quot;&gt;培训最后举行了&lt;/span&gt;4.22&lt;span style=&quot;font-family:宋体&quot;&gt;在中山希尔顿举行的家装省钱季誓师大会，家造网冯添全董事长亲自到现场为团队每一位小伙伴鼓舞士气，营销团队表现出色，志气高涨，决战&lt;/span&gt;&lt;span style=&quot;font-family:Calibri&quot;&gt;422&lt;/span&gt;&lt;span style=&quot;font-family:宋体&quot;&gt;，必定胜利！&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img data-src=&quot;/Uploads/Editor/2018-03-31/5abf01a7d0725.jpg&quot; style=&quot;float:none;&quot; title=&quot;IMG_20180328_193042.jpg&quot;/&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img data-src=&quot;/Uploads/Editor/2018-03-31/5abf01a9311fa.jpg&quot; style=&quot;float:none;&quot; title=&quot;IMG_20180328_193313_HHT.jpg&quot;/&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img data-src=&quot;http://jiajoo.com/Uploads/Editor/2018-03-31/5abf01a6cc672.jpg&quot; title=&quot;IMG_20180328_192651_1.jpg&quot; style=&quot;white-space: normal; float: none;&quot;/&gt;&lt;/p&gt;&lt;p style=&quot;text-indent:14px&quot;&gt;&lt;span style=&quot;;font-family:宋体;font-size:14px&quot;&gt;&lt;span style=&quot;font-family:宋体&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br/&gt;&lt;/p&gt;') [ RunTime:0.0100s ]
+
+[ 2018-06-28T13:49:44+08:00 ] 127.0.0.1 /index.php/Admin/Article/index/cat_id/40
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0030s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/40' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '40'  [ RunTime:0.0090s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '40' ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2018-06-28T13:49:44+08:00 ] 127.0.0.1 /index.php/Admin/Article/index/cat_id/40
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/40' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '40'  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '40' ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.006001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2018-06-28T13:49:46+08:00 ] 127.0.0.1 /index.php/Admin/Article/edit/cat_id/40/id/769
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005001s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/40' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_document` WHERE `id` = 769 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document_cimg` [ RunTime:0.0040s ]
+SQL: SELECT `imgurl` FROM `jia_document_cimg` WHERE `id` = 121 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_document_article` [ RunTime:0.0030s ]
+SQL: SELECT `content` FROM `jia_document_article` WHERE `id` = 769 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2018-06-28T13:49:46+08:00 ] 127.0.0.1 /index.php/Admin/Article/edit/cat_id/40/id/769
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/40' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+NOTIC: [2048] Declaration of Admin\Model\DocumentModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\DocumentModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_document` WHERE `id` = 769 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document_cimg` [ RunTime:0.0030s ]
+SQL: SELECT `imgurl` FROM `jia_document_cimg` WHERE `id` = 121 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document_article` [ RunTime:0.0030s ]
+SQL: SELECT `content` FROM `jia_document_article` WHERE `id` = 769 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2018-06-28T13:49:56+08:00 ] 127.0.0.1 /index.php/Admin/Article/index/cat_id/40
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/40' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '40'  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '40' ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+

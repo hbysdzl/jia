@@ -1,0 +1,107 @@
+<layout name="Public/layout"/>
+ <div class="page-heading">
+            <h3>
+               	 权限列表
+            </h3>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="#">控制面板</a>
+                </li>
+                <li>
+                    <a href="#">添加权限</a>
+                </li>
+                <li class="active"> Editable Table </li>
+            </ul>
+</div>
+
+        <div class="wrapper">
+             <div class="row">
+                <div class="col-sm-12">
+                <section class="panel">
+                <header class="panel-heading">
+                    Editable Table
+                    <span class="tools pull-right">
+                        <a href="javascript:;" class="fa fa-chevron-down"></a>
+                        <a href="javascript:;" class="fa fa-times"></a>
+                     </span>
+                </header>
+                <div class="panel-body">
+                <div class="adv-table editable-table ">
+                <div class="clearfix">
+                    <div class="btn-group">
+                        <button id="editable-sample_new" class="btn btn-primary">
+                          	<a href="{:U('authAdd')}">新增 </a><i class="fa fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="space15"></div>
+                <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                <thead style="text-align:center;">
+                <tr>
+                    <th style="width:50px;">排序</th>
+                    <th>权限名称</th>
+                    <th>控制器名</th>
+                    <th>方法名</th>
+                    <th>全路径</th>
+                    <th>权限等级</th>
+                    <th>排序</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                
+          <volist name="auth" id="vo">
+				
+                <tr class="">
+                    <td style="width:20px;">{$i}</td>
+                    <td>{$vo.auth_name}</td>
+                    <td>{$vo.auth_c}</td>
+                    <td>{$vo.auth_a}</td>
+                    <td>{$vo.auth_path}</td>
+                    <td>{$vo.auth_level}</td>
+                    <td>{$vo.sorting}</td>
+                    <td style="color:green">
+                    	<span style="cursor:pointer;" ><a href="{:U('authEdit','',false)}/auth_id/{$vo.auth_id}">修改</a></span> |
+                    	<span vo="{$vo.auth_id}" class="del"style="cursor:pointer;" >删除</span>
+					</td>
+                </tr>
+           </volist>      
+                </tbody>
+           </table>
+<style>
+.num{background:#34eb8a;margin:3px;width:20px;display:inline-block;padding-left:5px;color:#040906};
+</style>
+       <div style="margin-left:0px;"><?php echo $page;?></div>
+        </div>
+     </div>
+
+<div id="tishi" style="width:1650px;height:50px;background:#f66b34;color:white;line-height:50px;position: absolute;top:0px;font-size:22px;padding-left:50px;display:none"></div>     
+</section>
+<script src="__ROOT__/Application/Admin/Public/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+$('.del').click(function(){
+	var id=$(this).attr('vo');
+	var tr=$(this).parent().parent();
+	if(confirm('确定要删除吗？')){
+		$.ajax({
+			type:"get",
+			url:"{:U('ajaxdel','',false)}/auth_id/"+id,
+			dataType:"json",
+			success:function(data){
+				if(data.ok==1){
+					tr.remove();
+					$('#tishi').html('删除成功！');
+					$('#ishi').fadeIn(1000);
+					$('#tishi').fadeOut(3000);
+				}else{
+					$('#tishi').html('删除失败!');
+					$('#tishi').fadeIn(1000);
+					$('#tishi').fadeOut(3000);				
+				}
+			}
+		});
+	
+	}	
+});
+</script>
+ 

@@ -1,0 +1,121 @@
+<layout name="Public/layout"/>
+<style>
+.num{background:#34eb8a;margin:3px;width:20px;display:inline-block;padding-left:5px;color:#040906};
+</style>
+ <div class="page-heading">
+     <h3>{$title}</h3>
+        <ul class="breadcrumb"><li><a href="#">控制面板</a></li>
+            <li><a href="#">启用</a></li>
+            <li class="active">禁用</li>
+        </ul>
+</div>
+
+        <div class="wrapper">
+             <div class="row">
+                <div class="col-sm-12">
+                <section class="panel">
+                <header class="panel-heading">
+                    Editable Table
+                    <span class="tools pull-right">
+                        <a href="javascript:;" class="fa fa-chevron-down"></a>
+                        <a href="javascript:;" class="fa fa-times"></a>
+                     </span>
+                </header>
+                <div class="panel-body">
+                <div class="adv-table editable-table ">
+                <div class="clearfix">
+                    <div class="btn-group">
+                        <button id="editable-sample_new" class="btn btn-primary">
+                          	<a href="{:U('dadd')}">新增 </a><i class="fa fa-plus"></i>
+                        </button>
+                    </div> 
+                </div>
+            <div style="float:right;margin-top:-40px;">
+            	<form action="__SELF__" method="post">
+	                <div class="clearfix" style="margin-bottom:15px;">
+	                	 <input type="text" name="name" size="30" value="请输入名称"/>
+	                    <div class="btn-group">
+	                        <button id="editable-sample_new" class="btn btn-primary" type="submit">搜索</button>
+	                    </div>
+	                </div>
+      			</form>
+            </div>
+      
+                <div class="space15"></div>
+                <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                <thead>
+                <tr>
+                    <th style="width:50px;">ID</th>
+                    <th>名称</th>
+                    <th>所属类别ID/名称</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                
+          		<volist name="draw_name" id="vo">
+				
+                <tr class="">
+                    <td style="width:20px;">{$vo.id}</td>
+                    <td>{$vo.name}</td>
+                    <td>{$vo.fid}/{$vo.fname}</td>
+                    <td>
+                    	<if condition="$vo['status']==1">
+                    		<span style="color: green;">正常</span>
+                    	<else/>
+                    		<span style="color: red;">禁用</span>
+                    	</if>
+                    </td>
+                    <td style="color:green">
+                    	<span style="cursor:pointer;" ><a href="{:U('dindex','',false)}/id/{$vo.id}/p/<?php echo I('get.p')?>">
+                    	<if condition="$vo['status']==1">
+                    		禁用
+                    	<else/>
+                    		启用
+                    	</if>
+                    	</a></span> |
+                    	<span style="cursor:pointer;" ><a href="{:U('dedit','',false)}/id/{$vo.id}">修改</a></span> |
+                    	<span vo="{$vo.id}" class="del"style="cursor:pointer;" >删除</span>
+					</td>
+                </tr>
+                
+            </volist>      
+                </tbody>
+           </table>
+
+       <div style="margin-left:0px;"><?php echo $page_str;?></div>
+        </div>
+     </div>
+
+<div id="tishi" style="width:1650px;height:50px;background:#f66b34;color:white;line-height:50px;position:fixed;top:80px;font-size:22px;padding-left:50px;display:none;"></div>     
+</section>
+
+<script src="__ROOT__/Application/Admin/Public/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+$('.del').click(function(){
+	var id=$(this).attr('vo');
+	var tr=$(this).parent().parent();
+	if(confirm('确定要删除吗？')){
+		$.ajax({
+			type:"get",
+			url:"{:U('ajaxDdel','',false)}/id/"+id,
+			dataType:"json",
+			success:function(data){
+				if(data.ok==1){
+					tr.remove();
+					$('#tishi').html('删除成功！');
+					$('#tishi').fadeIn(1000);
+					$('#tishi').fadeOut(3000);
+				}else{
+					$('#tishi').html('删除失败!');
+					$('#tishi').fadeIn(1000);
+					$('#tishi').fadeOut(3000);				
+				}
+			}
+		});
+	
+	}	
+});
+</script>
+ 

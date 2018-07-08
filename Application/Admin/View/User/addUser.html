@@ -1,0 +1,111 @@
+<layout name="Public/layout"/>
+
+ <div class="page-heading">
+            <h3>
+               	 新增管理员
+            </h3>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="#">控制面板</a>
+                </li>
+                <li>
+                    <a href="#">新增管理员</a>
+                </li>
+                <li class="active"> Editable Table </li>
+            </ul>
+</div>
+<div class="wrapper">
+             <div class="row">
+                <div class="col-sm-12">
+                <section class="panel">
+                <header class="panel-heading">
+                    Editable Table
+                    <span class="tools pull-right">
+                        <a href="javascript:;" class="fa fa-chevron-down"></a>
+                        <a href="javascript:;" class="fa fa-times"></a>
+                     </span>
+                </header>
+                <div class="panel-body">
+                <div class="adv-table editable-table ">
+                <div class="clearfix">
+                   
+                </div>
+                
+        </div>
+     </div>
+<form id="form_data">    
+<table  style="width:400px;text-align:center;height:400px;margin-left:20px;font-size:16px">
+                
+   <tr>
+       <td>角色分配:</td>
+       <td>
+       		<volist name="role" id="vo">
+       		<input type="radio" name="role_id" value="{$vo.role_id}" checked="checked" /><span>{$vo.role_name}</span>&nbsp&nbsp&nbsp&nbsp
+       		</volist>
+       </td>
+   </tr>
+    <tr>
+       <td>账号:</td>
+       <td><input type="text" name="username" value="" size="35"/></td>
+   	</tr>
+    <tr>
+       <td>密码:</td>
+       <td><input type="password" name="password" value="" size="35"/></td>
+   	</tr>
+   	<tr>
+       <td>确认密码:</td>
+       <td><input type="password" name="passwords" value="" size="35"/></td>
+   	</tr> 
+   	<tr>
+       <td>是否启用:</td>
+       <td><input type="radio" name="is_use" value="1" checked="checked"/>启用   &nbsp &nbsp &nbsp &nbsp <input type="radio" name="is_use" value="0" />禁用</td>
+       
+   	</tr>
+   	<tr>
+       <td>是否可修改:</td>
+       <td><input type="radio" name="is_edit" value="1" checked="checked"/>可修改   &nbsp &nbsp &nbsp &nbsp <input type="radio" name="is_edit" value="0" />不可修改</td>
+       
+   	</tr>
+   	<tr>
+       <td>是否可删除:</td>
+       <td><input type="radio" name="is_del" value="1" checked="checked"/>可删除  &nbsp &nbsp &nbsp &nbsp <input type="radio" name="is_del" value="0" />不可删除</td>
+       
+   	</tr>
+   	<tr>
+      <td colspan=2><input type="button"  value="提交" id="tijiao"/> &nbsp &nbsp &nbsp<input type="reset"  value="重置" /></td>  
+   	</tr>                
+</table>
+</form> 
+<div id="tishi" style="width:1650px;height:50px;background:#f66b34;color:white;line-height:50px;position: absolute;top:0px;font-size:22px;padding-left:50px;display:none"></div>     
+</section>
+<script src="__ROOT__/Application/Admin/Public/js/jquery-1.10.2.min.js"></script>
+
+<script type="text/javascript">
+$('#tijiao').click(function(){
+	var from_data=$('#form_data').serialize();
+	$.ajax({
+		type:"post",
+		url:"{:U('ajaxAdd')}",
+		data:from_data,
+		dataType:"json",
+		success:function(data){
+			if(data.ok==0){
+				$('#tishi').html(data.error);
+				$('#tishi').fadeIn(1000);
+				$('#tishi').fadeOut(4000);
+			}else{
+				$('#tishi').html('操作成功正在跳转!');
+				$('#tishi').fadeIn(1000);
+				$('#tishi').fadeOut(3000);
+				
+					setTimeout(function(){
+						location.href="{:U('userlis')}"
+					},3000);
+				
+			}
+		}
+	});
+	
+});
+</script>
+ 
