@@ -1,0 +1,870 @@
+[ 2018-07-09T09:08:32+08:00 ] 127.0.0.1 /admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.021002s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.029001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.029001s ]
+
+[ 2018-07-09T09:08:32+08:00 ] 127.0.0.1 /index.php/Admin/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.079005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.079005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.025001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.026001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.024002s ]
+INFO: [ app_end ] --END-- [ RunTime:0.024002s ]
+
+[ 2018-07-09T09:08:32+08:00 ] 127.0.0.1 /index.php/Admin/Login/code.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006001s ]
+
+[ 2018-07-09T09:08:32+08:00 ] 127.0.0.1 /index.php/Admin/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006000s ]
+
+[ 2018-07-09T09:08:36+08:00 ] 127.0.0.1 /index.php/Admin/Login/code/0.7154349387969121
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.010000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010000s ]
+
+[ 2018-07-09T09:08:37+08:00 ] 127.0.0.1 /index.php/Admin/Login/code/0.2963328085148067
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-07-09T09:08:37+08:00 ] 127.0.0.1 /index.php/Admin/Login/code/0.23421629154970036
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.010000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010000s ]
+
+[ 2018-07-09T09:09:11+08:00 ] 127.0.0.1 /index.php/Admin/Login/ajaxLogin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.010000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0870s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.027002s ]
+INFO: [ app_end ] --END-- [ RunTime:0.029002s ]
+
+[ 2018-07-09T09:09:13+08:00 ] 127.0.0.1 /index.php/Admin/Login/ajaxLogin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0030s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2018-07-09T09:09:39+08:00 ] 127.0.0.1 /index.php/Admin/Login/code
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+
+[ 2018-07-09T09:15:56+08:00 ] 127.0.0.1 /index.php/Admin/Login/code
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.012001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.018001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.018001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.009000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010000s ]
+
+[ 2018-07-09T09:16:19+08:00 ] 127.0.0.1 /admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+
+[ 2018-07-09T09:16:19+08:00 ] 127.0.0.1 /index.php/Admin/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.081004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.081004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.014001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.014001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006001s ]
+
+[ 2018-07-09T09:16:19+08:00 ] 127.0.0.1 /index.php/Admin/Login/code.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.007000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007000s ]
+
+[ 2018-07-09T09:16:20+08:00 ] 127.0.0.1 /index.php/Admin/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006001s ]
+
+[ 2018-07-09T09:16:25+08:00 ] 127.0.0.1 /index.php/Admin/Login/code/0.6285354966491641
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.010000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010000s ]
+
+[ 2018-07-09T09:16:26+08:00 ] 127.0.0.1 /index.php/Admin/Login/code/0.354295775949069
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006000s ]
+
+[ 2018-07-09T09:16:35+08:00 ] 127.0.0.1 /index.php/Admin/Login/ajaxLogin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+NOTIC: [8] Undefined index: auto D:\UPUPW_NP5.4\htdocs\test\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT * FROM `jia_admin` WHERE `username` = 'root' LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `jia_admin` SET `lastdate`='1531098995',`lastip`='127.0.0.1' WHERE `username` = 'root' [ RunTime:0.0390s ]
+SQL: UPDATE `jia_admin` SET `count`=count+1 WHERE `username` = 'root' [ RunTime:0.0220s ]
+
+[ 2018-07-09T09:16:35+08:00 ] 127.0.0.1 /index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0260s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0090s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.075005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.075005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006000s ]
+
+[ 2018-07-09T09:16:36+08:00 ] 127.0.0.1 /index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.009000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.007000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006001s ]
+
+[ 2018-07-09T09:18:01+08:00 ] 127.0.0.1 /index.php/Admin/Category/cateList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.013001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.022001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.022001s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_category` [ RunTime:0.1280s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jia_category` LIMIT 1   [ RunTime:0.1390s ]
+NOTIC: [8] Undefined variable: cat_title D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Controller\CategoryController.class.php 第 20 行.
+SQL: SELECT * FROM `jia_category`  [ RunTime:0.0130s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: page D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\2fd35acb806049b5e181282c611b8c37.php 第 360 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.190011s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.190011s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.014001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.015001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.047003s ]
+INFO: [ app_end ] --END-- [ RunTime:0.048003s ]
+
+[ 2018-07-09T09:18:05+08:00 ] 127.0.0.1 /index.php/Admin/Article/index/cat_id/41
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT `auth_name` FROM `jia_auth` WHERE `auth_a` = 'index/cat_id/41' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_document` [ RunTime:0.0880s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '41'  [ RunTime:0.2190s ]
+SQL: SELECT * FROM `jia_document` WHERE `category_id` = '41' ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.091005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.091005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.006001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006000s ]
+
+[ 2018-07-09T09:18:08+08:00 ] 127.0.0.1 /index.php/Admin/Personnel/styleIndex
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0030s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_worktype` [ RunTime:0.0340s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jia_worktype` WHERE `status` >= 0 LIMIT 1   [ RunTime:0.0120s ]
+SQL: SELECT * FROM `jia_worktype` WHERE `status` >= 0 ORDER BY id desc LIMIT 0,10   [ RunTime:0.0000s ]
+SQL: SELECT `name` FROM `jia_worktype` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `name` FROM `jia_worktype` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `name` FROM `jia_worktype` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `name` FROM `jia_worktype` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `name` FROM `jia_worktype` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `name` FROM `jia_worktype` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `name` FROM `jia_worktype` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `name` FROM `jia_worktype` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `name` FROM `jia_worktype` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `name` FROM `jia_worktype` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.063003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.063003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007000s ]
+
+[ 2018-07-09T09:18:11+08:00 ] 127.0.0.1 /index.php/Admin/Personnel/gzindex
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_worker` [ RunTime:0.0240s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jia_worker` WHERE `type` = 1 AND `status` >= 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_worker` WHERE `type` = 1 AND `status` >= 0 LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.064004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.064004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006001s ]
+
+[ 2018-07-09T09:18:13+08:00 ] 127.0.0.1 /index.php/Admin/Personnel/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_worker` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jia_worker` WHERE `type` = 0 AND `status` >= 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_worker` WHERE `type` = 0 AND `status` >= 0 LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.066003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.066003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006000s ]
+
+[ 2018-07-09T09:18:17+08:00 ] 127.0.0.1 /index.php/Admin/Drawing/dindex
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+
+[ 2018-07-09T09:18:40+08:00 ] 127.0.0.1 /index.php/Admin/Drawing/dindex
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+
+[ 2018-07-09T09:19:04+08:00 ] 127.0.0.1 /index.php/Admin/Drawing/dindex
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007001s ]
+
+[ 2018-07-09T09:19:19+08:00 ] 127.0.0.1 /index.php/Admin/Drawing/dindex
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_drawtype` [ RunTime:0.0350s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jia_drawtype` WHERE `status` >= 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_drawtype` WHERE `status` >= 0 ORDER BY id desc LIMIT 0,10   [ RunTime:0.0010s ]
+SQL: SELECT `name` FROM `jia_drawtype` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `name` FROM `jia_drawtype` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `name` FROM `jia_drawtype` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `name` FROM `jia_drawtype` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `name` FROM `jia_drawtype` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `name` FROM `jia_drawtype` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `name` FROM `jia_drawtype` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `name` FROM `jia_drawtype` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `name` FROM `jia_drawtype` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `name` FROM `jia_drawtype` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.058003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.058003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006001s ]
+
+[ 2018-07-09T09:19:38+08:00 ] 127.0.0.1 /index.php/Admin/Drawing/dadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_drawtype` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_drawtype` WHERE ( fid=0 )  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.055003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.056003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.007000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006001s ]
+
+[ 2018-07-09T09:19:42+08:00 ] 127.0.0.1 /index.php/Admin/Drawing/ajaxdAdd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006001s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0030s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_drawtype` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined index: validate D:\UPUPW_NP5.4\htdocs\test\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\UPUPW_NP5.4\htdocs\test\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `jia_drawtype` (`fid`,`name`) VALUES ('0','请输入名称') [ RunTime:0.0240s ]
+
+[ 2018-07-09T09:19:45+08:00 ] 127.0.0.1 /index.php/Admin/Drawing/dindex.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0030s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_drawtype` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jia_drawtype` WHERE `status` >= 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_drawtype` WHERE `status` >= 0 ORDER BY id desc LIMIT 0,10   [ RunTime:0.0010s ]
+SQL: SELECT `name` FROM `jia_drawtype` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `name` FROM `jia_drawtype` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `name` FROM `jia_drawtype` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `name` FROM `jia_drawtype` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `name` FROM `jia_drawtype` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `name` FROM `jia_drawtype` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `name` FROM `jia_drawtype` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `name` FROM `jia_drawtype` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `name` FROM `jia_drawtype` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2018-07-09T09:19:50+08:00 ] 127.0.0.1 /index.php/Admin/Drawing/ajaxDdel/id/33
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_drawtype` [ RunTime:0.0030s ]
+SQL: DELETE FROM `jia_drawtype` WHERE `id` = 33 [ RunTime:0.0010s ]
+SQL: SELECT `id`,`fid` FROM `jia_drawtype`  [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006000s ]
+
+[ 2018-07-09T09:19:58+08:00 ] 127.0.0.1 /index.php/Admin/Drawing/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0030s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_draw` [ RunTime:0.0580s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jia_draw` WHERE `status` >= 0 AND `xuan` = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_draw` WHERE `status` >= 0 AND `xuan` = 0 ORDER BY id desc LIMIT 0,12   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.057004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.057004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006000s ]
+
+[ 2018-07-09T09:20:00+08:00 ] 127.0.0.1 /index.php/Admin/Drawing/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_draw` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `jia_drawtype` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`name` FROM `jia_drawtype` WHERE ( fid=1 )  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`name` FROM `jia_drawtype` WHERE ( fid=2 )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `jia_drawtype` WHERE ( fid=3 )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `jia_drawtype` WHERE ( fid=4 )  [ RunTime:0.0000s ]
+NOTIC: [2048] Declaration of Admin\Model\WorkerModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\WorkerModel.class.php 第 122 行.
+NOTIC: [2048] Declaration of Admin\Model\WorkerModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\WorkerModel.class.php 第 122 行.
+SQL: SHOW COLUMNS FROM `jia_worker` [ RunTime:0.0040s ]
+SQL: SELECT `id`,`name` FROM `jia_worker` WHERE ( type=0 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.057003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.057003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.006001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006000s ]
+
+[ 2018-07-09T09:21:54+08:00 ] 127.0.0.1 /index.php/Admin/Drawing/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0030s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_draw` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jia_draw` WHERE `status` >= 0 AND `xuan` = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_draw` WHERE `status` >= 0 AND `xuan` = 0 ORDER BY id desc LIMIT 0,12   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.048003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.048003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006000s ]
+
+[ 2018-07-09T09:21:57+08:00 ] 127.0.0.1 /index.php/Admin/Drawing/index/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006001s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0030s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_draw` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jia_draw` WHERE `status` >= 0 AND `xuan` = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_draw` WHERE `status` >= 0 AND `xuan` = 0 ORDER BY id desc LIMIT 12,12   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.058003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.058003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006001s ]
+
+[ 2018-07-09T09:22:20+08:00 ] 127.0.0.1 /index.php/Admin/Drawing/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0030s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_draw` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `jia_drawtype` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`name` FROM `jia_drawtype` WHERE ( fid=1 )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `jia_drawtype` WHERE ( fid=2 )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `jia_drawtype` WHERE ( fid=3 )  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `jia_drawtype` WHERE ( fid=4 )  [ RunTime:0.0000s ]
+NOTIC: [2048] Declaration of Admin\Model\WorkerModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\WorkerModel.class.php 第 122 行.
+NOTIC: [2048] Declaration of Admin\Model\WorkerModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\UPUPW_NP5.4\htdocs\test\Application\Admin\Model\WorkerModel.class.php 第 122 行.
+SQL: SHOW COLUMNS FROM `jia_worker` [ RunTime:0.0040s ]
+SQL: SELECT `id`,`name` FROM `jia_worker` WHERE ( type=0 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.049003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.049003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006000s ]
+
+[ 2018-07-09T09:22:45+08:00 ] 127.0.0.1 /index.php/Admin/Drawing/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.008000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0050s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jia_draw` [ RunTime:0.0050s ]
+NOTIC: [8] Undefined index: validate D:\UPUPW_NP5.4\htdocs\test\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\UPUPW_NP5.4\htdocs\test\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `jia_draw` (`name`,`room`,`area`,`worker`,`ffg`,`fhx`,`fmj`,`fzj`,`description`) VALUES ('测试','11','33','29-湛周军','8','10','7','12','嗯嗯啊') [ RunTime:0.0090s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.055004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.055004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.007000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008000s ]
+
+[ 2018-07-09T09:22:46+08:00 ] 127.0.0.1 /index.php/Admin/Drawing/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0030s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_draw` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jia_draw` WHERE `status` >= 0 AND `xuan` = 0 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_draw` WHERE `status` >= 0 AND `xuan` = 0 ORDER BY id desc LIMIT 0,12   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+NOTIC: [8] Undefined index: sost D:\UPUPW_NP5.4\htdocs\test\Application\Runtime\Cache\Admin\46342455d5635ad84219ee4d81bde5c0.php 第 348 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.049003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.050003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005001s ]
+
+[ 2018-07-09T09:22:49+08:00 ] 127.0.0.1 /index.php/Admin/Drawing/edit/id/144
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006001s ]
+SQL: SHOW COLUMNS FROM `jia_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id` FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jia_admin` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `jia_auth` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=0 ) ORDER BY sorting  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `jia_auth` WHERE ( auth_level=1 ) ORDER BY sorting  [ RunTime:0.0000s ]
+ERR: 非法操作:edit
+
