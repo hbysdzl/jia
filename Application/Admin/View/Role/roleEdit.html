@@ -1,0 +1,74 @@
+<layout name="Public/layout"/>
+<div class="page-heading">
+ <h3>修改角色</h3>
+    <ul class="breadcrumb">
+       <li><a href="#">控制面板</a></li>
+       <li><a href="{:U('role_list')}">返回</a></li>
+       <li class="active"> Editable Table </li>
+   </ul>
+</div>
+<div class="wrapper">
+             <div class="row">
+                <div class="col-sm-12">
+                <section class="panel">
+                <header class="panel-heading">
+                    Editable Table
+                    <span class="tools pull-right">
+                        <a href="javascript:;" class="fa fa-chevron-down"></a>
+                        <a href="javascript:;" class="fa fa-times"></a>
+                     </span>
+                </header>
+                <div class="panel-body">
+                <div class="adv-table editable-table ">
+                <div class="clearfix">
+                   
+                </div>
+                
+        </div>
+     </div>
+<form id="form_data">    
+<table  style="width:400px;text-align:center;height:300px;margin-left:20px;font-size:16px">                
+   <tr>
+   		<input type="hidden" name="role_id" value="{$role.role_id}">
+       <td>角色名称:</td>
+       <td>
+	      <input type="text" name="role_name" value="{$role.role_name}" />
+	   </td>
+   </tr>
+   	<tr>
+      <td colspan=2><input type="button"  value="提交" id="tijiao"/> &nbsp &nbsp &nbsp<input type="reset"  value="重置" /></td>  
+   	</tr>                
+</table>
+</form> 
+<div id="tishi" style="width:1650px;height:50px;background:#f66b34;color:white;line-height:50px;position: absolute;top:0px;font-size:22px;padding-left:50px;display:none"></div>     
+</section>
+<script src="__ROOT__/Application/Admin/Public/js/jquery-1.10.2.min.js"></script>
+
+<script type="text/javascript">
+$('#tijiao').click(function(){
+	var from_data=$('#form_data').serialize();
+	$.ajax({
+		type:"post",
+		url:"{:U('ajaxEdit')}",
+		data:from_data,
+		dataType:"json",
+		success:function(data){
+			if(data.ok==0){
+				$('#tishi').html(data.error);
+				$('#tishi').fadeIn(1000);
+				$('#tishi').fadeOut(4000);
+			}else{
+				$('#tishi').html('操作成功正在跳转！');
+				$('#tishi').fadeIn(1000);
+				$('#tishi').fadeOut(3000);
+				
+					setTimeout(function(){
+						location.href="{:U('role_list')}"
+					},3000);
+				
+			}
+		}
+	});
+	
+});
+</script>

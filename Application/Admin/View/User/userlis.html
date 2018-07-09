@@ -1,0 +1,105 @@
+<layout name="Public/layout"/>
+ <div class="page-heading">
+            <h3>
+               	 管理员列表
+            </h3>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="#">控制面板</a>
+                </li>
+                <li>
+                    <a href="#">新增管理员</a>
+                </li>
+                <li class="active"> Editable Table </li>
+            </ul>
+</div>
+
+        <div class="wrapper">
+             <div class="row">
+                <div class="col-sm-12">
+                <section class="panel">
+                <header class="panel-heading">
+                    Editable Table
+                    <span class="tools pull-right">
+                        <a href="javascript:;" class="fa fa-chevron-down"></a>
+                        <a href="javascript:;" class="fa fa-times"></a>
+                     </span>
+                </header>
+                <div class="panel-body">
+                <div class="adv-table editable-table ">
+                <div class="clearfix">
+                    <div class="btn-group">
+                        <button id="editable-sample_new" class="btn btn-primary">
+                          	<a href="{:U('addUser')}">新增 </a><i class="fa fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="space15"></div>
+                <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                <thead style="text-align:center;">
+                <tr>
+                    <th style="width:50px;">排序</th>
+                    <th>用户名</th>
+                    <th>登陆次数</th>
+                    <th>注册时间</th>
+                    <th>最后登陆时间</th>
+                    <th>最后登陆IP</th>
+                    <th>状态</th>
+                    <th>所属角色</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                
+          <volist name="user" id="vo">
+				<?php $role_name=$vo['role_name']? $vo['role_name']:"超级管理员"?>
+                <tr class="">
+                    <td style="width:20px;">{$i}</td>
+                    <td>{$vo.username}</td>
+                    <td>{$vo.count}</td>
+                    <td><?php echo date("Y-m-d H:i:s",$vo['datetime']);?></td>
+                    <td><?php echo date("Y-m-d H:i:s",$vo['lastdate']);?></td>
+                    <td>{$vo.lastip}</td>
+                    <td><?php echo $vo['is_use']==1?'启用':'禁用'?></td>
+                    <td>{$role_name}</td>
+                    <td style="color:green">
+                    	<span style="cursor:pointer;" ><a href="{:U('edit','',false)}/admin_id/{$vo.id}">修改</a></span> |
+                    	<span vo="{$vo.id}" class="del"style="cursor:pointer;" >删除</span>
+					</td>
+                </tr>
+           </volist>      
+                </tbody>
+           </table>
+        </div>
+     </div>
+<div id="tishi" style="width:1650px;height:50px;background:#f66b34;color:white;line-height:50px;position: absolute;top:0px;font-size:22px;padding-left:50px;display:none"></div>     
+</section>
+<script src="__ROOT__/Application/Admin/Public/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+$('.del').click(function(){
+	var id=$(this).attr('vo');
+	var tr=$(this).parent().parent()
+	if(confirm('确定要删除吗？')){
+		$.ajax({
+			type:"get",
+			url:"{:U('ajaxdel','',false)}/admin_id/"+id,
+			dataType:"json",
+			success:function(data){
+				if(data.ok==1){
+					tr.remove();
+					$('#tishi').html('删除成功！');
+					$('#tishi').fadeIn(1000);
+					$('#tishi').fadeOut(3000);
+				}else{
+					$('#tishi').html('删除失败!');
+					$('#tishi').fadeIn(1000);
+					$('#tishi').fadeOut(3000);
+				
+				}
+			}
+		});
+	
+	}	
+});
+</script>
+ 

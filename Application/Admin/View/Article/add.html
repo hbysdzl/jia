@@ -1,0 +1,143 @@
+<layout name="Public/layout"/>
+<style>
+#tabbar-div{font-size:18px;width:20%;height:30px;text-align:center;}
+#tabbar-div ul li{list-style-type:none;float:left;line-height:28px;width:50%;cursor:pointer;border:1px #d8ef3a solid;}
+.tab-front{background:#4ca90f;}
+.table_content{width:99%;height:800px;margin-left:10px;font-size:16px;font-weight: bold;}
+.table_content tr{height:35px;}
+</style>
+ <div class="page-heading">
+ <h3>{$title}</h3>
+ <ul class="breadcrumb">
+    <li><a href="#">控制面板</a></li>
+    <li><a href="{:U('index','',false)}/cat_id/{$cat_id}">返回</a></li>
+    <li class="active"> Editable Table </li>
+</ul>
+</div>
+<div class="wrapper">
+    <div class="row">
+        <div class="col-sm-12">
+            <section class="panel">
+                <header class="panel-heading">
+                    <span class="tools pull-right">
+                        <a href="javascript:;" class="fa fa-chevron-down"></a>
+                        <a href="javascript:;" class="fa fa-times"></a>
+                    </span>
+				<div id="tabbar-div">
+					<ul>
+						<li class="tab-front">基本信息</li>
+						<li class="tab-back">扩展</li>
+					
+					</ul>
+				</div>
+                </header>
+<form id="form_data">    
+<table class="table_content">
+	<input type="hidden" name="category_id" value="{$cat_id}">
+    <tr><td><span style="color:red">*</span>文档标题:</td></tr>
+   	<tr><td><input type="text" name="title" size="60"/></td></tr>
+   	<tr><td>标识:</td></tr>
+   	<tr><td><input type="text" name="name"  size="60"/></td></tr>
+    <tr><td><span style="color:red">*</span>描述:</td></tr>
+    <tr><td><textarea rows="8" cols="60" name="description"></textarea></td></tr>
+    <tr><td><span style="color:red">*</span>文章内容:</td></tr>
+   	<tr><td><textarea id="document" name="document"></textarea></td></tr>              
+</table>
+
+<table class="table_content" style="display:none;width:100%;height:350px;margin-left:10px;font-size:16px;">
+	<tr><td>内容类型：&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			<select name="type">
+				<option value="0">--请选择--</option>
+				<option value="1">目录</option>
+				<option value="2">主题</option>
+				<option value="3">段落</option>
+			</select>
+
+	</td></tr>
+	<tr><td>浏览量：&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="view"></td></tr>
+	<tr>
+		<td>可见性：&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			<input type="radio" name="display" value="0">不可见&nbsp&nbsp&nbsp&nbsp
+			<input type="radio" name="display" value="1" checked="checked">所有人可见
+		</td>
+	</tr>
+	
+	<tr>
+		<td>数据状态：&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			<input type="radio" name="status" value="0">禁用&nbsp&nbsp&nbsp&nbsp
+			<input type="radio" name="status" value="1" checked="checked">启用
+		</td>
+	</tr>
+	<tr>
+		<td>优先级：&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			<input type="text" name="level" >
+		</td>
+	</tr>
+	<tr><td>封面:</td></tr>
+	<tr><td><input type="file" name="img"></td></tr>	 
+</table>
+
+<table>
+	<tr>
+      <td colspan=2><input type="button"  value="提交" id="tijiao"/> &nbsp &nbsp &nbsp<input type="reset"  value="重置" /></td>  
+	</tr>
+</table> 
+</form> 
+<div id="tishi" style="width:1650px;height:50px;background:#f66b34;color:white;line-height:50px;position:fixed;top:80px;font-size:22px;padding-left:50px;display:none"></div>     
+</section>
+<script src="__ROOT__/Application/Admin/Public/js/jquery-1.10.2.min.js"></script>
+
+<script type="text/javascript">
+
+// 点击按钮切换table
+$("#tabbar-div ul li").click(function(){
+	// 获取点击的是第几个按钮
+	var i = $(this).index();
+	// 显示第i个table
+	$(".table_content").eq(i).show();
+	// 隐藏其他的table
+	$(".table_content").eq(i).siblings(".table_content").hide();
+	// 把原来选中的取消选中状态
+	$(".tab-front").removeClass("tab-front").addClass("tab-back");
+	// 切换点击的按钮的样式为选中状态
+	$(this).removeClass("tab-back").addClass("tab-front");
+});
+
+$('#tijiao').click(function(){
+	var form = new FormData(document.getElementById("form_data"));
+    $.ajax({
+        url: "{:U('ajaxAdd')}",
+        type: "post",
+        data: form,
+        dataType:"json",
+        processData: false,
+        contentType: false,
+        success: function(data) {
+        	if(data.ok==0){
+				$('#tishi').html(data.error);
+				$('#tishi').fadeIn(1000);
+				$('#tishi').fadeOut(3000);
+			}else{
+				$('#tishi').html('操作成功正在跳转！');
+				$('#tishi').fadeIn(1000);
+				$('#tishi').fadeOut(3000);
+				
+					setTimeout(function(){
+						location.href="{:U('index','',false)}/cat_id/"+{$cat_id};
+					},3000);
+				
+			}
+        }
+ 
+    });
+	
+});
+//在线编辑器
+UE.getEditor('document', {
+	"initialFrameWidth" : "100%",   // 宽
+	"initialFrameHeight" : 400,      // 高
+	"maximumWords" : 3000,// 最大可以输入的字符数量
+	'scaleEnabled':true
+});
+</script>
+ 
