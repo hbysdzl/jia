@@ -196,7 +196,7 @@ class DrawingController extends BackController{
         $this->assign(array('title'=>'新增效果图','OneAuth'=>$this->OneAuth,'TowAuth'=>$this->TowAuth));
         $drawModel=D('Draw');
         if(IS_POST){
-           if($drawModel->create(I('post.'),1)){
+           if($drawModel->validate($drawModel->dra)->create(I('post.'),1)){
                if($drawModel->add()){
                    $this->success('恭喜您！添加成功',U('index'));
                    die();
@@ -216,6 +216,103 @@ class DrawingController extends BackController{
         $work=D('Worker')->field('id,name')->where('type=0')->select();
         $this->assign('work',$work);
         $this->display();
+    }
+    
+    /*
+     * 效果图的修改
+     * */
+    
+    public function edit($id){
+        
+        $this->assign(array('title'=>'效果图修改','OneAuth'=>$this->OneAuth,'TowAuth'=>$this->TowAuth));
+        $draModel=D('Draw');
+        if(IS_POST){
+            if($draModel->validate($draModel->dra)->create(I('post.'),2)){
+                if($draModel->save()!==false){
+                    $this->success('恭喜您！修改成功',U('index'));
+                    die();
+                }
+            }
+            $this->error($draModel->getError());
+            return;
+        }
+        
+        //取出编辑的数据
+        $res=$draModel->find($id);
+        $this->assign('res',$res);
+        //获取效果图图片表的数据
+        $draimg=M('drawimg');
+        $resImg=$draimg->field('id,img')->where('drawid='.$id)->select();
+        $this->assign('resimg',$resImg);
+        //获取设计师信息
+        $work=D('Worker')->field('id,name')->where('type=0')->select();
+        $this->assign('work',$work);
+        //取出风格选项 4类
+        $res1 = M("drawtype")->field('id,name')->where('fid=1')->select();
+        $res2 = M("drawtype")->field('id,name')->where('fid=2')->select();
+        $res3 = M("drawtype")->field('id,name')->where('fid=3')->select();
+        $res4 = M("drawtype")->field('id,name')->where('fid=4')->select();
+        $this->assign(array('res1'=>$res1,'res2'=>$res2,'res3'=>$res3,'res4'=>$res4));
+        
+        $this->display();
+    }
+    
+    /*
+     * ajax删除图片
+     * */
+    public function ajaxDelImg($id){
+        $draimg=M('drawimg');
+        
+        //先删除硬盘上的
+        $url=$draimg->field('img')->find($id);
+        $imgurl='./Public/Upload/'.$url['img'];
+        if (unlink($imgurl)){
+            if($draimg->delete($id)){
+                echo json_encode(array('ok'=>1));
+            }
+        }
+        
+    }
+    
+    /*
+     * 状态修改
+     * */
+    public function changeStatus($method=null){
+        
+        $id=array_unique((array)I('id'));//将字符串转换为数组
+        $id=is_array($id)? implode(',',$id):$id;
+        
+        if (empty($id)){
+            $this->error('请选择要操作的记录');
+        }
+        
+        switch (strtolower($method)){//将url参数转换为小写
+            case 'forbidw':
+                $this->forbid('draw',array('id'=>$id));
+                break;
+            case 'resumew':
+                $this->resumew('draw',array('id'=>$id));
+                break;
+            case 'deletew':
+                $this->delete('draw',array('id'=>$id));
+                break;
+            default:
+                $this->error('参数非法');
+        }
+        
+    }
+    
+    /*
+     * ajax删除效果图
+     * */
+    public function ajaxDradel($id){
+        
+        $draModel=D('Draw');
+        if($draModel->delete($id)){
+            echo json_encode(array('ok'=>1));
+        }else{
+            echo json_encode(array('ok'=>0));
+        }
     }
 
 }

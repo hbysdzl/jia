@@ -76,13 +76,13 @@
                     	</if>
                     </td>
                     <td style="color:green">
-                    	<span style="cursor:pointer;" ><a href="{:U('index','',false)}/id/{$vo.id}/p/<?php echo I('get.p')?>">
+                    	
                     	<if condition="$vo['status']==1">
-                    		禁用
+                    		<span style="cursor:pointer;" ><a href="{:U('Drawing/changeStatus?method=forbidw&id='.$vo['id'])}">禁用</a></span> |
                     	<else/>
-                    		启用
+                    		<span style="cursor:pointer;" ><a href="{:U('Drawing/changeStatus?method=resumew&id='.$vo['id'])}">启用</a></span> |	
                     	</if>
-                    	</a></span> |
+                    	
                     	<span style="cursor:pointer;" ><a href="{:U('edit','',false)}/id/{$vo.id}">修改</a></span> |
                     	<span vo="{$vo.id}" class="del"style="cursor:pointer;" >删除</span>
 					</td>
@@ -99,7 +99,7 @@
 <div id="tishi" style="width:1650px;height:50px;background:#f66b34;color:white;line-height:50px;position:fixed;top:80px;font-size:22px;padding-left:50px;display:none;"></div>     
 </section>
 
-<script src="__ROOT__/Application/Admin/Public/js/jquery-1.10.2.min.js"></script>
+
 <script type="text/javascript">
 $('.del').click(function(){
 	var id=$(this).attr('vo');
@@ -107,7 +107,7 @@ $('.del').click(function(){
 	if(confirm('确定要删除吗？')){
 		$.ajax({
 			type:"get",
-			url:"{:U('ajaxdel','',false)}/id/"+id,
+			url:"{:U('ajaxDradel','',false)}/id/"+id,
 			dataType:"json",
 			success:function(data){
 				if(data.ok==1){

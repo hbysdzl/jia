@@ -50,6 +50,19 @@ function ShowImage($url,$width='',$height=''){
     echo "<img src='$url' $width $height>";
 }
 
+/*
+ * 判断批量上传图片的表单中是否为空
+ * */
+
+function hasImage($imgName){
+    foreach ($_FILES[$imgName]['error'] as $v){
+        if($v==0){
+            return true;
+        }
+        return false;
+    }
+}
+
 //ajax添加数据入库公共函数
 function ajaxadd($obj,$table,$ae){
     $obj=D($table);

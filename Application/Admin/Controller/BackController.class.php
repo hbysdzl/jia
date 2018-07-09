@@ -52,4 +52,37 @@ class BackController extends Controller{
 
 	}
 	
+	/*
+	 * 最终方法 对数据表的一行或多行记录执行状态修改
+	 * */
+	final protected function editRow($model,$data,$where,$msg){
+	   
+	    $where=array_merge(array('id'=>array('in',$id)),(array)$where);//合并数组
+	    $msg=array_merge(array('success'=>'操作成功！','error'=>'操作失败！','url'=>'','ajax'=>IS_AJAX),(array)$msg);
+	    
+	    if(M($model)->where($where)->save($data)!==false){
+	        $this->success($msg['success'],$msg['url'],$msg['ajax']);
+	    }else {
+	        $this->error($msg['error'],$msg['url'],$msg['ajax']);
+	    }
+	}
+	
+	/*
+	 * 禁用
+	 * */
+	protected function forbid($model,$where=array(),$msg=array('success'=>'状态禁用成功！','error'=>'状态禁用失败！')){
+	    $data=array('status'=>0);
+	    $this->editRow($model, $data, $where, $msg);
+	}
+	
+	/*
+	 * 启用
+	 * */
+	protected function resumew($model,$where=array(),$msg=array('success'=>'状态恢复成功！','error'=>'状态恢复失败！')){
+	    $data=array('status'=>1);
+	    $this->editRow($model, $data, $where, $msg);
+	}
+	
+	
+	
 }

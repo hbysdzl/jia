@@ -339,7 +339,7 @@ th{font-weight: bold;padding-top:18px;font-family:'微软雅黑';}
     <tr><th>面积</th>   
     <tr><td><input type="text" name="area" size="47"/></td></tr>
     <tr><th>造价（如8.7万）</th>   
-    <tr><td><input type="text" name="area" size="47"/></td></tr>
+    <tr><td><input type="text" name="cost" size="47"/></td></tr>
    	<tr><th>设计师</th>   
     <tr>
     	<td>

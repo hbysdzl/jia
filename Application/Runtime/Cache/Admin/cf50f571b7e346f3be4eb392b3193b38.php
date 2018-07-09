@@ -276,18 +276,21 @@
 		
         <!--body wrapper start-->
 		
-<style>
-.num{background:#34eb8a;margin:3px;width:20px;display:inline-block;padding-left:5px;color:#040906};
+<style type="text/css">
+table{margin-top: -30px;}
+tr{height: 35px;}
+th{font-weight: bold;padding-top:18px;font-family:'微软雅黑';}
 </style>
- <div class="page-heading">
-     <h3><?php echo ($title); ?></h3>
-        <ul class="breadcrumb"><li><a href="javascript:void(0)">控制面板</a></li>
-            <li><a href="javascript:void(0)">启用</a></li>
-            <li class="active">禁用</li>
-        </ul>
+<div class="page-heading">
+    <h3><?php echo ($title); ?></h3>
+       <ul class="breadcrumb">
+           <li><a href="javascript:void(0);">控制面板</a></li>
+           <li><a href="<?php echo U('index');?>">返回</a></li>
+           <li class="active"> Editable Table </li>
+      </ul>
 </div>
 
-        <div class="wrapper">
+<div class="wrapper">
              <div class="row">
                 <div class="col-sm-12">
                 <section class="panel">
@@ -301,101 +304,133 @@
                 <div class="panel-body">
                 <div class="adv-table editable-table ">
                 <div class="clearfix">
-                    <div class="btn-group">
-                        <button id="editable-sample_new" class="btn btn-primary">
-                          	<a href="<?php echo U('add');?>">新增 </a><i class="fa fa-plus"></i>
-                        </button>
-                    </div> 
+                   
                 </div>
-            <div style="float:right;margin-top:-40px;">
-            	<form action="/index.php/Admin/Drawing/index" method="post">
-	                <div class="clearfix" style="margin-bottom:15px;">
-	                	 <input type="text" name="name" size="30" value="请输入名称"/>
-	                    <div class="btn-group">
-	                        <button id="editable-sample_new" class="btn btn-primary" type="submit">搜索</button>
-	                    </div>
-	                </div>
-      			</form>
-            </div>
-      
-                <div class="space15"></div>
-                <table class="table table-striped table-hover table-bordered" id="editable-sample">
-                <thead>
-                <tr>
-                    <th style="width:50px;">ID</th>
-                    <th>案例名称</th>
-                    <th>居室</th>
-                    <th>面积</th>
-                    <th>造价</th>
-                    <th>设计师</th>
-                    <th>创建时间</th>
-                    <th>状态</th>
-                    <th>操作</th>
-                </tr>
-                </thead>
-                <tbody>
                 
-          		<?php if(is_array($listImg)): $i = 0; $__LIST__ = $listImg;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="">
-                    <td style="width:20px;"><?php echo ($vo["id"]); ?></td>
-                    <td><?php echo ($vo["name"]); ?></td>
-                    <td><?php echo ($vo["room"]); ?></td>
-                    <td><?php echo ($vo["area"]); ?></td>
-                    <td><?php echo ($vo["sost"]); ?></td>
-                    <td><?php echo ($vo["worker"]); ?></td>
-                    <td><?php echo date('Y-m-d',$vo['time'])?></td>
-                    <td>
-                    	<?php if($vo['status']==1): ?><span style="color: green;">正常</span>
-                    	<?php else: ?>
-                    		<span style="color: red;">禁用</span><?php endif; ?>
-                    </td>
-                    <td style="color:green">
-                    	
-                    	<?php if($vo['status']==1): ?><span style="cursor:pointer;" ><a href="<?php echo U('Drawing/changeStatus?method=forbidw&id='.$vo['id']);?>">禁用</a></span> |
-                    	<?php else: ?>
-                    		<span style="cursor:pointer;" ><a href="<?php echo U('Drawing/changeStatus?method=resumew&id='.$vo['id']);?>">启用</a></span> |<?php endif; ?>
-                    	
-                    	<span style="cursor:pointer;" ><a href="<?php echo U('edit','',false);?>/id/<?php echo ($vo["id"]); ?>">修改</a></span> |
-                    	<span vo="<?php echo ($vo["id"]); ?>" class="del"style="cursor:pointer;" >删除</span>
-					</td>
-                </tr><?php endforeach; endif; else: echo "" ;endif; ?>      
-                </tbody>
-           </table>
-
-       <div style="margin-left:0px;"><?php echo $page_str;?></div>
         </div>
      </div>
-
-<div id="tishi" style="width:1650px;height:50px;background:#f66b34;color:white;line-height:50px;position:fixed;top:80px;font-size:22px;padding-left:50px;display:none;"></div>     
+<form id="form_data" action="/index.php/Admin/Drawing/edit/id/147" method="post" enctype="multipart/form-data">
+	<input type="hidden" name="id" value="<?php echo ($res["id"]); ?>">    
+<table  style="width:50%;height:300px;margin-left:20px;font-size:16px">
+    <tr><th>效果图名称:</th></tr>
+    <tr><td><input type="text" name="name" size="47" value="<?php echo ($res["name"]); ?>"/> </td></tr>
+   
+    <tr><th>效果图封面 </th></tr>
+    <tr><td><input type="file" name="img_url" id="file" onchange="c()"/></td></tr>
+    <tr><td><img src="<?php echo C('IMG_PATH').'/'.$res['img_url'];?>" id="show" width='90px'></td></tr>
+   
+ 	  <tr><th>效果图展示图片</th></tr>
+	  <tr>
+	  	<td>
+	    <div style="border: 1px dashed; height:320px;width: 155%;text-align: center;background-color:#f3f3f3;">
+	    <div style="margin-top:10px;">
+	    	<?php if(is_array($resimg)): $i = 0; $__LIST__ = $resimg;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><span title="点击删除图片" id="<?php echo ($vo["id"]); ?>" class="pic" style="cursor: pointer;"><?php echo ShowImage($vo['img'],100);?></span>&nbsp&nbsp&nbsp;<?php endforeach; endif; else: echo "" ;endif; ?>
+	    </div>
+	  	<div style="width:98%;height: 90%;margin:10px auto;text-align: center;" id="pcs"></div>
+		<div style="margin-top:-100px;">
+	  	  <input onclick="$(this).parent().parent().find('#pcs').append('<span style=\'float:left\'><input  type=\'file\' name=\'pics[]\' id=\'file\' /><br/></span>')" type="button" value="点击添加图片" />
+	  	</div>
+	  </div>
+	 </td>
+	 </tr>
+  	<tr><th>几居室</th>   
+    <tr><td><input type="text" name="room" size="47" value="<?php echo ($res["room"]); ?>"/></td></tr>
+    <tr><th>面积</th>   
+    <tr><td><input type="text" name="area" size="47" value="<?php echo ($res["area"]); ?>"/></td></tr>
+    <tr><th>造价（如8.7万）</th>   
+    <tr><td><input type="text" name="cost" size="47" value="<?php echo ($res["cost"]); ?>"/></td></tr>
+   	<tr><th>设计师</th>   
+    <tr>
+    	<td>
+    	<select name="worker">
+    		<option value="">--请选择--</option>
+    		<?php if(is_array($work)): $i = 0; $__LIST__ = $work;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($res['workerid']==$vo['id']){ $check='selected="selected"'; }else{ $check=''; } ?>
+    		<option value="<?php echo ($vo["id"]); ?>-<?php echo ($vo["name"]); ?>" <?php echo ($check); ?>>--<?php echo ($vo["name"]); ?>--</option><?php endforeach; endif; else: echo "" ;endif; ?>
+    	</select>
+    	</td>
+   </tr>
+   	<tr><th>风格</th></tr>
+    <tr>
+    	<td>
+    		<?php if(is_array($res1)): $i = 0; $__LIST__ = $res1;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($res['ffg']==$vo['id']){ $check='checked="checked"'; }else{ $check=''; } ?>
+    		<input class="auth_rules" type="radio" name="ffg" value="<?php echo ($vo["id"]); ?>" <?php echo ($check); ?>><?php echo ($vo["name"]); ?> &nbsp;&nbsp;&nbsp;&nbsp;<?php endforeach; endif; else: echo "" ;endif; ?>
+    	</td>
+   </tr>
+   <tr><th>户型</th></tr>
+    <tr>
+    	<td>
+    		<?php if(is_array($res2)): $i = 0; $__LIST__ = $res2;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($res['fhx']==$vo['id']){ $check='checked="checked"'; }else{ $check=''; } ?>
+    		<input class="auth_rules" type="radio" name="fhx" value="<?php echo ($vo["id"]); ?>" <?php echo ($check); ?>><?php echo ($vo["name"]); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php endforeach; endif; else: echo "" ;endif; ?>
+    	</td>
+   </tr>
+   <tr><th>面积</th></tr>
+    <tr>
+    	<td>
+    		<?php if(is_array($res3)): $i = 0; $__LIST__ = $res3;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($res['fmj']==$vo['id']){ $check='checked="checked"'; }else{ $check=''; } ?>
+    		<input class="auth_rules" type="radio" name="fmj" value="<?php echo ($vo["id"]); ?>" <?php echo ($check); ?>><?php echo ($vo["name"]); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php endforeach; endif; else: echo "" ;endif; ?>
+    	</td>
+   </tr>
+   <tr><th>造价</th></tr>
+    <tr>
+    	<td>
+    		<?php if(is_array($res4)): $i = 0; $__LIST__ = $res4;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($res['fzj']==$vo['id']){ $check='checked="checked"'; }else{ $check=''; } ?>
+    		<input class="auth_rules" type="radio" name="fzj" value="<?php echo ($vo["id"]); ?>" <?php echo ($check); ?>><?php echo ($vo["name"]); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php endforeach; endif; else: echo "" ;endif; ?>
+    	</td>
+   </tr>
+   <tr><th>描述</th> </tr> 
+   <tr><td><textarea name="description" style="height:200px;width:400px"><?php echo ($res["description"]); ?></textarea></td></tr>    
+   	
+   	<tr>
+      <td colspan=2><input type="submit"  value="提交" id="tijiao"/> &nbsp &nbsp &nbsp<input type="reset"  value="重置" /></td>  
+   	</tr>   
+   	               
+</table>
+</form> 
+<div id="tishi" style="width:1650px;height:50px;background:#f66b34;color:white;line-height:50px;position:fixed;top:60px;font-size:22px;padding-left:50px;display:none"></div>     
 </section>
-
-
+<script src="/Application/Admin/Public/js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript">
-$('.del').click(function(){
-	var id=$(this).attr('vo');
-	var tr=$(this).parent().parent();
-	if(confirm('确定要删除吗？')){
-		$.ajax({
-			type:"get",
-			url:"<?php echo U('ajaxDradel','',false);?>/id/"+id,
-			dataType:"json",
-			success:function(data){
-				if(data.ok==1){
-					tr.remove();
-					$('#tishi').html('删除成功！');
-					$('#tishi').fadeIn(1000);
-					$('#tishi').fadeOut(3000);
-				}else{
-					$('#tishi').html('删除失败!');
-					$('#tishi').fadeIn(1000);
-					$('#tishi').fadeOut(3000);				
-				}
-			}
-		});
+//上传图片预览
+function c () {
+	  var r= new FileReader();
+	  f=document.getElementById('file').files[0];
+	   
+	  r.readAsDataURL(f);
+	  r.onload=function (e) {
+	    document.getElementById('show').src=this.result;
+	  };
+	}
 	
-	}	
+//ajax删除图片
+
+$('.pic').click(function(){
+	//获取id
+	var Id=$(this).attr('id');
+	var span=$(this);
+	//执行Ajax
+	if(confirm("确定删除吗")){
+		$.ajax({
+			type:'get',
+		    url:"<?php echo U('ajaxDelImg','',false);?>/id/"+Id,
+		    dataType:"json",
+		    success:function(data){
+		    	if(data.ok==1){
+		    		alert('删除成功！您可以重新上传更新');
+		    		//将标签删除
+		    		span.remove();
+		    	}else{
+		    		alert('删除失败！');
+		    	}
+		    }
+		});
+	}
+	
 });
 </script>
-  
+
+
+
+ 
 		<footer>
             2018 &copy; AdminEx by <a href="http://www.jiajoo.com" target="_blank">家造网</a>
   		 </footer>       
