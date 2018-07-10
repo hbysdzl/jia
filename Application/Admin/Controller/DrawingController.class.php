@@ -180,9 +180,8 @@ class DrawingController extends BackController{
         $tatalPage=$Wdb_num;//总的记录数
         $page=12;//每页显示的数量
         //调用分页公用函数
-
         $pageArr=getPage($Wdb_num,$page); 
-        $pageArr=getPage($Wdb_num,$page);
+  
         $listImg=$Tdb->where($where)->limit($pageArr[0],$pageArr[1])->order('id desc')->select();
         $this->assign('listImg',$listImg);
         $this->assign('page_str',$pageArr[2]);
@@ -199,6 +198,7 @@ class DrawingController extends BackController{
            if($drawModel->validate($drawModel->dra)->create(I('post.'),1)){
                if($drawModel->add()){
                    $this->success('恭喜您！添加成功',U('index'));
+                   
                    die();
                }
            }
@@ -309,9 +309,9 @@ class DrawingController extends BackController{
         
         $draModel=D('Draw');
         if($draModel->delete($id)){
-            echo json_encode(array('ok'=>1));
+            $this->ajaxReturn(array('status'=>'1','msg'=>'删除成功'));
         }else{
-            echo json_encode(array('ok'=>0));
+            $this->ajaxReturn(array('status'=>'0','msg'=>'删除失败'));
         }
     }
 

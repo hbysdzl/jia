@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -8,31 +8,31 @@
   <meta name="author" content="ThemeBucket">
   <link rel="shortcut icon" href="#" type="image/png">
 
-  <title>{$title}</title>
+  <title><?php echo ($title); ?></title>
 <!--icheck-->
-  <link href="__ROOT__/Application/Admin/Public/js/iCheck/skins/minimal/minimal.css" rel="stylesheet">
-  <link href="__ROOT__/Application/Admin/Public/js/iCheck/skins/square/square.css" rel="stylesheet">
-  <link href="__ROOT__/Application/Admin/Public/js/iCheck/skins/square/red.css" rel="stylesheet">
-  <link href="__ROOT__/Application/Admin/Public/js/iCheck/skins/square/blue.css" rel="stylesheet">
-  <link rel="shortcut icon" type="image/x-icon" href="__ROOT__/Application/Admin/Public/images/favicon.ico" media="screen">
+  <link href="/Application/Admin/Public/js/iCheck/skins/minimal/minimal.css" rel="stylesheet">
+  <link href="/Application/Admin/Public/js/iCheck/skins/square/square.css" rel="stylesheet">
+  <link href="/Application/Admin/Public/js/iCheck/skins/square/red.css" rel="stylesheet">
+  <link href="/Application/Admin/Public/js/iCheck/skins/square/blue.css" rel="stylesheet">
+  <link rel="shortcut icon" type="image/x-icon" href="/Application/Admin/Public/images/favicon.ico" media="screen">
   <!--dashboard calendar-->
-  <link href="__ROOT__/Application/Admin/Public/css/clndr.css" rel="stylesheet">
+  <link href="/Application/Admin/Public/css/clndr.css" rel="stylesheet">
   <!--Morris Chart CSS -->
-  <link rel="stylesheet" href="__ROOT__/Application/Admin/Public/js/morris-chart/morris.css">
+  <link rel="stylesheet" href="/Application/Admin/Public/js/morris-chart/morris.css">
   <!--common-->
-  <link href="__ROOT__/Application/Admin/Public/css/style.css" rel="stylesheet">
-  <link href="__ROOT__/Application/Admin/Public/css/style-responsive.css" rel="stylesheet">
+  <link href="/Application/Admin/Public/css/style.css" rel="stylesheet">
+  <link href="/Application/Admin/Public/css/style-responsive.css" rel="stylesheet">
 
-  <script src="__ROOT__/Application/Admin/Public/js/jquery-1.10.2.min.js"></script>
+  <script src="/Application/Admin/Public/js/jquery-1.10.2.min.js"></script>
   <!-- jquery form表单提交插件 -->
-  <script src="__ROOT__/Application/Admin/Public/js/form/jquery-1.8.3.min.js"></script>
-  <script src="__ROOT__/Application/Admin/Public/js/form/jquery.form.js"></script>
-  <script src="__ROOT__/Application/Admin/Public/js/layer/layer.js"></script>  
+  <script src="/Application/Admin/Public/js/form/jquery-1.8.3.min.js"></script>
+  <script src="/Application/Admin/Public/js/form/jquery.form.js"></script>
+  <script src="/Application/Admin/Public/js/layer/layer.js"></script>  
   	
   <!-- 在线编辑器 -->
-<script type="text/javascript" charset="utf-8" src="__ROOT__/Application/Admin/Public/ueditor/ueditor.config.js"></script>
-<script type="text/javascript" charset="utf-8" src="__ROOT__/Application/Admin/Public/ueditor/ueditor.all.min.js"> </script>
-<script type="text/javascript" charset="utf-8" src="__ROOT__/Application/Admin/Public/ueditor/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript" charset="utf-8" src="/Application/Admin/Public/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="/Application/Admin/Public/ueditor/ueditor.all.min.js"> </script>
+<script type="text/javascript" charset="utf-8" src="/Application/Admin/Public/ueditor/lang/zh-cn/zh-cn.js"></script>
 </head>
 
 <body class="sticky-header">
@@ -43,7 +43,7 @@
 
         <!--logo and iconic logo start-->
         <div class="logo">
-            <a href="index.html"><img src="__ROOT__/Application/Admin/Public/images/logo.png" alt=""></a>
+            <a href="index.html"><img src="/Application/Admin/Public/images/logo.png" alt=""></a>
         </div>
         <!--logo and iconic logo end-->
         <div class="left-side-inner">
@@ -52,19 +52,15 @@
 
             <!--sidebar nav start-->
     <ul class="nav nav-pills nav-stacked custom-nav">
-        <li class="active"><a href="{:U('Index/index')}"><i class="fa fa-home"></i> <span>首页</span></a></li>
-            <volist name="OneAuth" id="vo">
-				<?php $class=$vo['class_name']? $vo['class_name']:'fa-tasks';?>
-			<li class="menu-list"><a href=""><i class="fa {$class}"></i> <span>{$vo.auth_name}</span></a>
+        <li class="active"><a href="<?php echo U('Index/index');?>"><i class="fa fa-home"></i> <span>首页</span></a></li>
+            <?php if(is_array($OneAuth)): $i = 0; $__LIST__ = $OneAuth;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; $class=$vo['class_name']? $vo['class_name']:'fa-tasks';?>
+			<li class="menu-list"><a href=""><i class="fa <?php echo ($class); ?>"></i> <span><?php echo ($vo["auth_name"]); ?></span></a>
                 <ul class="sub-menu-list">
-					<volist name="TowAuth" id="vo1">
-					<?php if($vo1['auth_pid']==$vo['auth_id']):?>
-                    <li><a href="__MODULE__/{$vo1.auth_c}/{$vo1.auth_a}">{$vo1.auth_name}</a></li>
-					<?php endif;?>
-					</volist>
+					<?php if(is_array($TowAuth)): $i = 0; $__LIST__ = $TowAuth;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo1): $mod = ($i % 2 );++$i; if($vo1['auth_pid']==$vo['auth_id']):?>
+                    <li><a href="/index.php/Admin/<?php echo ($vo1["auth_c"]); ?>/<?php echo ($vo1["auth_a"]); ?>"><?php echo ($vo1["auth_name"]); ?></a></li>
+					<?php endif; endforeach; endif; else: echo "" ;endif; ?>
                 </ul>
-            </li>
-            </volist>   
+            </li><?php endforeach; endif; else: echo "" ;endif; ?>   
     </ul>
             <!--sidebar nav end-->
 
@@ -173,7 +169,7 @@
                             <ul class="dropdown-list normal-list">
                                 <li class="new">
                                     <a href="">
-                                        <span class="thumb"><img src="__ROOT__/Application/Admin/Public/images/photos/user1.png" alt="" /></span>
+                                        <span class="thumb"><img src="/Application/Admin/Public/images/photos/user1.png" alt="" /></span>
                                         <span class="desc">
                                           <span class="name">John Doe <span class="badge badge-success">new</span></span>
                                           <span class="msg">Lorem ipsum dolor sit amet...</span>
@@ -182,7 +178,7 @@
                                 </li>
                                 <li>
                                     <a href="">
-                                        <span class="thumb"><img src="__ROOT__/Application/Admin/Public/images/photos/user2.png" alt="" /></span>
+                                        <span class="thumb"><img src="/Application/Admin/Public/images/photos/user2.png" alt="" /></span>
                                         <span class="desc">
                                           <span class="name">Jonathan Smith</span>
                                           <span class="msg">Lorem ipsum dolor sit amet...</span>
@@ -191,7 +187,7 @@
                                 </li>
                                 <li>
                                     <a href="">
-                                        <span class="thumb"><img src="__ROOT__/Application/Admin/Public/images/photos/user3.png" alt="" /></span>
+                                        <span class="thumb"><img src="/Application/Admin/Public/images/photos/user3.png" alt="" /></span>
                                         <span class="desc">
                                           <span class="name">Jane Doe</span>
                                           <span class="msg">Lorem ipsum dolor sit amet...</span>
@@ -200,7 +196,7 @@
                                 </li>
                                 <li>
                                     <a href="">
-                                        <span class="thumb"><img src="__ROOT__/Application/Admin/Public/images/photos/user4.png" alt="" /></span>
+                                        <span class="thumb"><img src="/Application/Admin/Public/images/photos/user4.png" alt="" /></span>
                                         <span class="desc">
                                           <span class="name">Mark Henry</span>
                                           <span class="msg">Lorem ipsum dolor sit amet...</span>
@@ -209,7 +205,7 @@
                                 </li>
                                 <li>
                                     <a href="">
-                                        <span class="thumb"><img src="__ROOT__/Application/Admin/Public/images/photos/user5.png" alt="" /></span>
+                                        <span class="thumb"><img src="/Application/Admin/Public/images/photos/user5.png" alt="" /></span>
                                         <span class="desc">
                                           <span class="name">Jim Doe</span>
                                           <span class="msg">Lorem ipsum dolor sit amet...</span>
@@ -262,16 +258,14 @@
                     </li>
                     <li>
                         <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                            <img src="__ROOT__/Application/Admin/Public/images/photos/user-avatar.png" alt="" />
-                                                           <?php echo session('adminname');
-																  $admin_id=session('admin_id');
-														   ?> 
+                            <img src="/Application/Admin/Public/images/photos/user-avatar.png" alt="" />
+                                                           <?php echo session('adminname'); $admin_id=session('admin_id'); ?> 
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
-                            <li><a href="{:U('User/edit','',false)}/admin_id/{$admin_id}"><i class="fa fa-user"></i>修改</a></li>
+                            <li><a href="<?php echo U('User/edit','',false);?>/admin_id/<?php echo ($admin_id); ?>"><i class="fa fa-user"></i>修改</a></li>
                             <li><a href="#"><i class="fa fa-cog"></i>设置</a></li>
-                            <li><a href="{:U('Index/outLogin')}"><i class="fa fa-sign-out"></i>退出</a></li>
+                            <li><a href="<?php echo U('Index/outLogin');?>"><i class="fa fa-sign-out"></i>退出</a></li>
                         </ul>
                     </li>
 
@@ -285,7 +279,116 @@
         <!-- header section end-->
 		
         <!--body wrapper start-->
-		{__CONTENT__} 
+		
+<style type="text/css">
+table{margin-top: -30px;}
+tr{height: 35px;}
+th{font-weight: bold;padding-top:18px;font-family:'微软雅黑';}
+</style>
+<div class="page-heading">
+    <h3><?php echo ($title); ?></h3>
+       <ul class="breadcrumb">
+           <li><a href="javascript:void(0);">控制面板</a></li>
+           <li><a href="<?php echo U('index');?>">返回</a></li>
+           <li class="active"> Editable Table </li>
+      </ul>
+</div>
+
+<div class="wrapper">
+             <div class="row">
+                <div class="col-sm-12">
+                <section class="panel">
+                <header class="panel-heading">
+                    Editable Table
+                    <span class="tools pull-right">
+                        <a href="javascript:;" class="fa fa-chevron-down"></a>
+                        <a href="javascript:;" class="fa fa-times"></a>
+                     </span>
+                </header>
+                <div class="panel-body">
+                <div class="adv-table editable-table ">
+                <div class="clearfix">
+                   
+                </div>
+                
+        </div>
+     </div>
+<form action="" method="post" enctype="multipart/form-data">    
+  <table  style="width:50%;height:300px;margin-left:20px;font-size:16px">
+    <tr><th>案例名称:</th></tr>
+    <tr><td><input type="text" name="name" size="47"/> </td></tr>
+ 
+ 	  <tr><th>案例展示图片</th></tr>
+	  <tr>
+	  	<td>
+	  <div style="border: 1px dashed; height:320px;width: 155%;text-align: center;background-color:#f3f3f3;">
+	  	<div style="width:98%;height: 90%;margin:10px auto;text-align: center;" id="pcs"></div>
+		<div style="margin-top:-50px;">
+	  	  <input onclick="$(this).parent().parent().find('#pcs').append('<span style=\'float:left\'><input  type=\'file\' name=\'pics[]\' id=\'file\' /><br/></span>')" type="button" value="点击添加图片" />
+	  	</div>
+	  </div>
+	 </td>
+	 </tr>
+  	<tr><th>几居室</th>   
+    <tr><td><input type="text" name="room" size="47"/></td></tr>
+    <tr><th>面积</th>   
+    <tr><td><input type="text" name="area" size="47"/></td></tr>
+    <tr><th>展示等级（请填写数字1-100，越大越优秀）</th>   
+    <tr><td><input type="text" name="lev" size="47"/></td></tr>
+   	<tr><th>设计师</th>   
+    <tr>
+    	<td>
+    	<select name="worker">
+    		<option value="">--请选择--</option>
+    		<?php if(is_array($work)): $i = 0; $__LIST__ = $work;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo["id"]); ?>-<?php echo ($vo["name"]); ?>">--<?php echo ($vo["name"]); ?>--</option><?php endforeach; endif; else: echo "" ;endif; ?>
+    	</select>
+    	</td>
+   </tr>
+   	
+   <tr><th>描述</th> </tr> 
+   <tr><td><textarea name="description" style="height:200px;width:400px"></textarea></td></tr>    
+   	
+   	<tr>
+      <td colspan=2><input type="submit"  value="提交"/> &nbsp &nbsp &nbsp<input type="reset"  value="重置" /></td>  
+   	</tr>   
+   	               
+ </table>
+</form> 
+</section>
+
+<script type="text/javascript">
+
+//实现使用jQueryForm实现表单提交
+	$('form').submit(function(){
+		//具体实现使用jqueryForm的方式ajax提交
+		$(this).ajaxSubmit({
+			url:"<?php echo U('add');?>",//指定表单的提交地址
+			type:'post',//表示具体的请求类型 post/get
+			dataType:'json',//指定数据交互格式
+			success:function(msg){
+				if(msg.status==1){
+					layer.alert('<h4 style="color:green;">恭喜您，添加成功！<br/>正在跳转</h4>', {
+						  skin: 'layui-layer-molv', //样式类名
+						  closeBtn: 1
+						});
+					setTimeout(function(){
+						location.href="<?php echo U('index');?>";
+					},2000);
+				}else{
+					layer.alert('<h4 style="color:red;">'+msg.msg+'!</h4>', {
+					  skin: 'layui-layer-molv', //样式类名
+					  closeBtn: 1
+					});	
+				}
+			}
+		});
+		//阻止当前的表单默认的提交
+		return false;
+	});
+</script>
+
+
+ 
 		<footer>
             2018 &copy; AdminEx by <a href="http://www.jiajoo.com" target="_blank">家造网</a>
   		 </footer>       
@@ -296,43 +399,43 @@
 </section>
 
 <!-- Placed js at the end of the document so the pages load faster -->
-<script src="__ROOT__/Application/Admin/Public/js/jquery-ui-1.9.2.custom.min.js"></script>
-<script src="__ROOT__/Application/Admin/Public/js/jquery-migrate-1.2.1.min.js"></script>
-<script src="__ROOT__/Application/Admin/Public/js/bootstrap.min.js"></script>
-<script src="__ROOT__/Application/Admin/Public/js/modernizr.min.js"></script>
-<script src="__ROOT__/Application/Admin/Public/js/jquery.nicescroll.js"></script>
+<script src="/Application/Admin/Public/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="/Application/Admin/Public/js/jquery-migrate-1.2.1.min.js"></script>
+<script src="/Application/Admin/Public/js/bootstrap.min.js"></script>
+<script src="/Application/Admin/Public/js/modernizr.min.js"></script>
+<script src="/Application/Admin/Public/js/jquery.nicescroll.js"></script>
 
 <!--easy pie chart-->
-<script src="__ROOT__/Application/Admin/Public/js/easypiechart/jquery.easypiechart.js"></script>
-<script src="__ROOT__/Application/Admin/Public/js/easypiechart/easypiechart-init.js"></script>
+<script src="/Application/Admin/Public/js/easypiechart/jquery.easypiechart.js"></script>
+<script src="/Application/Admin/Public/js/easypiechart/easypiechart-init.js"></script>
 
 <!--Sparkline Chart-->
-<script src="__ROOT__/Application/Admin/Public/js/sparkline/jquery.sparkline.js"></script>
-<script src="__ROOT__/Application/Admin/Public/js/sparkline/sparkline-init.js"></script>
+<script src="/Application/Admin/Public/js/sparkline/jquery.sparkline.js"></script>
+<script src="/Application/Admin/Public/js/sparkline/sparkline-init.js"></script>
 
 <!--icheck -->
-<script src="__ROOT__/Application/Admin/Public/js/iCheck/jquery.icheck.js"></script>
-<script src="__ROOT__/Application/Admin/Public/js/icheck-init.js"></script>
+<script src="/Application/Admin/Public/js/iCheck/jquery.icheck.js"></script>
+<script src="/Application/Admin/Public/js/icheck-init.js"></script>
 
 <!-- jQuery Flot Chart-->
-<script src="__ROOT__/Application/Admin/Public/js/flot-chart/jquery.flot.js"></script>
-<script src="__ROOT__/Application/Admin/Public/js/flot-chart/jquery.flot.tooltip.js"></script>
-<script src="__ROOT__/Application/Admin/Public/js/flot-chart/jquery.flot.resize.js"></script>
+<script src="/Application/Admin/Public/js/flot-chart/jquery.flot.js"></script>
+<script src="/Application/Admin/Public/js/flot-chart/jquery.flot.tooltip.js"></script>
+<script src="/Application/Admin/Public/js/flot-chart/jquery.flot.resize.js"></script>
 <!--Morris Chart-->
-<script src="__ROOT__/Application/Admin/Public/js/morris-chart/morris.js"></script>
-<script src="__ROOT__/Application/Admin/Public/js/morris-chart/raphael-min.js"></script>
+<script src="/Application/Admin/Public/js/morris-chart/morris.js"></script>
+<script src="/Application/Admin/Public/js/morris-chart/raphael-min.js"></script>
 
 <!--Calendar-->
-<script src="__ROOT__/Application/Admin/Public/js/calendar/clndr.js"></script>
-<script src="__ROOT__/Application/Admin/Public/js/calendar/evnt.calendar.init.js"></script>
-<script src="__ROOT__/Application/Admin/Public/js/calendar/moment-2.2.1.js"></script>
+<script src="/Application/Admin/Public/js/calendar/clndr.js"></script>
+<script src="/Application/Admin/Public/js/calendar/evnt.calendar.init.js"></script>
+<script src="/Application/Admin/Public/js/calendar/moment-2.2.1.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
 
 <!--common scripts for all pages-->
-<script src="__ROOT__/Application/Admin/Public/js/scripts.js"></script>
+<script src="/Application/Admin/Public/js/scripts.js"></script>
 
 <!--Dashboard Charts-->
-<script src="__ROOT__/Application/Admin/Public/js/dashboard-chart-init.js"></script>
+<script src="/Application/Admin/Public/js/dashboard-chart-init.js"></script>
 
 </body>
 </html>

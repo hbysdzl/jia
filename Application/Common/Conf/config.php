@@ -21,11 +21,10 @@ return array(
     
     //配置标题
     'TITLE'                 =>'家造网',
-    
-    'DB_CHARSET'            =>  'utf8',      // 数据库编码默认采用utf8
-
     //密码加密配置
     'MD5_PSW'               =>'kjgujalureyrt213wekyuol12TU',
-    //硬盘图片路径
-    'IMG_PATH'            =>'/Public/Upload'
+    
+    'IMG_PATH'              =>'/Public/Upload',//存放上传文件的目录
+
+    'IMG_ROOTPATH'          =>'./Public/Upload/', //硬盘图片路径
 );

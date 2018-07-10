@@ -23,12 +23,7 @@
   <link href="/Application/Admin/Public/css/style.css" rel="stylesheet">
   <link href="/Application/Admin/Public/css/style-responsive.css" rel="stylesheet">
 
-
-  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-  <script src="js/html5shiv.js"></script>
-  <script src="js/respond.min.js"></script>
-  <![endif]-->
+  <script src="/Application/Admin/Public/js/jquery-1.10.2.min.js"></script> 
 
   <!-- 在线编辑器 -->
 <script type="text/javascript" charset="utf-8" src="/Application/Admin/Public/ueditor/ueditor.config.js"></script>

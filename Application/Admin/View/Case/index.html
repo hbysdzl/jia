@@ -49,8 +49,8 @@
                     <th>案例名称</th>
                     <th>居室</th>
                     <th>面积</th>
-                    <th>造价</th>
                     <th>设计师</th>
+                    <th>等级</th>
                     <th>创建时间</th>
                     <th>状态</th>
                     <th>操作</th>
@@ -104,26 +104,33 @@
 $('.del').click(function(){
 	var id=$(this).attr('vo');
 	var tr=$(this).parent().parent();
-	if(confirm('确定要删除吗？')){
-		$.ajax({
-			type:"get",
-			url:"{:U('ajaxDradel','',false)}/id/"+id,
-			dataType:"json",
-			success:function(data){
-				if(data.status==1){
-					tr.remove();
-					$('#tishi').html(data.msg);
-					$('#tishi').fadeIn(500);
-					$('#tishi').fadeOut(3000);
-				}else{
-					$('#tishi').html('删除失败!');
-					$('#tishi').fadeIn(1000);
-					$('#tishi').fadeOut(3000);				
+	layer.confirm('确认要执行此操作吗？', {
+		  btn: ['去意已决','我再想想'] //按钮
+		}, function(){
+		  layer.msg('正在玩命执行中', {icon: 6});
+		  $.ajax({
+				type:"get",
+				url:"{:U('ajaxCasedel','',false)}/id/"+id,
+				dataType:"json",
+				success:function(msg){
+					if(msg.status==1){
+						tr.remove();
+						layer.alert('<h4 style="color:green;">删除成功</h4>', {
+							  skin: 'layui-layer-molv', //样式类名
+							  closeBtn: 1
+							});
+					}else{
+						layer.alert('<h4 style="color:red;">'+msg.msg+'!</h4>', {
+							  skin: 'layui-layer-molv', //样式类名
+							  closeBtn: 1
+							});				
+					}
 				}
-			}
+			});
+		  
 		});
-	
-	}	
 });
+
+
 </script>
  

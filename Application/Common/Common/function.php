@@ -51,6 +51,19 @@ function ShowImage($url,$width='',$height=''){
 }
 
 /*
+ * 批量删除硬盘图片
+ * @image 数据库中保存的路径数组
+ * */
+
+function deleteImage($image){
+    //取出文件所在目录
+    $path=C('IMG_ROOTPATH');
+    foreach ($image as $v){
+        @unlink($path.$v);
+    }
+}
+
+/*
  * 判断批量上传图片的表单中是否为空
  * */
 
