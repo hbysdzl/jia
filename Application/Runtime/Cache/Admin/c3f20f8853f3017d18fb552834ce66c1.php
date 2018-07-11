@@ -403,7 +403,7 @@ $('.pic').click(function(){
 		dataType:'json',//指定数据交互格式
 		success:function(msg){
 			if(msg.status==1){
-				//表示提交注册成功
+				
 				layer.alert('<h4 style="color:green;">恭喜您，更新成功！<br/>正在跳转</h4>', {
 					  skin: 'layui-layer-molv', //样式类名
 					  closeBtn: 1

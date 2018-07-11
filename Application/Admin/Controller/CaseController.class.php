@@ -130,4 +130,32 @@ class CaseController extends BackController{
             $this->ajaxReturn(array('status'=>'0','msg'=>'删除失败'));
         }
     }
+    
+    /*
+     * 状态修改
+     * */
+    public function changeStatus($method=null){
+    
+        $id=array_unique((array)I('id'));//将字符串转换为数组
+        $id=is_array($id)? implode(',',$id):$id;
+    
+        if (empty($id)){
+            $this->error('请选择要操作的记录');
+        }
+    
+        switch (strtolower($method)){//将url参数转换为小写
+            case 'forbidw':
+                $this->forbid('wcase',array('id'=>$id));
+                break;
+            case 'resumew':
+                $this->resumew('wcase',array('id'=>$id));
+                break;
+            case 'deletew':
+                $this->delete('wcase',array('id'=>$id));
+                break;
+            default:
+                $this->error('参数非法');
+        }
+    
+    }
 }

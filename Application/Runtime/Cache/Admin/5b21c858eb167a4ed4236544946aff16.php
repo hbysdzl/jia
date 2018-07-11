@@ -280,197 +280,141 @@
 		
         <!--body wrapper start-->
 		
-<div class="page-heading">
-            <h3>
-                	消息面板
-            </h3>
-            <ul class="breadcrumb">
-                <li>
-                    My home network
-                </li>
-                <li class="active"> 我的家造网 </li>
-            </ul>
-            <div class="state-info">
+<style>
+.num{background:#34eb8a;margin:3px;width:20px;display:inline-block;padding-left:5px;color:#040906};
+</style>
+ <div class="page-heading">
+     <h3><?php echo ($title); ?></h3>
+        <ul class="breadcrumb"><li><a href="javascript:void(0)">控制面板</a></li>
+            <li><a href="javascript:void(0)">启用</a></li>
+            <li class="active">禁用</li>
+        </ul>
+</div>
+
+        <div class="wrapper">
+             <div class="row">
+                <div class="col-sm-12">
                 <section class="panel">
-                    <div class="panel-body">
-                        <div class="summary">
-                            <span>yearly expense</span>
-                            <h3 class="red-txt">$ 45,600</h3>
-                        </div>
-                        <div id="income" class="chart-bar"></div>
-                    </div>
-                </section>
-                <section class="panel">
-                    <div class="panel-body">
-                        <div class="summary">
-                            <span>yearly  income</span>
-                            <h3 class="green-txt">$ 45,600</h3>
-                        </div>
-                        <div id="expense" class="chart-bar"></div>
-                    </div>
-                </section>
+                <header class="panel-heading">
+                    Editable Table
+                    <span class="tools pull-right">
+                        <a href="javascript:;" class="fa fa-chevron-down"></a>
+                        <a href="javascript:;" class="fa fa-times"></a>
+                     </span>
+                </header>
+                <div class="panel-body">
+                <div class="adv-table editable-table ">
+                
+            <div style="float:left;>
+            	<form action="/index.php/Admin/Postuser/index/p/1.html" method="post">
+	                <div class="clearfix" style="margin-bottom:15px;">
+	                	 <input type="text" name="name" size="30" value="请输入名称"/>
+	                    <div class="btn-group">
+	                        <button id="editable-sample_new" class="btn btn-primary" type="submit">搜索</button>
+	                    </div>
+	                </div>
+      			</form>
             </div>
-</div>
+      
+                <div class="space15"></div>
+                <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                <thead>
+                <tr>
+                    <th style="width:50px;">ID</th>
+                    <th>留言名称</th>
+                    <th>电话</th>
+                    <th>面积</th>
+                    <th>地区</th>
+                    <th>设计师</th>
+                    <th>来源</th>
+                    <th>关键词</th>
+                    <th>预约时间</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                
+          		<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="">
+                    <td style="width:20px;"><?php echo ($vo["id"]); ?></td>
+                    <td><?php echo ($vo["name"]); ?></td>
+                    <td><?php echo ($vo["mobile"]); ?></td>
+                    <td><?php echo ($vo["area"]); ?></td>
+                    <td><?php echo ($vo["addres"]); ?></td>
+                    <td><?php echo ($vo["workername"]); ?></td>
+                    <td><?php echo ($vo["from"]); ?></td>
+                    <td><?php echo ($vo["keyword"]); ?></td>
+                    <td><?php echo date('Y-m-d',$vo['time'])?></td>
+                  
+                    <td style="color:green">                    	
+                    	<span vo="<?php echo ($vo["id"]); ?>" class="del"style="cursor:pointer;" >删除</span>
+					</td>
+                </tr><?php endforeach; endif; else: echo "" ;endif; ?>      
+                </tbody>
+           </table>
 
-<div class="wrapper">
-            <div class="row">
-                <div class="col-md-6">
-                    <!--statistics start-->
-                    <div class="row state-overview">
-                        <div class="col-md-6 col-xs-12 col-sm-6">
-                            <div class="panel purple">
-                                <div class="symbol">
-                                    <i class="fa fa-gavel"></i>
-                                </div>
-                                <div class="state-value">
-                                    <div class="value">230</div>
-                                    <div class="title">今日累计预约人数</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-xs-12 col-sm-6">
-                            <div class="panel red">
-                                <div class="symbol">
-                                    <i class="fa fa-tags"></i>
-                                </div>
-                                <div class="state-value">
-                                    <div class="value">3490</div>
-                                    <div class="title">今日访问量</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row state-overview">
-                        <div class="col-md-6 col-xs-12 col-sm-6">
-                            <div class="panel blue">
-                                <div class="symbol">
-                                    <i class="fa fa-money"></i>
-                                </div>
-                                <div class="state-value">
-                                    <div class="value">22014</div>
-                                    <div class="title">今日累计成交量</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-xs-12 col-sm-6">
-                            <div class="panel green">
-                                <div class="symbol">
-                                    <i class="fa fa-eye"></i>
-                                </div>
-                                <div class="state-value">
-                                    <div class="value">390</div>
-                                    <div class="title"> Unique Visitors</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--statistics end-->
-                </div>
-                <div class="col-md-6">
-                    <!--more statistics box start-->
-                    <div class="panel deep-purple-box">
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-md-7 col-sm-7 col-xs-7">
-                                    <div id="graph-donut" class="revenue-graph"></div>
+       <div style="margin-left:0px;"><?php echo $page_str;?></div>
+        </div>
+     </div>
+</section>
+<script type="text/javascript">
+$('.del').click(function(){
+	var id=$(this).attr('vo');
+	var tr=$(this).parent().parent();
+	layer.confirm('确认要执行此操作吗？', {
+		  btn: ['去意已决','我再想想'] //按钮
+		}, function(){
+		  layer.msg('正在玩命执行中', {icon: 6});
+		  $.ajax({
+				type:"get",
+				url:"<?php echo U('ajaxCasedel','',false);?>/id/"+id,
+				dataType:"json",
+				success:function(msg){
+					if(msg.status==1){
+						tr.remove();
+						layer.alert('<h4 style="color:green;">删除成功</h4>', {
+							  skin: 'layui-layer-molv', //样式类名
+							  closeBtn: 1
+							});
+					}else{
+						layer.alert('<h4 style="color:red;">'+msg.msg+'!</h4>', {
+							  skin: 'layui-layer-molv', //样式类名
+							  closeBtn: 1
+							});				
+					}
+				}
+			});
+		  
+		});
+});
 
-                                </div>
-                                <div class="col-md-5 col-sm-5 col-xs-5">
-                                    <ul class="bar-legend">
-                                        <li><span class="blue"></span> Open rate</li>
-                                        <li><span class="green"></span> Click rate</li>
-                                        <li><span class="purple"></span> Share rate</li>
-                                        <li><span class="red"></span> Unsubscribed rate</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--more statistics box end-->
-                </div>
-            </div>
-           <div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="panel">
-                        <div class="panel-body">
-                            <div class="calendar-block ">
-                                <div class="cal1">
+//ajax状态操作
+function status(URL,c){
+	$.ajax({
+		
+		type:"get",
+		url:URL,
+		dataType:"json",
+		success:function(msg){
+			if(msg.status==1){
+				layer.tips('恭喜您！操作成功！', '#'+c, {
+					  tips: [1, '#3595CC'],
+					  time: 2000
+					});
+				setTimeout(function(){
+					location.href="<?php echo U('index','',false);?>/p/"+<?php echo I('get.p')?I('get.p'):1?>;
+				},800);
+			}else{
+				layer.tips(msg.error, '#'+c, {
+					  tips: [1, '#3595CC'],
+					  time: 3000
+					});
+			}
+		}
+	});
+}
 
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-                <div class="col-md-8" style="float:right;margin-top:-440px;">
-                    <div class="panel">
-                        <div class="panel-body">
-                            <div class="row revenue-states">
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <h4>Monthly revenue report</h4>
-                                    <div class="icheck">
-                                        <div class="square-red single-row">
-                                            <div class="checkbox ">
-                                                <input type="checkbox" checked>
-                                                <label>Online</label>
-                                            </div>
-                                        </div>
-                                        <div class="square-blue single-row">
-                                            <div class="checkbox ">
-                                                <input type="checkbox">
-                                                <label>Offline </label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <ul class="revenue-nav">
-                                        <li><a href="#">weekly</a></li>
-                                        <li><a href="#">monthly</a></li>
-                                        <li class="active"><a href="#">yearly</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="clearfix">
-                                        <div id="main-chart-legend" class="pull-right">
-                                        </div>
-                                    </div>
-
-                                    <div id="main-chart">
-                                        <div id="main-chart-container" class="main-chart">
-                                        </div>
-                                    </div>
-                                    <ul class="revenue-short-info">
-                                        <li>
-                                            <h1 class="red">15%</h1>
-                                            <p>Server Load</p>
-                                        </li>
-                                        <li>
-                                            <h1 class="purple">30%</h1>
-                                            <p>Disk Space</p>
-                                        </li>
-                                        <li>
-                                            <h1 class="green">84%</h1>
-                                            <p>Transferred</p>
-                                        </li>
-                                        <li>
-                                            <h1 class="blue">28%</h1>
-                                            <p>Temperature</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>            
-</div>
-</div>
- 
+</script>
+  
 		<footer>
             2018 &copy; AdminEx by <a href="http://www.jiajoo.com" target="_blank">家造网</a>
   		 </footer>       

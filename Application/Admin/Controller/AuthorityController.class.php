@@ -27,7 +27,7 @@ class AuthorityController extends BackController{
         
          $page=$pageModel->show();
          
-         $auth=$authModel->limit($pageModel->firstRow,$pageModel->listRows)->order('sorting')->select();
+         $auth=$authModel->limit($pageModel->firstRow,$pageModel->listRows)->select();
          
          $this->assign('page',$page);
          $this->assign('auth',$auth);

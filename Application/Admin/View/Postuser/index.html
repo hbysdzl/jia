@@ -23,14 +23,8 @@
                 </header>
                 <div class="panel-body">
                 <div class="adv-table editable-table ">
-                <div class="clearfix">
-                    <div class="btn-group">
-                        <button id="editable-sample_new" class="btn btn-primary">
-                          	<a href="{:U('add')}">新增 </a><i class="fa fa-plus"></i>
-                        </button>
-                    </div> 
-                </div>
-            <div style="float:right;margin-top:-40px;">
+                
+            <div style="float:left;>
             	<form action="__SELF__" method="post">
 	                <div class="clearfix" style="margin-bottom:15px;">
 	                	 <input type="text" name="name" size="30" value="请输入名称"/>
@@ -46,43 +40,33 @@
                 <thead>
                 <tr>
                     <th style="width:50px;">ID</th>
-                    <th>案例名称</th>
-                    <th>居室</th>
+                    <th>留言名称</th>
+                    <th>电话</th>
                     <th>面积</th>
+                    <th>地区</th>
                     <th>设计师</th>
-                    <th>等级</th>
-                    <th>创建时间</th>
-                    <th>状态</th>
+                    <th>来源</th>
+                    <th>关键词</th>
+                    <th>预约时间</th>
                     <th>操作</th>
                 </tr>
                 </thead>
                 <tbody>
                 
-          		<volist name="listImg" id="vo">
+          		<volist name="list" id="vo">
 				
                 <tr class="">
                     <td style="width:20px;">{$vo.id}</td>
                     <td>{$vo.name}</td>
-                    <td>{$vo.room}</td>
+                    <td>{$vo.mobile}</td>
                     <td>{$vo.area}</td>
-                    <td>{$vo.sost}</td>
-                    <td>{$vo.worker}</td>
+                    <td>{$vo.addres}</td>
+                    <td>{$vo.workername}</td>
+                    <td>{$vo.from}</td>
+                    <td>{$vo.keyword}</td>
                     <td><?php echo date('Y-m-d',$vo['time'])?></td>
-                    <td>
-                    	<if condition="$vo['status']==1">
-                    		<span style="color: green;">正常</span>
-                    	<else/>
-                    		<span style="color: red;">禁用</span>
-                    	</if>
-                    </td>
-                    <td style="color:green">
-                    	<if condition="$vo['status']==1">
-                    		<span style="cursor:pointer;" id="{$vo.id}"><a href="javascript:void(0);" onclick='status("{:U('changeStatus','',false)}/method/forbidw/id/{$vo.id}","{$vo.id}")'>禁用</a></span> |
-                    	<else/>
-                    		<span style="cursor:pointer;" id="{$vo.id}"><a href="javascript:void(0);" onclick='status("{:U('changeStatus','',false)}/method/resumew/id/{$vo.id}","{$vo.id}")'>启用</a></span> |	
-                    	</if>
-                    	
-                    	<span style="cursor:pointer;" ><a href="{:U('edit','',false)}/id/{$vo.id}">修改</a></span> |
+                  
+                    <td style="color:green">                    	
                     	<span vo="{$vo.id}" class="del"style="cursor:pointer;" >删除</span>
 					</td>
                 </tr>

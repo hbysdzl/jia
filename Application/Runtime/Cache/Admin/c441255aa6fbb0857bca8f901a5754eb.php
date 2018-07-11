@@ -312,7 +312,7 @@
                     </div> 
                 </div>
             <div style="float:right;margin-top:-40px;">
-            	<form action="/index.php/Admin/Case/index.html" method="post">
+            	<form action="/index.php/Admin/Case/index/p/2" method="post">
 	                <div class="clearfix" style="margin-bottom:15px;">
 	                	 <input type="text" name="name" size="30" value="请输入名称"/>
 	                    <div class="btn-group">
@@ -353,10 +353,9 @@
                     		<span style="color: red;">禁用</span><?php endif; ?>
                     </td>
                     <td style="color:green">
-                    	
-                    	<?php if($vo['status']==1): ?><span style="cursor:pointer;" ><a href="<?php echo U('Drawing/changeStatus?method=forbidw&id='.$vo['id']);?>">禁用</a></span> |
+                    	<?php if($vo['status']==1): ?><span style="cursor:pointer;" id="<?php echo ($vo["id"]); ?>"><a href="javascript:void(0);" onclick='status("<?php echo U('changeStatus','',false);?>/method/forbidw/id/<?php echo ($vo["id"]); ?>","<?php echo ($vo["id"]); ?>")'>禁用</a></span> |
                     	<?php else: ?>
-                    		<span style="cursor:pointer;" ><a href="<?php echo U('Drawing/changeStatus?method=resumew&id='.$vo['id']);?>">启用</a></span> |<?php endif; ?>
+                    		<span style="cursor:pointer;" id="<?php echo ($vo["id"]); ?>"><a href="javascript:void(0);" onclick='status("<?php echo U('changeStatus','',false);?>/method/resumew/id/<?php echo ($vo["id"]); ?>","<?php echo ($vo["id"]); ?>")'>启用</a></span> |<?php endif; ?>
                     	
                     	<span style="cursor:pointer;" ><a href="<?php echo U('edit','',false);?>/id/<?php echo ($vo["id"]); ?>">修改</a></span> |
                     	<span vo="<?php echo ($vo["id"]); ?>" class="del"style="cursor:pointer;" >删除</span>
@@ -368,11 +367,7 @@
        <div style="margin-left:0px;"><?php echo $page_str;?></div>
         </div>
      </div>
-
-<div id="tishi" style="width:1650px;height:50px;background:#f66b34;color:white;line-height:50px;position:fixed;top:80px;font-size:22px;padding-left:50px;display:none;"></div>     
 </section>
-
-
 <script type="text/javascript">
 $('.del').click(function(){
 	var id=$(this).attr('vo');
@@ -404,6 +399,31 @@ $('.del').click(function(){
 		});
 });
 
+//ajax状态操作
+function status(URL,c){
+	$.ajax({
+		
+		type:"get",
+		url:URL,
+		dataType:"json",
+		success:function(msg){
+			if(msg.status==1){
+				layer.tips('恭喜您！操作成功！', '#'+c, {
+					  tips: [1, '#3595CC'],
+					  time: 2000
+					});
+				setTimeout(function(){
+					location.href="<?php echo U('index','',false);?>/p/"+<?php echo I('get.p')?I('get.p'):1?>;
+				},800);
+			}else{
+				layer.tips(msg.error, '#'+c, {
+					  tips: [1, '#3595CC'],
+					  time: 3000
+					});
+			}
+		}
+	});
+}
 
 </script>
   

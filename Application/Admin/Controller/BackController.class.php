@@ -61,9 +61,11 @@ class BackController extends Controller{
 	    $msg=array_merge(array('success'=>'操作成功！','error'=>'操作失败！','url'=>'','ajax'=>IS_AJAX),(array)$msg);
 	    
 	    if(M($model)->where($where)->save($data)!==false){
-	        $this->success($msg['success'],$msg['url'],$msg['ajax']);
+	       
+	        $this->ajaxReturn(array('status'=>1));
 	    }else {
-	        $this->error($msg['error'],$msg['url'],$msg['ajax']);
+	        
+	        $this->ajaxReturn(array('status'=>0,'error'=>$msg['error']));
 	    }
 	}
 	
