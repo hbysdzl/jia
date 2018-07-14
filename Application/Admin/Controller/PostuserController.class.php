@@ -59,4 +59,19 @@ class PostuserController extends BackController{
         //sort($arr); //sort函数对数组进行排序
         return $arr;
     }
+    
+    /*
+     * ajax删除留言
+     * */
+    public function ajaxPodel(){
+        $id=I('get.id');
+        $Wdb = M("postuser");
+        //当前记录的手机号需要将与其重复的记录都删除掉
+        $ph=$Wdb->field('mobile')->find($id);
+        if ($Wdb->where(array('mobile'=>array('eq',$ph['mobile'])))->delete()){
+            $this->ajaxReturn(array('status'=>1));
+            die();
+        }
+        $this->ajaxReturn(array('status'=>0,'error'=>$Wdb->getError()));
+    }
 }

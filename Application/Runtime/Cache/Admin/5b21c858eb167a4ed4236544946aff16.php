@@ -306,7 +306,7 @@
                 <div class="adv-table editable-table ">
                 
             <div style="float:left;>
-            	<form action="/index.php/Admin/Postuser/index/p/1.html" method="post">
+            	<form action="/index.php/Admin/Postuser/index" method="post">
 	                <div class="clearfix" style="margin-bottom:15px;">
 	                	 <input type="text" name="name" size="30" value="请输入名称"/>
 	                    <div class="btn-group">
@@ -343,7 +343,7 @@
                     <td><?php echo ($vo["workername"]); ?></td>
                     <td><?php echo ($vo["from"]); ?></td>
                     <td><?php echo ($vo["keyword"]); ?></td>
-                    <td><?php echo date('Y-m-d',$vo['time'])?></td>
+                    <td><?php echo date('Y-m-d - H:i',$vo['time'])?></td>
                   
                     <td style="color:green">                    	
                     	<span vo="<?php echo ($vo["id"]); ?>" class="del"style="cursor:pointer;" >删除</span>
@@ -366,7 +366,7 @@ $('.del').click(function(){
 		  layer.msg('正在玩命执行中', {icon: 6});
 		  $.ajax({
 				type:"get",
-				url:"<?php echo U('ajaxCasedel','',false);?>/id/"+id,
+				url:"<?php echo U('ajaxPodel','',false);?>/id/"+id,
 				dataType:"json",
 				success:function(msg){
 					if(msg.status==1){

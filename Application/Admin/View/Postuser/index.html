@@ -64,7 +64,7 @@
                     <td>{$vo.workername}</td>
                     <td>{$vo.from}</td>
                     <td>{$vo.keyword}</td>
-                    <td><?php echo date('Y-m-d',$vo['time'])?></td>
+                    <td><?php echo date('Y-m-d - H:i',$vo['time'])?></td>
                   
                     <td style="color:green">                    	
                     	<span vo="{$vo.id}" class="del"style="cursor:pointer;" >删除</span>
@@ -89,7 +89,7 @@ $('.del').click(function(){
 		  layer.msg('正在玩命执行中', {icon: 6});
 		  $.ajax({
 				type:"get",
-				url:"{:U('ajaxCasedel','',false)}/id/"+id,
+				url:"{:U('ajaxPodel','',false)}/id/"+id,
 				dataType:"json",
 				success:function(msg){
 					if(msg.status==1){
