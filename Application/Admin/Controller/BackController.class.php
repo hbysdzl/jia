@@ -85,6 +85,14 @@ class BackController extends Controller{
 	    $this->editRow($model, $data, $where, $msg);
 	}
 	
+	/*
+	 * 删除
+	 * */
+	protected function delete($model,$where=array(),$msg=array('success'=>'删除成功！','error'=>'删除失败！')){
+	    $data=array('status'=>-1);
+	    $this->editRow($model, $data, $where, $msg);
+	}
+	
 	
 	
 }

@@ -17,7 +17,6 @@ class DrawingController extends BackController{
         //获取分类信息
         $Tdb=M('drawtype');
         $where['status']=array('egt',0);//没有被删除       
-        $where['status']=array('egt',0);//没有被删除
         //设置启用状态
         if(IS_GET){
             $id=I('get.id');

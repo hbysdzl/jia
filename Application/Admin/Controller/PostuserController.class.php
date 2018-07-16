@@ -74,4 +74,11 @@ class PostuserController extends BackController{
         }
         $this->ajaxReturn(array('status'=>0,'error'=>$Wdb->getError()));
     }
+    
+    /*
+     * 投诉建议
+     * */
+    public function objIndex(){
+        $this->error('本功能还在开发中');
+    }
 }

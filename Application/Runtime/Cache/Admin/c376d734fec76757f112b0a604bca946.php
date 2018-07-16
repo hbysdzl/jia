@@ -280,19 +280,15 @@
 		
         <!--body wrapper start-->
 		
+<style>
+.num{background:#34eb8a;margin:3px;width:20px;display:inline-block;padding-left:5px;color:#040906};
+</style>
  <div class="page-heading">
-            <h3>
-               	 管理员列表
-            </h3>
-            <ul class="breadcrumb">
-                <li>
-                    <a href="#">控制面板</a>
-                </li>
-                <li>
-                    <a href="#">新增管理员</a>
-                </li>
-                <li class="active"> Editable Table </li>
-            </ul>
+     <h3><?php echo ($title); ?></h3>
+        <ul class="breadcrumb"><li><a href="#">控制面板</a></li>
+            <li><a href="#">启用</a></li>
+            <li class="active">禁用</li>
+        </ul>
 </div>
 
         <div class="wrapper">
@@ -311,57 +307,72 @@
                 <div class="clearfix">
                     <div class="btn-group">
                         <button id="editable-sample_new" class="btn btn-primary">
-                          	<a href="<?php echo U('addUser');?>">新增 </a><i class="fa fa-plus"></i>
+                          	<a href="<?php echo U('zoneadd');?>">新增 </a><i class="fa fa-plus"></i>
                         </button>
-                    </div>
+                    </div> 
                 </div>
+            <div style="float:right;margin-top:-40px;">
+            	<form action="/index.php/Admin/Homeser/zoneindex.html" method="post">
+	                <div class="clearfix" style="margin-bottom:15px;">
+	                	 <input type="text" name="zname" size="30" value="请输入名称"/>
+	                    <div class="btn-group">
+	                        <button id="editable-sample_new" class="btn btn-primary" type="submit">搜索</button>
+	                    </div>
+	                </div>
+      			</form>
+            </div>
+      
                 <div class="space15"></div>
                 <table class="table table-striped table-hover table-bordered" id="editable-sample">
-                <thead style="text-align:center;">
+                <thead>
                 <tr>
-                    <th style="width:50px;">排序</th>
-                    <th>用户名</th>
-                    <th>登陆次数</th>
-                    <th>注册时间</th>
-                    <th>最后登陆时间</th>
-                    <th>最后登陆IP</th>
+                    <th style="width:50px;">ID</th>
+                    <th>名称</th>
+                    <th>所属类别ID/名称</th>
                     <th>状态</th>
-                    <th>所属角色</th>
                     <th>操作</th>
                 </tr>
                 </thead>
                 <tbody>
                 
-          <?php if(is_array($user)): $i = 0; $__LIST__ = $user;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; $role_name=$vo['role_name']? $vo['role_name']:"超级管理员"?>
-                <tr class="">
-                    <td style="width:20px;"><?php echo ($i); ?></td>
-                    <td><?php echo ($vo["username"]); ?></td>
-                    <td><?php echo ($vo["count"]); ?></td>
-                    <td><?php echo date("Y-m-d H:i:s",$vo['datetime']);?></td>
-                    <td><?php echo date("Y-m-d H:i:s",$vo['lastdate']);?></td>
-                    <td><?php echo ($vo["lastip"]); ?></td>
-                    <td><?php echo $vo['is_use']==1?'启用':'禁用'?></td>
-                    <td><?php echo ($role_name); ?></td>
+          		<?php if(is_array($HomList)): $i = 0; $__LIST__ = $HomList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="">
+                    <td style="width:20px;"><?php echo ($vo["id"]); ?></td>
+                    <td><?php echo ($vo["zname"]); ?></td>
+                    <td><?php echo ($vo["fid"]); ?>/<?php echo ($vo["fname"]); ?></td>
+                    <td>
+                    	<?php if($vo['status']==1): ?><span style="color: green;">正常</span>
+                    	<?php else: ?>
+                    		<span style="color: red;">禁用</span><?php endif; ?>
+                    </td>
                     <td style="color:green">
-                    	<span style="cursor:pointer;" ><a href="<?php echo U('edit','',false);?>/admin_id/<?php echo ($vo["id"]); ?>">修改</a></span> |
+                    	<span style="cursor:pointer;" ><a href="<?php echo U('dindex','',false);?>/id/<?php echo ($vo["id"]); ?>/p/<?php echo I('get.p')?>">
+                    	<?php if($vo['status']==1): ?>禁用
+                    	<?php else: ?>
+                    		启用<?php endif; ?>
+                    	</a></span> |
+                    	<span style="cursor:pointer;" ><a href="<?php echo U('zoneedit','id='.$vo['id']);?>">修改</a></span> |
                     	<span vo="<?php echo ($vo["id"]); ?>" class="del"style="cursor:pointer;" >删除</span>
 					</td>
                 </tr><?php endforeach; endif; else: echo "" ;endif; ?>      
                 </tbody>
            </table>
+
+       <div style="margin-left:0px;"><?php echo $page_str;?></div>
         </div>
      </div>
-<div id="tishi" style="width:1650px;height:50px;background:#f66b34;color:white;line-height:50px;position: absolute;top:0px;font-size:22px;padding-left:50px;display:none"></div>     
+
+<div id="tishi" style="width:1650px;height:50px;background:#f66b34;color:white;line-height:50px;position:fixed;top:80px;font-size:22px;padding-left:50px;display:none;"></div>     
 </section>
+
 <script src="/Application/Admin/Public/js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript">
 $('.del').click(function(){
 	var id=$(this).attr('vo');
-	var tr=$(this).parent().parent()
+	var tr=$(this).parent().parent();
 	if(confirm('确定要删除吗？')){
 		$.ajax({
 			type:"get",
-			url:"<?php echo U('ajaxdel','',false);?>/admin_id/"+id,
+			url:"<?php echo U('ajaxDdel','',false);?>/id/"+id,
 			dataType:"json",
 			success:function(data){
 				if(data.ok==1){
@@ -372,8 +383,7 @@ $('.del').click(function(){
 				}else{
 					$('#tishi').html('删除失败!');
 					$('#tishi').fadeIn(1000);
-					$('#tishi').fadeOut(3000);
-				
+					$('#tishi').fadeOut(3000);				
 				}
 			}
 		});
