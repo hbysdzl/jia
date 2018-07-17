@@ -24,6 +24,8 @@
   <link href="/Application/Admin/Public/css/style-responsive.css" rel="stylesheet">
 
   <script src="/Application/Admin/Public/js/jquery-1.10.2.min.js"></script>
+  <!-- ajax状态操作 -->
+  <script src="/Application/Admin/Public/js/status.js"></script>
   <!-- jquery form表单提交插件 -->
   <script src="/Application/Admin/Public/js/form/jquery-1.8.3.min.js"></script>
   <script src="/Application/Admin/Public/js/form/jquery.form.js"></script>

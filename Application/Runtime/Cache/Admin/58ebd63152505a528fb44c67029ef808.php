@@ -24,6 +24,8 @@
   <link href="/Application/Admin/Public/css/style-responsive.css" rel="stylesheet">
 
   <script src="/Application/Admin/Public/js/jquery-1.10.2.min.js"></script>
+  <!-- ajax状态操作 -->
+  <script src="/Application/Admin/Public/js/status.js"></script>
   <!-- jquery form表单提交插件 -->
   <script src="/Application/Admin/Public/js/form/jquery-1.8.3.min.js"></script>
   <script src="/Application/Admin/Public/js/form/jquery.form.js"></script>
@@ -312,7 +314,7 @@
                     </div> 
                 </div>
             <div style="float:right;margin-top:-40px;">
-            	<form action="/index.php/Admin/Homeser/homeProIndex.html" method="post">
+            	<form action="/index.php/Admin/Homeser/homeProIndex" method="post">
 	                <div class="clearfix" style="margin-bottom:15px;">
 	                	 <input type="text" name="gname" size="30" value="请输入名称"/>
 	                    <div class="btn-group">
@@ -345,13 +347,13 @@
                     		<span style="color: red;">禁用</span><?php endif; ?>
                     </td>
                     <td style="color:green">
-                    	<?php if($vo['status']==1): ?><span style="cursor:pointer;" id="<?php echo ($vo["id"]); ?>" ><a href="javascript:void(0);" onclick='status("<?php echo U('setStatus','method=forbid&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>禁用|</a></span> 
+                    	<?php if($vo['status']==1): ?><span style="cursor:pointer;" id="<?php echo ($vo["id"]); ?>" ><a href="javascript:void(0);" onclick='status("<?php echo U('setStatus','method=forbid&mo=homepro&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>禁用|</a></span> 
                     		
                     	<?php else: ?>
-                    	<span style="cursor:pointer;" id="<?php echo ($vo["id"]); ?>" ><a href="javascript:void(0);" onclick='status("<?php echo U('setStatus','method=resumew&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>启用|</a></span><?php endif; ?>
+                    	<span style="cursor:pointer;" id="<?php echo ($vo["id"]); ?>" ><a href="javascript:void(0);" onclick='status("<?php echo U('setStatus','method=resumew&mo=homepro&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>启用|</a></span><?php endif; ?>
                     	
-                    	<span style="cursor:pointer;" ><a href="<?php echo U('zoneedit','id='.$vo['id']);?>">修改</a></span> |
-                    	<span id="<?php echo ($vo["id"]); ?>" class="del"style="cursor:pointer;" onclick='status("<?php echo U('setStatus','method=delete&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)' >删除</span>
+                    	<span style="cursor:pointer;" ><a href="<?php echo U('homeproedit','id='.$vo['id']);?>">修改</a></span> |
+                    	<span id="<?php echo ($vo["id"]); ?>" class="del"style="cursor:pointer;" onclick='status("<?php echo U('setStatus','method=delete&mo=homepro&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)' >删除</span>
 					</td>
                 </tr><?php endforeach; endif; else: echo "" ;endif; ?>      
                 </tbody>
@@ -360,35 +362,7 @@
        <div style="margin-left:0px;"><?php echo $page_str;?></div>
         </div>
      </div>
-</section>
-<script type="text/javascript">
-//ajax状态操作
-function status(URL,c){
-	$.ajax({
-		
-		type:"get",
-		url:URL,
-		dataType:"json",
-		success:function(msg){
-			if(msg.status==1){
-				layer.tips('恭喜您！操作成功！', '#'+c, {
-					  tips: [1, '#3595CC'],
-					  time: 2000
-					});
-				setTimeout(function(){
-					location.href="<?php echo U('zoneIndex','',false);?>/p/"+<?php echo I('get.p')?I('get.p'):1?>;
-				},800);
-			}else{
-				layer.tips(msg.error, '#'+c, {
-					  tips: [1, '#3595CC'],
-					  time: 3000
-					});
-			}
-		}
-	});
-}
-</script>
-  
+</section>  
 		<footer>
             2018 &copy; AdminEx by <a href="http://www.jiajoo.com" target="_blank">家造网</a>
   		 </footer>       

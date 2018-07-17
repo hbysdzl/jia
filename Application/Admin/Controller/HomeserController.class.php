@@ -15,8 +15,54 @@ class HomeserController extends BackController{
     public function index(){
         
         $this->assign(array('title'=>'家居服务人员列表','OneAuth'=>$this->OneAuth,'TowAuth'=>$this->TowAuth));
+        
+        $Hdb=D('homeman');
+        $where['status']=array('egt',0);//没有被删除
+        //搜索功能
+        if(IS_POST){
+            $name=I('post.name');
+            if (empty($name) || $name=='请输入人员名称') {
+                $this->error('请输入搜索的名称');
+            }
+            $where['name']=array('LIKE','%'.$name.'%');
+        }
+        
+        /**************************************设定分页****************/
+        $Wdb_num=$Hdb->where($where)->count();
+        $tatalPage=$Wdb_num;//总的记录数
+        $page=10;//每页显示的数量
+        //调用分页公用函数
+        $pageArr=getPage($Wdb_num,$page);
+        $HomList= $Hdb->where($where)->limit($pageArr[0],$pageArr[1])->order('id desc')->select();
+        
+        $this->assign('HomList',$HomList);
+        $this->assign('page_str',$pageArr[2]);
+        $this->display();
     }
     
+    /*
+     * 新增服务人员
+     * */
+    public function add(){
+        $this->assign(array('title'=>'新增服务人员','OneAuth'=>$this->OneAuth,'TowAuth'=>$this->TowAuth));
+        
+        $model=D('Homeman');
+        if(IS_POST){
+            if($model->create(I('post.'),1)){
+                if($model->add()){
+                    $this->ajaxReturn(array('status'=>1,'ok'=>'恭喜你，新增成功！'));
+                    die();
+                }
+            }
+            $this->ajaxReturn(array('status'=>0,'error'=>$model->getError()));
+            
+        }
+        //获取地区/工种分类
+        $res1=M('homezone')->field('id,zname')->where(array('status'=>array('egt',0)))->select();
+        $res2=M('homepro')->field('id,gname')->where(array('status'=>array('egt',0)))->select();
+        $this->assign(array('res1'=>$res1,'res2'=>$res2));
+        $this->display();
+    }
     
     /*
      * 地区管理列表
@@ -98,7 +144,7 @@ class HomeserController extends BackController{
             $this->ajaxReturn(array('status'=>0,'error'=>$Hdb->getError()));
         }
         
-        $this->assign(array('title'=>'新增地区','OneAuth'=>$this->OneAuth,'TowAuth'=>$this->TowAuth));
+        $this->assign(array('title'=>'编辑地区','OneAuth'=>$this->OneAuth,'TowAuth'=>$this->TowAuth));
         $id=I('get.id');
         if(!$id){
             $this->error('参数错误');
@@ -119,23 +165,25 @@ class HomeserController extends BackController{
     public  function setStatus($method=null){
         
         $id=I('get.id');
-        if(!$id){
+        $model=I('get.mo');
+        if(!$id || !$model){
             $this->error('参数错误');
         }
         switch(strtolower($method)){  //将参数同意转换为小写
-            
+        
             case "forbid":
-                $this->forbid('homezone',array('id'=>$id));
+                $this->forbid($model,array('id'=>$id));
                 break;
             case "resumew":
-                $this->resumew('homezone',array('id'=>$id));
+                $this->resumew($model,array('id'=>$id));
                 break;
             case "delete":
-                $this->delete('homezone',array('id'=>$id));
+                $this->delete($model,array('id'=>$id));
                 break;
             default:
                 $this->error('非法参数');
         }
+        
     }
     
     /*
@@ -201,4 +249,34 @@ class HomeserController extends BackController{
         $this->display();
     }
     
+    /*
+     * 编辑工种
+     * 
+     * */
+    public function homeproedit(){
+        
+        $Hdb=D('homepro');     
+        if(IS_POST){
+            if($Hdb->create(I('post.'),2)){
+                if($Hdb->save()!==false){
+                    $this->ajaxReturn(array('status'=>1));
+                    die();
+                }
+            }
+            $this->ajaxReturn(array('status'=>0,'error'=>$Hdb->getError()));
+        }
+        
+        $this->assign(array('title'=>'编辑工种','OneAuth'=>$this->OneAuth,'TowAuth'=>$this->TowAuth));
+        $id=I('get.id');
+        if(!$id){
+            $this->error('参数错误');
+        }
+        //取出当前修改的数据
+        $dataEd=$Hdb->find($id);
+        $this->assign('dataEd',$dataEd);
+        //取出父级
+        $fid=$Hdb->where('fid=0')->select();
+        $this->assign('fid',$fid);
+        $this->display();
+    }    
 }

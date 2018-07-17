@@ -69,15 +69,15 @@
                     </td>
                     <td style="color:green">
                     	<if condition="$vo['status']==1">
-                    	<span style="cursor:pointer;" id="{$vo.id}" ><a href="javascript:void(0);" onclick='status("{:U('setStatus','method=forbid&id='.$vo['id'])}",{$vo.id})'>禁用|</a></span> 
+                    	<span style="cursor:pointer;" id="{$vo.id}" ><a href="javascript:void(0);" onclick='status("{:U('setStatus','method=forbid&mo=homezone&id='.$vo['id'])}",{$vo.id})'>禁用|</a></span> 
                     		
                     	<else/>
-                    	<span style="cursor:pointer;" id="{$vo.id}" ><a href="javascript:void(0);" onclick='status("{:U('setStatus','method=resumew&id='.$vo['id'])}",{$vo.id})'>启用|</a></span>
+                    	<span style="cursor:pointer;" id="{$vo.id}" ><a href="javascript:void(0);" onclick='status("{:U('setStatus','method=resumew&mo=homezone&id='.$vo['id'])}",{$vo.id})'>启用|</a></span>
                     		
                     	</if>
                     	
                     	<span style="cursor:pointer;" ><a href="{:U('zoneedit','id='.$vo['id'])}">修改</a></span> |
-                    	<span id="{$vo.id}" class="del"style="cursor:pointer;" onclick='status("{:U('setStatus','method=delete&id='.$vo['id'])}",{$vo.id})' >删除</span>
+                    	<span id="{$vo.id}" class="del"style="cursor:pointer;" onclick='status("{:U('setStatus','method=delete&mo=homezone&id='.$vo['id'])}",{$vo.id})' >删除</span>
 					</td>
                 </tr>
                 
@@ -89,31 +89,4 @@
         </div>
      </div>
 </section>
-<script type="text/javascript">
-//ajax状态操作
-function status(URL,c){
-	$.ajax({
-		
-		type:"get",
-		url:URL,
-		dataType:"json",
-		success:function(msg){
-			if(msg.status==1){
-				layer.tips('恭喜您！操作成功！', '#'+c, {
-					  tips: [1, '#3595CC'],
-					  time: 2000
-					});
-				setTimeout(function(){
-					location.href="{:U('zoneIndex','',false)}/p/"+<?php echo I('get.p')?I('get.p'):1?>;
-				},800);
-			}else{
-				layer.tips(msg.error, '#'+c, {
-					  tips: [1, '#3595CC'],
-					  time: 3000
-					});
-			}
-		}
-	});
-}
-</script>
  
