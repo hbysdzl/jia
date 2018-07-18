@@ -283,7 +283,7 @@
         <!--body wrapper start-->
 		
 <style>
-.num{background:#34eb8a;margin:3px;width:20px;display:inline-block;padding-left:5px;color:#040906};
+.num{background:#34eb8a;margin:3px;width:20px;display:inline-block;padding-left:5px;color:#040906}
 </style>
  <div class="page-heading">
      <h3><?php echo ($title); ?></h3>
@@ -314,7 +314,7 @@
                     </div> 
                 </div>
             <div style="float:right;margin-top:-40px;">
-            	<form action="/index.php/Admin/Homeser/index.html" method="post">
+            	<form action="/index.php/Admin/Homeser/index/id/11/p/" method="post">
 	                <div class="clearfix" style="margin-bottom:15px;">
 	                	 <input type="text" name="name" size="30" value="请输入人员名称"/>
 	                    <div class="btn-group">
@@ -353,14 +353,14 @@
                     		<span style="color: red;">禁用</span><?php endif; ?>
                     </td>
                     <td style="color:green">
-                    	<span style="cursor:pointer;" ><a href="<?php echo U('index','',false);?>/id/<?php echo ($vo["id"]); ?>/p/<?php echo I('get.p')?>">
-                    	<?php if($vo['status']==1): ?>禁用
-                    	<?php else: ?>
-                    		启用<?php endif; ?>
-                    	</a></span> |
+                    	
+                    <?php if($vo['status']==1): ?><span style="cursor:pointer;" id="<?php echo ($vo["id"]); ?>"><a href="javascript:void(0);" onclick='status("<?php echo U('setStatus','method=forbid&mo=homeman&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>禁用|</a></span> 
+                    <?php else: ?>
+                    <span style="cursor:pointer;" id="<?php echo ($vo["id"]); ?>"><a href="javascript:void(0);" onclick='status("<?php echo U('setStatus','method=resumew&mo=homeman&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>启用|</a></span><?php endif; ?>
+                    	
                     	<span style="cursor:pointer;" ><a href="<?php echo U('edit','',false);?>/id/<?php echo ($vo["id"]); ?>">修改</a></span> |
-                    	<span vo="<?php echo ($vo["id"]); ?>" class="del"style="cursor:pointer;" >删除</span>
-					</td>
+                    	<span id="<?php echo ($vo["id"]); ?>" class="del"style="cursor:pointer;" onclick='status("<?php echo U('setStatus','method=delete&mo=homeman&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>删除</span>
+                    </td> 
                 </tr><?php endforeach; endif; else: echo "" ;endif; ?>      
                 </tbody>
            </table>

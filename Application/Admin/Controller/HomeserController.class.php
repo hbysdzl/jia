@@ -65,6 +65,40 @@ class HomeserController extends BackController{
     }
     
     /*
+     * 编辑服务人员
+     * */
+    public function edit(){
+        $this->assign(array('title'=>'服务人员修改','OneAuth'=>$this->OneAuth,'TowAuth'=>$this->TowAuth));
+        $model=D('Homeman');
+
+        if(IS_POST) {
+            if($data=$model->create(I('post.'),2)){
+                if($model->save()!==false){
+                    $this->ajaxReturn(array('status'=>1,'ok'=>'恭喜您，修改成功！'));
+                    die();
+                }
+            }
+            $this->ajaxReturn(array('status'=>0,'error'=>$model->getError()));
+        }
+        //获取地区/工种分类
+        $res1=M('homezone')->field('id,zname')->where(array('status'=>array('egt',0)))->select();
+        $res2=M('homepro')->field('id,gname')->where(array('status'=>array('egt',0)))->select();
+        $this->assign(array('res1'=>$res1,'res2'=>$res2));
+        
+        //获取当前编辑的数据
+        $id=I('get.id');
+         if(!$id){
+            $this->error('非法操作！');
+        }
+        $editData=$model->find($id);
+        //处理json格式的元素为数组
+        $editData['zarr']=json_decode($editData['zarr'],true);
+        $editData['hparr']=json_decode($editData['hparr'],true);
+        $this->assign('editData',$editData);
+        $this->display();
+    }
+    
+    /*
      * 地区管理列表
      * */
     public function zoneIndex(){
@@ -229,6 +263,7 @@ class HomeserController extends BackController{
     
     /**
      * 新增工种
+     * 
      * */
     public function homeproAdd(){
         $Hdb=D('homepro');

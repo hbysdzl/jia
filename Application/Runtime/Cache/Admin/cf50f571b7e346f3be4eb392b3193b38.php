@@ -24,15 +24,17 @@
   <link href="/Application/Admin/Public/css/style-responsive.css" rel="stylesheet">
 
   <script src="/Application/Admin/Public/js/jquery-1.10.2.min.js"></script>
+  
   <!-- jquery form表单提交插件 -->
   <script src="/Application/Admin/Public/js/form/jquery-1.8.3.min.js"></script>
   <script src="/Application/Admin/Public/js/form/jquery.form.js"></script>
   <script src="/Application/Admin/Public/js/layer/layer.js"></script>  
-  	
+  <!-- ajax状态操作 -->
+  <script src="/Application/Admin/Public/js/status.js"></script>
   <!-- 在线编辑器 -->
-<script type="text/javascript" charset="utf-8" src="/Application/Admin/Public/ueditor/ueditor.config.js"></script>
-<script type="text/javascript" charset="utf-8" src="/Application/Admin/Public/ueditor/ueditor.all.min.js"> </script>
-<script type="text/javascript" charset="utf-8" src="/Application/Admin/Public/ueditor/lang/zh-cn/zh-cn.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/Application/Admin/Public/ueditor/ueditor.config.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/Application/Admin/Public/ueditor/ueditor.all.min.js"> </script>
+  <script type="text/javascript" charset="utf-8" src="/Application/Admin/Public/ueditor/lang/zh-cn/zh-cn.js"></script>
 </head>
 
 <body class="sticky-header">
@@ -313,7 +315,7 @@ th{font-weight: bold;padding-top:18px;font-family:'微软雅黑';}
                 
         </div>
      </div>
-<form id="form_data" action="/index.php/Admin/Drawing/edit/id/136" method="post" enctype="multipart/form-data">
+<form id="form_data" action="/index.php/Admin/Drawing/edit/id/114" method="post" enctype="multipart/form-data">
 	<input type="hidden" name="id" value="<?php echo ($res["id"]); ?>">    
 <table  style="width:50%;height:300px;margin-left:20px;font-size:16px">
     <tr><th>效果图名称:</th></tr>

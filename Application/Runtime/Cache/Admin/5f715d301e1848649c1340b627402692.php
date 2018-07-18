@@ -295,7 +295,6 @@ th{font-weight: bold;padding-top:18px;font-family:'微软雅黑';}
            <li class="active"> Editable Table </li>
       </ul>
 </div>
-
 <div class="wrapper">
              <div class="row">
                 <div class="col-sm-12">
@@ -315,120 +314,73 @@ th{font-weight: bold;padding-top:18px;font-family:'微软雅黑';}
                 
         </div>
      </div>
-<form  action="" method="post" enctype="multipart/form-data">
-	<input type="hidden" name="id" value="<?php echo ($res["id"]); ?>">    
-  <table  style="width:50%;height:300px;margin-left:20px;font-size:16px">
-    <tr><th>效果图名称</th></tr>
-    <tr><td><input type="text" name="name" size="47" value="<?php echo ($res["name"]); ?>"/> </td></tr>
+<form id="form_data" method="post" action="" enctype="multipart/form-data">  
+    <input type="hidden" name="id" value="<?php echo ($editData["id"]); ?>">  
+<table  style="width:50%;height:300px;margin-left:20px;font-size:16px">
+    <tr><th>服务人员名称:</th></tr>
+    <tr><td><input type="text" name="name" size="47" value="<?php echo ($editData["name"]); ?>"/> </td></tr>
    
+    <tr><th>人员照片</th></tr>
+    <tr><td><input type="file" name="img" id="picture"/></td></tr>
+    <tr><td><img src="/Public/Upload/<?php echo ($editData["photo"]); ?>" id="ps" width='100px'></td></tr>
    
- 	  <tr><th>效果图展示图片：（鼠标点击可进行删除操作）</th></tr>
-	  <tr>
-	  	<td>
-	    <div style="border: 1px dashed; height:320px;width: 155%;text-align: center;background-color:#f3f3f3;">
-	    <div style="margin-top:10px;">
-	    	<?php if(is_array($resimg)): $i = 0; $__LIST__ = $resimg;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><span title="点击删除图片" id="<?php echo ($vo["id"]); ?>" class="pic" style="cursor: pointer;"><?php echo ShowImage($vo['img'],100);?></span>&nbsp&nbsp&nbsp;<?php endforeach; endif; else: echo "" ;endif; ?>
-	    </div>
-	  	<div style="width:98%;height: 90%;margin:10px auto;text-align: center;" id="pcs"></div>
-		<div style="margin-top:-100px;">
-	  	  <input onclick="$(this).parent().parent().find('#pcs').append('<span style=\'float:left\'><input  type=\'file\' name=\'pics[]\' id=\'file\' /><br/></span>')" type="button" value="点击添加图片" />
-	  	</div>
-	  </div>
-	 </td>
-	 </tr>
-  	<tr><th>几居室</th>   
-    <tr><td><input type="text" name="room" size="47" value="<?php echo ($res["room"]); ?>"/></td></tr>
-    <tr><th>面积</th>   
-    <tr><td><input type="text" name="area" size="47" value="<?php echo ($res["area"]); ?>"/></td></tr>
-    <tr><th>展示等级（请填写数字1-100，越大越优秀）</th>   
-    <tr><td><input type="text" name="lev" size="47" value="<?php echo ($res["lev"]); ?>"/></td></tr>
-   	<tr><th>设计师</th>   
+    <tr><th>资历经验:</th></tr>
+    <tr><td><input type="text" name="exp" size="47" value="<?php echo ($editData["exp"]); ?>" /></td></tr>
+  
+  	<tr><th>服务内容（3-10个字符）</th>   
+    <tr><td><input type="text" name="ser" size="47" value="<?php echo ($editData["ser"]); ?>" /></td></tr>
+   	
+   	<tr><th>地区:</th></tr>
     <tr>
     	<td>
-    	<select name="worker">
-    		<option value="">--请选择--</option>
-    		<?php if(is_array($work)): $i = 0; $__LIST__ = $work;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($res['workerid']==$vo['id']){ $check='selected="selected"'; }else{ $check=''; } ?>
-    		<option value="<?php echo ($vo["id"]); ?>-<?php echo ($vo["name"]); ?>" <?php echo ($check); ?>>--<?php echo ($vo["name"]); ?>--</option><?php endforeach; endif; else: echo "" ;endif; ?>
-    	</select>
+    		<?php if(is_array($res1)): $i = 0; $__LIST__ = $res1;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if(in_array($vo['id'],$editData['zarr'])){ $sel='checked="checked"'; }else{ $sel=''; } ?>
+          
+    		<input class="auth_rules" type="checkbox" name="zone[]" value="<?php echo ($vo["id"]); ?>" <?php echo ($sel); ?>><?php echo ($vo["zname"]); ?> &nbsp;&nbsp;<?php endforeach; endif; else: echo "" ;endif; ?>
     	</td>
    </tr>
-   	
-   <tr><th>描述</th> </tr> 
-   <tr><td><textarea name="description" style="height:200px;width:400px"><?php echo ($res["description"]); ?></textarea></td></tr>    
-   	
+   <tr><th>工种:</th></tr>
+    <tr>
+    	<td>
+    		<?php if(is_array($res2)): $i = 0; $__LIST__ = $res2;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if(in_array($vo['id'],$editData['hparr'])){ $sel='checked="checked"'; }else{ $sel=''; } ?>
+    		<input class="auth_rules" type="checkbox" name="pro[]" value="<?php echo ($vo["id"]); ?>" <?php echo ($sel); ?>><?php echo ($vo["gname"]); ?>&nbsp;&nbsp;<?php endforeach; endif; else: echo "" ;endif; ?>
+    	</td>
+   </tr>
+   	<tr><th>联系电话</th>   
+    <tr><td><input type="text" name="tel" size="47" value="<?php echo ($editData["tel"]); ?>" /></td></tr>
+    
+    <tr><th>优先级(请填写数字1-100，越大越优先)</th>   
+    <tr><td><input type="text" name="lev" size="47" value="<?php echo ($editData["lev"]); ?>" /></td></tr>
    	<tr>
-      <td colspan=2><input type="submit"  value="提交" id="tijiao"/> &nbsp &nbsp &nbsp<input type="reset"  value="重置" /></td>  
+      <td colspan=2><input type="submit"  value="提交"/> &nbsp &nbsp &nbsp<input type="reset"  value="重置" /></td>  
    	</tr>   
    	               
 </table>
 </form> 
 </section>
-<script type="text/javascript">	
-//ajax删除图片
+<script type="text/javascript">
+	//表单提交
+	var Furl="<?php echo U('edit');?>";
+	var Rurl="<?php echo U('index');?>";
+	actionForm(Furl,Rurl);
 
-$('.pic').click(function(){
-	//获取id
-	var Id=$(this).attr('id');
-	var span=$(this);
-	//执行Ajax	
-	layer.confirm('确认执行该操作吗？', {
-		  btn: ['去意已决','我再想想'] //按钮
-		}, function(){
-		  layer.msg('正在玩命执行中', {icon: 6});
-		  $.ajax({
-				type:'get',
-			    url:"<?php echo U('ajaxDelImg','',false);?>/id/"+Id,
-			    dataType:"json",
-			    success:function(data){
-			    	if(data.status==1){
-			    		layer.alert('<h4 style="color:green;">删除成功！您可以重新上传更新！</h4>', {
-							  skin: 'layui-layer-molv', //样式类名
-							  closeBtn: 1
-							});
-			    		span.remove();
-			    	}else{
-			    		layer.alert('<h4 style="color:red;">操作失败！</h4>', {
-							  skin: 'layui-layer-molv', //样式类名
-							  closeBtn: 1
-							});
-			    	}
-			    }
-			});
-		});
+//显示封面预览
+$('#picture').change(function(){
+	//获取图片文件
+	var pic_file=this.files[0];
+	//调用预览方法
+	preview_pic(pic_file);
 });
 
- //实现使用jQueryForm插件实现表单提交
- $('form').submit(function(){
-	$(this).ajaxSubmit({
-		url:"<?php echo U('edit');?>",//指定表单的提交地址
-		type:'post',//表示具体的请求类型 post/get
-		dataType:'json',//指定数据交互格式
-		success:function(msg){
-			if(msg.status==1){
-				
-				layer.alert('<h4 style="color:green;">恭喜您，更新成功！<br/>正在跳转</h4>', {
-					  skin: 'layui-layer-molv', //样式类名
-					  closeBtn: 1
-					});
-				setTimeout(function(){
-					location.href="<?php echo U('index');?>";
-				},2000);
-			}else{
-				layer.alert('<h4 style="color:red;">'+msg.msg+'!</h4>', {
-				  skin: 'layui-layer-molv', //样式类名
-				  closeBtn: 1
-				});	
-			}
-		}
-	});
-	//阻止当前的表单默认的提交
-	return false;
-});
-</script>
-
-
-
- 
+//预览方法实现
+function preview_pic(pic){
+	//通过html5的FileReader对象
+	var r=new FileReader();
+	r.readAsDataURL(pic);
+	r.onload=function(){
+		$('#ps').attr('src',this.result).show();
+	}
+}
+</script> 
 		<footer>
             2018 &copy; AdminEx by <a href="http://www.jiajoo.com" target="_blank">家造网</a>
   		 </footer>       
