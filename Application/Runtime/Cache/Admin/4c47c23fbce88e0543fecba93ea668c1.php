@@ -291,7 +291,7 @@ th{font-weight: bold;padding-top:18px;font-family:'微软雅黑';}
     <h3><?php echo ($title); ?></h3>
        <ul class="breadcrumb">
            <li><a href="javascript:void(0);">控制面板</a></li>
-           <li><a href="<?php echo U('zoneIndex');?>">返回</a></li>
+           <li><a href="<?php echo U('index');?>">返回</a></li>
            <li class="active"> Editable Table </li>
       </ul>
 </div>
@@ -314,51 +314,87 @@ th{font-weight: bold;padding-top:18px;font-family:'微软雅黑';}
                 
         </div>
      </div>
-	<form id="form_data" method="post" action="">    
-		<table  style="width:50%;height:300px;margin-left:20px;font-size:16px">
-		    <tr><th>上级分类:</th></tr>
-		    <tr>
-		     	<td>
-		     		<select name="fid">
-		     			<option value="0">---顶级---</option>
-		     			<?php if(is_array($fid)): $i = 0; $__LIST__ = $fid;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo["id"]); ?>">---<?php echo ($vo["zname"]); ?>---</option><?php endforeach; endif; else: echo "" ;endif; ?>
-		     		</select>
-			 	</td>
-			</tr>
-		    <tr><th>名称</th></tr>
-		    <tr><td><input type="text" name="zname"/></td></tr>
-		   	
-		   	<tr>
-		      <td colspan=2><input type="submit"  value="提交" /> &nbsp &nbsp &nbsp<input type="reset"  value="重置" /></td>  
-		   	</tr>   
-		   	               
-		</table>
-	</form> 
+<form id="form_data" method="post" action="" enctype="multipart/form-data">    
+<table  style="width:50%;height:300px;margin-left:20px;font-size:16px">
+    <tr><th>商店名称:</th></tr>
+    <tr><td><input type="text" name="name" size="47"/> </td></tr>
+    
+    <tr><th>展示图片</th></tr>
+    <tr><td><input type="file" name="photo" id="picture"/></td></tr>
+    <tr><td><img src="" id="ps" width='150px'></td></tr>
+
+    <tr><th>商家logo</th></tr>
+    <tr><td><input type="file" name="bpic" id="picture"/></td></tr>
+    <tr><td><img src="" id="ps" width='150px'></td></tr>
+   
+    <tr><th>主营方向:</th></tr>
+    <tr><td><input type="text" name="info" size="47" /></td></tr> 	
+   	
+    <tr><th>建材分类:</th></tr>
+    <tr>
+    	<td>
+    		<?php if(is_array($res1)): $i = 0; $__LIST__ = $res1;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><input class="auth_rules" type="checkbox" name="f[]" value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["zname"]); ?> &nbsp;&nbsp;<?php endforeach; endif; else: echo "" ;endif; ?>
+    	</td>
+   </tr>
+   <tr><th>建材品牌:</th></tr>
+    <tr>
+    	<td>
+    		<?php if(is_array($res2)): $i = 0; $__LIST__ = $res2;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><input class="auth_rules" type="checkbox" name="b[]" value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["gname"]); ?>&nbsp;&nbsp;<?php endforeach; endif; else: echo "" ;endif; ?>
+    	</td>
+   </tr>
+    <tr><th>地区:</th></tr>
+    <tr>
+      <td>
+        <?php if(is_array($res2)): $i = 0; $__LIST__ = $res2;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><input class="auth_rules" type="checkbox" name="z[]" value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["gname"]); ?>&nbsp;&nbsp;<?php endforeach; endif; else: echo "" ;endif; ?>
+      </td>
+   </tr>
+    <tr><th>等级(请填写数字1-100，越大越优先)</th>   
+    <tr><td><input type="text" name="lev" size="47"/></td></tr>
+   	  
+    <tr><th>评分(请填写数字1-100)</th>   
+    <tr><td><input type="text" name="fen" size="47"/></td></tr>
+    <tr><th>一句话品牌(请填写10-14个)</th>   
+    <tr><td><input type="text" name="adinfo" size="47"/></td></tr>
+    <tr><th>商铺地址</th>   
+    <tr><td><input type="text" name="addr" size="47"/></td></tr>
+    <tr><th>公司网址(http/s://开头)</th>   
+    <tr><td><input type="text" name="url" size="47"/></td></tr>
+    <tr><th>商铺坐标(坐标获取:http://api.map.baidu.com/lbsapi/getpoint/index.html)</th>   
+    <tr><td><input type="text" name="xyz" size="47"/></td></tr>
+    <tr><th>活动文字(20字以内)</th>   
+    <tr><td><input type="text" name="hdtext" size="47"/></td></tr>  
+    <tr><th>活动网址(http/s://开头)</th>   
+    <tr><td><input type="text" name="hdurl" size="47"/></td></tr> 
+
+    <tr>
+      <td colspan=2><input type="submit"  value="提交"/> &nbsp &nbsp &nbsp<input type="reset"  value="重置" /></td>  
+    </tr> 
+</table>
+</form> 
 </section>
 <script type="text/javascript">
-	//jqureForm插件提交表单
-	$('form').submit(function(){
-		
-		$(this).ajaxSubmit({
-			
-			type:"post",
-			url:"<?php echo U('zoneadd');?>",
-			dataType:"json",
-			success:function(msg){
-				if(msg.status==1){
-					layer.msg('恭喜您，添加成功！');
-					setTimeout(function(){
-						location.href="<?php echo U('zoneIndex');?>";
-					},1000);
-				}else{
-					alert(msg.error);
-				}
-			}
-		});
-		//阻止表单提交
-		return false;
-	});
+	//表单提交
+	var Furl="<?php echo U('add');?>";
+	var Rurl="<?php echo U('index');?>";
+	actionForm(Furl,Rurl);
 
+//显示封面预览
+$('#picture').change(function(){
+	//获取图片文件
+	var pic_file=this.files[0];
+	//调用预览方法
+	preview_pic(pic_file);
+});
+
+//预览方法实现
+function preview_pic(pic){
+	//通过html5的FileReader对象
+	var r=new FileReader();
+	r.readAsDataURL(pic);
+	r.onload=function(){
+		$('#ps').attr('src',this.result).show();
+	}
+}
 </script> 
 		<footer>
             2018 &copy; AdminEx by <a href="http://www.jiajoo.com" target="_blank">家造网</a>

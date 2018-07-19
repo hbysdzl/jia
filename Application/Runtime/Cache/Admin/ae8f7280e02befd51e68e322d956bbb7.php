@@ -282,18 +282,13 @@
 		
         <!--body wrapper start-->
 		
-<style type="text/css">
-table{margin-top: -30px;}
-tr{height: 35px;}
-th{font-weight: bold;padding-top:18px;font-family:'微软雅黑';}
-</style>
 <div class="page-heading">
-    <h3><?php echo ($title); ?></h3>
-       <ul class="breadcrumb">
-           <li><a href="javascript:void(0);">控制面板</a></li>
-           <li><a href="<?php echo U('zoneIndex');?>">返回</a></li>
-           <li class="active"> Editable Table </li>
-      </ul>
+ <h3><?php echo ($title); ?></h3>
+    <ul class="breadcrumb">
+       <li><a href="#">控制面板</a></li>
+       <li><a href="<?php echo U('linkIndex');?>">返回</a></li>
+       <li class="active"> Editable Table </li>
+   </ul>
 </div>
 <div class="wrapper">
              <div class="row">
@@ -314,52 +309,31 @@ th{font-weight: bold;padding-top:18px;font-family:'微软雅黑';}
                 
         </div>
      </div>
-	<form id="form_data" method="post" action="">    
-		<table  style="width:50%;height:300px;margin-left:20px;font-size:16px">
-		    <tr><th>上级分类:</th></tr>
-		    <tr>
-		     	<td>
-		     		<select name="fid">
-		     			<option value="0">---顶级---</option>
-		     			<?php if(is_array($fid)): $i = 0; $__LIST__ = $fid;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo["id"]); ?>">---<?php echo ($vo["zname"]); ?>---</option><?php endforeach; endif; else: echo "" ;endif; ?>
-		     		</select>
-			 	</td>
-			</tr>
-		    <tr><th>名称</th></tr>
-		    <tr><td><input type="text" name="zname"/></td></tr>
-		   	
-		   	<tr>
-		      <td colspan=2><input type="submit"  value="提交" /> &nbsp &nbsp &nbsp<input type="reset"  value="重置" /></td>  
-		   	</tr>   
-		   	               
-		</table>
-	</form> 
+<form id="form_data" method="post" action="">    
+<table  style="width:400px;text-align:center;height:150px;margin-left:20px;font-size:16px">                
+   <tr>
+       <td>链接名称:</td>
+       <td>
+	      <input type="text" name="linkname"/>
+	   </td>
+   </tr>
+   <tr>
+       <td>链接地址:</td>
+       <td>
+        <input type="text" name="url"/>
+     </td>
+   </tr>
+   	<tr>
+      <td colspan=2><input type="submit"  value="提交"/> &nbsp &nbsp<input type="reset"  value="重置" /></td>  
+   	</tr>                
+</table>
+</form> 
 </section>
 <script type="text/javascript">
-	//jqureForm插件提交表单
-	$('form').submit(function(){
-		
-		$(this).ajaxSubmit({
-			
-			type:"post",
-			url:"<?php echo U('zoneadd');?>",
-			dataType:"json",
-			success:function(msg){
-				if(msg.status==1){
-					layer.msg('恭喜您，添加成功！');
-					setTimeout(function(){
-						location.href="<?php echo U('zoneIndex');?>";
-					},1000);
-				}else{
-					alert(msg.error);
-				}
-			}
-		});
-		//阻止表单提交
-		return false;
-	});
-
-</script> 
+//jQureForm插件提交表单
+actionForm("<?php echo U('linkAdd');?>","<?php echo U('linkIndex');?>");
+</script>>
+ 
 		<footer>
             2018 &copy; AdminEx by <a href="http://www.jiajoo.com" target="_blank">家造网</a>
   		 </footer>       

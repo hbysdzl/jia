@@ -282,20 +282,18 @@
 		
         <!--body wrapper start-->
 		
-<style type="text/css">
-table{margin-top: -30px;}
-tr{height: 35px;}
-th{font-weight: bold;padding-top:18px;font-family:'微软雅黑';}
+<style>
+.num{background:#34eb8a;margin:3px;width:20px;display:inline-block;padding-left:5px;color:#040906}
 </style>
-<div class="page-heading">
-    <h3><?php echo ($title); ?></h3>
-       <ul class="breadcrumb">
-           <li><a href="javascript:void(0);">控制面板</a></li>
-           <li><a href="<?php echo U('zoneIndex');?>">返回</a></li>
-           <li class="active"> Editable Table </li>
-      </ul>
+ <div class="page-heading">
+     <h3><?php echo ($title); ?></h3>
+        <ul class="breadcrumb"><li><a href="#">控制面板</a></li>
+            <li><a href="#">启用</a></li>
+            <li class="active">禁用</li>
+        </ul>
 </div>
-<div class="wrapper">
+
+        <div class="wrapper">
              <div class="row">
                 <div class="col-sm-12">
                 <section class="panel">
@@ -309,57 +307,66 @@ th{font-weight: bold;padding-top:18px;font-family:'微软雅黑';}
                 <div class="panel-body">
                 <div class="adv-table editable-table ">
                 <div class="clearfix">
-                   
+                    <div class="btn-group">
+                        <button id="editable-sample_new" class="btn btn-primary">
+                          	<a href="<?php echo U('add');?>">新增 </a><i class="fa fa-plus"></i>
+                        </button>
+                    </div> 
                 </div>
+            <div style="float:right;margin-top:-40px;">
+          <form action="/index.php/Admin/material/index" method="post">
+	                <div class="clearfix" style="margin-bottom:15px;">
+	                	 <input type="text" name="name" size="30" value="请输入名称"/>
+	                    <div class="btn-group">
+	                        <button id="editable-sample_new" class="btn btn-primary" type="submit">搜索</button>
+	                    </div>
+	                </div>
+      			</form>
+            </div>
+      
+                <div class="space15"></div>
+                <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                <thead>
+                <tr>
+                    <th style="width:50px;">ID</th>
+                    <th>名称</th>
+                    <th>展示图片</th>
+                    <th>商家logo</th>
+                    <th>等级</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
                 
+          		<?php if(is_array($mstoreList)): $i = 0; $__LIST__ = $mstoreList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="">
+                    <td style="width:20px;"><?php echo ($vo["id"]); ?></td>
+                    <td><?php echo ($vo["name"]); ?></td>
+                    <td><?php ShowImage($vo['photo'],70);?></td>
+                    <td><?php ShowImage($vo['bpic'],70);?></td>
+                    <td><?php echo ($vo["lev"]); ?></td>
+                    <td>
+                    	<?php if($vo['status']==1): ?><span style="color: green;">正常</span>
+                    	<?php else: ?>
+                    		<span style="color: red;">禁用</span><?php endif; ?>
+                    </td>
+                    <td style="color:green">
+                    	
+                    <?php if($vo['status']==1): ?><span style="cursor:pointer;" id="<?php echo ($vo["id"]); ?>"><a href="javascript:void(0);" onclick='status("<?php echo U('setStatus','method=forbid&mo=homeman&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>禁用|</a></span> 
+                    <?php else: ?>
+                    <span style="cursor:pointer;" id="<?php echo ($vo["id"]); ?>"><a href="javascript:void(0);" onclick='status("<?php echo U('setStatus','method=resumew&mo=homeman&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>启用|</a></span><?php endif; ?>
+                    	
+                    	<span style="cursor:pointer;" ><a href="<?php echo U('edit','',false);?>/id/<?php echo ($vo["id"]); ?>">修改</a></span> |
+                    	<span id="<?php echo ($vo["id"]); ?>" class="del"style="cursor:pointer;" onclick='status("<?php echo U('setStatus','method=delete&mo=homeman&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>删除</span>
+                    </td> 
+                </tr><?php endforeach; endif; else: echo "" ;endif; ?>      
+                </tbody>
+           </table>
+
+       <div style="margin-left:0px;"><?php echo $page_str;?></div>
         </div>
      </div>
-	<form id="form_data" method="post" action="">    
-		<table  style="width:50%;height:300px;margin-left:20px;font-size:16px">
-		    <tr><th>上级分类:</th></tr>
-		    <tr>
-		     	<td>
-		     		<select name="fid">
-		     			<option value="0">---顶级---</option>
-		     			<?php if(is_array($fid)): $i = 0; $__LIST__ = $fid;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo["id"]); ?>">---<?php echo ($vo["zname"]); ?>---</option><?php endforeach; endif; else: echo "" ;endif; ?>
-		     		</select>
-			 	</td>
-			</tr>
-		    <tr><th>名称</th></tr>
-		    <tr><td><input type="text" name="zname"/></td></tr>
-		   	
-		   	<tr>
-		      <td colspan=2><input type="submit"  value="提交" /> &nbsp &nbsp &nbsp<input type="reset"  value="重置" /></td>  
-		   	</tr>   
-		   	               
-		</table>
-	</form> 
-</section>
-<script type="text/javascript">
-	//jqureForm插件提交表单
-	$('form').submit(function(){
-		
-		$(this).ajaxSubmit({
-			
-			type:"post",
-			url:"<?php echo U('zoneadd');?>",
-			dataType:"json",
-			success:function(msg){
-				if(msg.status==1){
-					layer.msg('恭喜您，添加成功！');
-					setTimeout(function(){
-						location.href="<?php echo U('zoneIndex');?>";
-					},1000);
-				}else{
-					alert(msg.error);
-				}
-			}
-		});
-		//阻止表单提交
-		return false;
-	});
-
-</script> 
+</section>  
 		<footer>
             2018 &copy; AdminEx by <a href="http://www.jiajoo.com" target="_blank">家造网</a>
   		 </footer>       

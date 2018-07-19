@@ -23,17 +23,18 @@
   <link href="/Application/Admin/Public/css/style.css" rel="stylesheet">
   <link href="/Application/Admin/Public/css/style-responsive.css" rel="stylesheet">
 
-
-  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-  <script src="js/html5shiv.js"></script>
-  <script src="js/respond.min.js"></script>
-  <![endif]-->
-
+  <script src="/Application/Admin/Public/js/jquery-1.10.2.min.js"></script>
+  
+  <!-- jquery form表单提交插件 -->
+  <script src="/Application/Admin/Public/js/form/jquery-1.8.3.min.js"></script>
+  <script src="/Application/Admin/Public/js/form/jquery.form.js"></script>
+  <script src="/Application/Admin/Public/js/layer/layer.js"></script>  
+  <!-- ajax状态操作 -->
+  <script src="/Application/Admin/Public/js/status.js"></script>
   <!-- 在线编辑器 -->
-<script type="text/javascript" charset="utf-8" src="/Application/Admin/Public/ueditor/ueditor.config.js"></script>
-<script type="text/javascript" charset="utf-8" src="/Application/Admin/Public/ueditor/ueditor.all.min.js"> </script>
-<script type="text/javascript" charset="utf-8" src="/Application/Admin/Public/ueditor/lang/zh-cn/zh-cn.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/Application/Admin/Public/ueditor/ueditor.config.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/Application/Admin/Public/ueditor/ueditor.all.min.js"> </script>
+  <script type="text/javascript" charset="utf-8" src="/Application/Admin/Public/ueditor/lang/zh-cn/zh-cn.js"></script>
 </head>
 
 <body class="sticky-header">
@@ -363,7 +364,6 @@ $('#tijiao').click(function(){
 </section>
 
 <!-- Placed js at the end of the document so the pages load faster -->
-<script src="/Application/Admin/Public/js/jquery-1.10.2.min.js"></script>
 <script src="/Application/Admin/Public/js/jquery-ui-1.9.2.custom.min.js"></script>
 <script src="/Application/Admin/Public/js/jquery-migrate-1.2.1.min.js"></script>
 <script src="/Application/Admin/Public/js/bootstrap.min.js"></script>

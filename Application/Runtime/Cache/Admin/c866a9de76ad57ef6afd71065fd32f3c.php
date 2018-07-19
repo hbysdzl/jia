@@ -316,7 +316,7 @@
             <div style="float:right;margin-top:-40px;">
             	<form action="/index.php/Admin/Reguser/index" method="post">
 	                <div class="clearfix" style="margin-bottom:15px;">
-	                	 <input type="text" name="name" size="30" value="请输入人员名称"/>
+	                	 <input type="text" name="name" size="30" value="请输入名称"/>
 	                    <div class="btn-group">
 	                        <button id="editable-sample_new" class="btn btn-primary" type="submit">搜索</button>
 	                    </div>
@@ -329,10 +329,10 @@
                 <thead>
                 <tr>
                     <th style="width:50px;">ID</th>
-                    <th>姓名</th>
-                    <th>照片</th>
-                    <th>资历</th>
-                    <th>优先级</th>
+                    <th>名称</th>
+                    <th>手机号码</th>
+                    <th>注册IP</th>
+                    <th>注册地址</th>
                     <th>注册时间</th>
                     <th>状态</th>
                     <th>操作</th>
@@ -340,12 +340,12 @@
                 </thead>
                 <tbody>
                 
-          		<?php if(is_array($HomList)): $i = 0; $__LIST__ = $HomList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="">
+          		<?php if(is_array($userList)): $i = 0; $__LIST__ = $userList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="">
                     <td style="width:20px;"><?php echo ($vo["id"]); ?></td>
                     <td><?php echo ($vo["name"]); ?></td>
-                    <td><?php ShowImage($vo['photo'],70);?></td>
-                    <td><?php echo ($vo["exp"]); ?></td>
-                    <td><?php echo ($vo["lev"]); ?></td>
+                    <td><?php echo ($vo["mobile"]); ?></td>
+                    <td><?php echo ($vo["regip"]); ?></td>
+                    <td><?php echo ($vo["area"]); ?></td>
                     <td><?php echo date('Y-m-d',$vo['time'])?></td>
                     <td>
                     	<?php if($vo['status']==1): ?><span style="color: green;">正常</span>
@@ -354,12 +354,11 @@
                     </td>
                     <td style="color:green">
                     	
-                    <?php if($vo['status']==1): ?><span style="cursor:pointer;" id="<?php echo ($vo["id"]); ?>"><a href="javascript:void(0);" onclick='status("<?php echo U('setStatus','method=forbid&mo=homeman&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>禁用|</a></span> 
+                    <?php if($vo['status']==1): ?><span style="cursor:pointer;" id="<?php echo ($vo["id"]); ?>"><a href="javascript:void(0);" onclick='status("<?php echo U('setStatus','method=forbid&mo=reguser&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>禁用|</a></span> 
                     <?php else: ?>
-                    <span style="cursor:pointer;" id="<?php echo ($vo["id"]); ?>"><a href="javascript:void(0);" onclick='status("<?php echo U('setStatus','method=resumew&mo=homeman&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>启用|</a></span><?php endif; ?>
-                    	
+                    <span style="cursor:pointer;" id="<?php echo ($vo["id"]); ?>"><a href="javascript:void(0);" onclick='status("<?php echo U('setStatus','method=resumew&mo=reguser&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>启用|</a></span><?php endif; ?>	
                     	<span style="cursor:pointer;" ><a href="<?php echo U('edit','',false);?>/id/<?php echo ($vo["id"]); ?>">修改</a></span> |
-                    	<span id="<?php echo ($vo["id"]); ?>" class="del"style="cursor:pointer;" onclick='status("<?php echo U('setStatus','method=delete&mo=homeman&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>删除</span>
+                    	<span id="<?php echo ($vo["id"]); ?>" class="del"style="cursor:pointer;" onclick='status("<?php echo U('setStatus','method=delete&mo=reguser&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>删除</span>
                     </td> 
                 </tr><?php endforeach; endif; else: echo "" ;endif; ?>      
                 </tbody>
