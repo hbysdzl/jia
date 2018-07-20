@@ -282,18 +282,24 @@
 		
         <!--body wrapper start-->
 		
-<style>
-.num{background:#34eb8a;margin:3px;width:20px;display:inline-block;padding-left:5px;color:#040906}
-</style>
- <div class="page-heading">
-     <h3><?php echo ($title); ?></h3>
-        <ul class="breadcrumb"><li><a href="#">控制面板</a></li>
-            <li><a href="#">启用</a></li>
-            <li class="active">禁用</li>
-        </ul>
-</div>
+<style type="text/css">
+table{margin-top: -30px;}
+tr{height: 35px;}
+th{font-weight: bold;padding-top:18px;font-family:'微软雅黑';}
+<script src="/Application/Admin/Public/js/jquery-fileupload/jquery.ui.widget.js"></script>
+<script src="/Application/Admin/Public/js/jquery-fileupload/jquery.iframe-transport.js"></script>
+<script src="/Application/Admin/Public/js/jquery-fileupload/jquery.fileupload.js"></script>
 
-        <div class="wrapper">
+</style>
+<div class="page-heading">
+    <h3><?php echo ($title); ?></h3>
+       <ul class="breadcrumb">
+           <li><a href="javascript:void(0);">控制面板</a></li>
+           <li><a href="<?php echo U('index');?>">返回</a></li>
+           <li class="active"> Editable Table </li>
+      </ul>
+</div>
+<div class="wrapper">
              <div class="row">
                 <div class="col-sm-12">
                 <section class="panel">
@@ -307,66 +313,103 @@
                 <div class="panel-body">
                 <div class="adv-table editable-table ">
                 <div class="clearfix">
-                    <div class="btn-group">
-                        <button id="editable-sample_new" class="btn btn-primary">
-                          	<a href="<?php echo U('add');?>">新增 </a><i class="fa fa-plus"></i>
-                        </button>
-                    </div> 
+                   
                 </div>
-            <div style="float:right;margin-top:-40px;">
-          <form action="/index.php/Admin/Material/index.html" method="post">
-	                <div class="clearfix" style="margin-bottom:15px;">
-	                	 <input type="text" name="name" size="30" value="请输入名称"/>
-	                    <div class="btn-group">
-	                        <button id="editable-sample_new" class="btn btn-primary" type="submit">搜索</button>
-	                    </div>
-	                </div>
-      			</form>
-            </div>
-      
-                <div class="space15"></div>
-                <table class="table table-striped table-hover table-bordered" id="editable-sample">
-                <thead>
-                <tr>
-                    <th style="width:50px;">ID</th>
-                    <th>名称</th>
-                    <th>展示图片</th>
-                    <th>商家logo</th>
-                    <th>等级</th>
-                    <th>状态</th>
-                    <th>操作</th>
-                </tr>
-                </thead>
-                <tbody>
                 
-          		<?php if(is_array($mstoreList)): $i = 0; $__LIST__ = $mstoreList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="">
-                    <td style="width:20px;"><?php echo ($vo["id"]); ?></td>
-                    <td><?php echo ($vo["name"]); ?></td>
-                    <td><?php ShowImage($vo['photo'],70);?></td>
-                    <td><?php ShowImage($vo['bpic'],70);?></td>
-                    <td><?php echo ($vo["lev"]); ?></td>
-                    <td>
-                    	<?php if($vo['status']==1): ?><span style="color: green;">正常</span>
-                    	<?php else: ?>
-                    		<span style="color: red;">禁用</span><?php endif; ?>
-                    </td>
-                    <td style="color:green">
-                    	
-                    <?php if($vo['status']==1): ?><span style="cursor:pointer;" id="<?php echo ($vo["id"]); ?>"><a href="javascript:void(0);" onclick='status("<?php echo U('setStatus','method=forbid&mo=homeman&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>禁用|</a></span> 
-                    <?php else: ?>
-                    <span style="cursor:pointer;" id="<?php echo ($vo["id"]); ?>"><a href="javascript:void(0);" onclick='status("<?php echo U('setStatus','method=resumew&mo=homeman&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>启用|</a></span><?php endif; ?>
-                    	
-                    	<span style="cursor:pointer;" ><a href="<?php echo U('edit','',false);?>/id/<?php echo ($vo["id"]); ?>">修改</a></span> |
-                    	<span id="<?php echo ($vo["id"]); ?>" class="del"style="cursor:pointer;" onclick='status("<?php echo U('setStatus','method=delete&mo=homeman&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>删除</span>
-                    </td> 
-                </tr><?php endforeach; endif; else: echo "" ;endif; ?>      
-                </tbody>
-           </table>
-
-       <div style="margin-left:0px;"><?php echo $page_str;?></div>
         </div>
      </div>
-</section>  
+<form id="form_data" method="post" action="" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="<?php echo ($editData["id"]); ?>">    
+  <table  style="width:60%;height:300px;margin-left:20px;font-size:16px">
+    <tr><th>商店名称:</th></tr>
+    <tr><td><input type="text" name="name" size="47" value="<?php echo ($editData["name"]); ?>" /> </td></tr>
+    
+    <tr><th>展示图片</th></tr>
+    <tr><td><input type="file" name="photo1" id="picture"/></td></tr>
+    <tr><td><img src="/Public/Upload/<?php echo ($editData["photo"]); ?>" id="ps" width='80px'></td></tr>
+
+    <tr><th>商家logo</th></tr>
+    <tr><td><input type="file" name="bpic2" id="logo"/></td></tr>
+    <tr><td><img src="/Public/Upload/<?php echo ($editData["bpic"]); ?>" id="po" width='80px'></td></tr>
+   
+    <tr><th>主营方向:</th></tr>
+    <tr><td><input type="text" name="info" size="47" value="<?php echo ($editData["info"]); ?>" /></td></tr> 	
+   	
+    <tr><th>建材分类:</th></tr>
+    <tr>
+    	<td>
+    		<?php if(is_array($res1)): $i = 0; $__LIST__ = $res1;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if(in_array($vo['id'],$editData['f'])){ $che='checked="checked"'; }else{ $che=''; } ?>
+    		<input class="auth_rules" type="checkbox" name="f[]" value="<?php echo ($vo["id"]); ?>" <?php echo ($che); ?>><?php echo ($vo["name"]); ?> &nbsp;&nbsp;<?php endforeach; endif; else: echo "" ;endif; ?>
+    	</td>
+   </tr>
+   <tr><th>建材品牌:</th></tr>
+    <tr>
+    	<td>
+    		<?php if(is_array($res2)): $i = 0; $__LIST__ = $res2;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if(in_array($vo['id'],$editData['b'])){ $che='checked="checked"'; }else{ $che=''; } ?>
+    		<input class="auth_rules" type="checkbox" name="b[]" value="<?php echo ($vo["id"]); ?>" <?php echo ($che); ?>><?php echo ($vo["name"]); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php endforeach; endif; else: echo "" ;endif; ?>
+    	</td>
+   </tr>
+    <tr><th>地区:</th></tr>
+    <tr>
+      <td>
+        <?php if(is_array($res3)): $i = 0; $__LIST__ = $res3;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if(in_array($vo['id'],$editData['f'])){ $che='checked="checked"'; }else{ $che=''; } ?>
+        <input class="auth_rules" type="checkbox" name="z[]" value="<?php echo ($vo["id"]); ?>" <?php echo ($che); ?>><?php echo ($vo["zname"]); ?>&nbsp;&nbsp;<?php endforeach; endif; else: echo "" ;endif; ?>
+      </td>
+   </tr>
+    <tr><th>等级(请填写数字1-100，越大越优先)</th>   
+    <tr><td><input type="text" name="lev" size="47" value="<?php echo ($editData["lev"]); ?>" /></td></tr>
+   	  
+    <tr><th>评分(请填写数字1-100)</th>   
+    <tr><td><input type="text" name="fen" size="47" value="<?php echo ($editData["fen"]); ?>" /></td></tr>
+    <tr><th>一句话品牌(请填写10-14个)</th>   
+    <tr><td><input type="text" name="adinfo" size="47" value="<?php echo ($editData["adinfo"]); ?>" /></td></tr>
+    <tr><th>商铺地址</th>   
+    <tr><td><input type="text" name="addr" size="47"/ value="<?php echo ($editData["addr"]); ?>"></td></tr>
+    <tr><th>公司网址(http/s://开头)</th>   
+    <tr><td><input type="text" name="url" size="47" value="<?php echo ($editData["url"]); ?>" /></td></tr>
+    <tr><th>商铺坐标(坐标获取:http://api.map.baidu.com/lbsapi/getpoint/index.html)</th>   
+    <tr><td><input type="text" name="xyz" size="47" value="<?php echo ($editData["xyz"]); ?>" /></td></tr>
+    <tr><th>活动文字(20字以内)</th>   
+    <tr><td><input type="text" name="hdtext" size="47" value="<?php echo ($editData["hdtext"]); ?>" /></td></tr>  
+    <tr><th>活动网址(http/s://开头)</th>   
+    <tr><td><input type="text" name="hdurl" size="47" value="<?php echo ($editData["hdurl"]); ?>" /></td></tr> 
+
+    <tr>
+      <td colspan=2><input type="submit"  value="提交"/> &nbsp &nbsp &nbsp<input type="reset"  value="重置" /></td>  
+    </tr> 
+</table>
+</form> 
+</section>
+<script type="text/javascript">
+	//表单提交
+	actionForm("<?php echo U('edit');?>","<?php echo U('index');?>");
+
+//显示封面预览
+$('#picture').change(function(){
+	//获取图片文件
+	var pic_file=this.files[0];
+	//调用预览方法
+	preview_pic(pic_file,'ps');
+});
+
+//显示封面预览
+$('#logo').change(function(){
+  //获取图片文件
+  var pic_file=this.files[0];
+  //调用预览方法
+  preview_pic(pic_file,'po');
+});
+
+//预览方法实现
+function preview_pic(pic,s2){
+	//通过html5的FileReader对象
+	var r=new FileReader();
+	r.readAsDataURL(pic);
+	r.onload=function(){
+		$('#'+s2).attr('src',this.result).show();
+	}
+}
+</script> 
 		<footer>
             2018 &copy; AdminEx by <a href="http://www.jiajoo.com" target="_blank">家造网</a>
   		 </footer>       

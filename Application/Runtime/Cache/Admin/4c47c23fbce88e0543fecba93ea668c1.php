@@ -286,6 +286,10 @@
 table{margin-top: -30px;}
 tr{height: 35px;}
 th{font-weight: bold;padding-top:18px;font-family:'微软雅黑';}
+<script src="/Application/Admin/Public/js/jquery-fileupload/jquery.ui.widget.js"></script>
+<script src="/Application/Admin/Public/js/jquery-fileupload/jquery.iframe-transport.js"></script>
+<script src="/Application/Admin/Public/js/jquery-fileupload/jquery.fileupload.js"></script>
+
 </style>
 <div class="page-heading">
     <h3><?php echo ($title); ?></h3>
@@ -315,17 +319,17 @@ th{font-weight: bold;padding-top:18px;font-family:'微软雅黑';}
         </div>
      </div>
 <form id="form_data" method="post" action="" enctype="multipart/form-data">    
-<table  style="width:50%;height:300px;margin-left:20px;font-size:16px">
+<table  style="width:60%;height:300px;margin-left:20px;font-size:16px">
     <tr><th>商店名称:</th></tr>
     <tr><td><input type="text" name="name" size="47"/> </td></tr>
     
     <tr><th>展示图片</th></tr>
     <tr><td><input type="file" name="photo" id="picture"/></td></tr>
-    <tr><td><img src="" id="ps" width='150px'></td></tr>
+    <tr><td><img src="" id="ps" width='80px'></td></tr>
 
     <tr><th>商家logo</th></tr>
-    <tr><td><input type="file" name="bpic" id="picture"/></td></tr>
-    <tr><td><img src="" id="ps" width='150px'></td></tr>
+    <tr><td><input type="file" name="bpic" id="logo"/></td></tr>
+    <tr><td><img src="" id="po" width='80px'></td></tr>
    
     <tr><th>主营方向:</th></tr>
     <tr><td><input type="text" name="info" size="47" /></td></tr> 	
@@ -333,19 +337,19 @@ th{font-weight: bold;padding-top:18px;font-family:'微软雅黑';}
     <tr><th>建材分类:</th></tr>
     <tr>
     	<td>
-    		<?php if(is_array($res1)): $i = 0; $__LIST__ = $res1;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><input class="auth_rules" type="checkbox" name="f[]" value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["zname"]); ?> &nbsp;&nbsp;<?php endforeach; endif; else: echo "" ;endif; ?>
+    		<?php if(is_array($res1)): $i = 0; $__LIST__ = $res1;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><input class="auth_rules" type="checkbox" name="f[]" value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["name"]); ?> &nbsp;&nbsp;<?php endforeach; endif; else: echo "" ;endif; ?>
     	</td>
    </tr>
    <tr><th>建材品牌:</th></tr>
     <tr>
     	<td>
-    		<?php if(is_array($res2)): $i = 0; $__LIST__ = $res2;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><input class="auth_rules" type="checkbox" name="b[]" value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["gname"]); ?>&nbsp;&nbsp;<?php endforeach; endif; else: echo "" ;endif; ?>
+    		<?php if(is_array($res2)): $i = 0; $__LIST__ = $res2;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><input class="auth_rules" type="checkbox" name="b[]" value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["name"]); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php endforeach; endif; else: echo "" ;endif; ?>
     	</td>
    </tr>
     <tr><th>地区:</th></tr>
     <tr>
       <td>
-        <?php if(is_array($res2)): $i = 0; $__LIST__ = $res2;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><input class="auth_rules" type="checkbox" name="z[]" value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["gname"]); ?>&nbsp;&nbsp;<?php endforeach; endif; else: echo "" ;endif; ?>
+        <?php if(is_array($res3)): $i = 0; $__LIST__ = $res3;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><input class="auth_rules" type="checkbox" name="z[]" value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["zname"]); ?>&nbsp;&nbsp;<?php endforeach; endif; else: echo "" ;endif; ?>
       </td>
    </tr>
     <tr><th>等级(请填写数字1-100，越大越优先)</th>   
@@ -383,16 +387,24 @@ $('#picture').change(function(){
 	//获取图片文件
 	var pic_file=this.files[0];
 	//调用预览方法
-	preview_pic(pic_file);
+	preview_pic(pic_file,'ps');
+});
+
+//显示封面预览
+$('#logo').change(function(){
+  //获取图片文件
+  var pic_file=this.files[0];
+  //调用预览方法
+  preview_pic(pic_file,'po');
 });
 
 //预览方法实现
-function preview_pic(pic){
+function preview_pic(pic,s2){
 	//通过html5的FileReader对象
 	var r=new FileReader();
 	r.readAsDataURL(pic);
 	r.onload=function(){
-		$('#ps').attr('src',this.result).show();
+		$('#'+s2).attr('src',this.result).show();
 	}
 }
 </script> 
