@@ -114,4 +114,51 @@ class MstoreModel extends Model{
 	/**
 	***更新之后的处理
 	**/
+	protected function _after_update(&$data,$options){
+			//将筛选表中原有的记录删除重新添加
+			$fdb=M('mfilter');
+			$fdb->where('storeid='.$data['id'])->delete();
+
+			//保存建材分类数据到筛选表中
+			$mdb=M('mtype');
+			foreach (I('post.f') as $k => $v) {
+				//获取对应的名称
+				$name=$mdb->field('id,name')->find($v);
+				$fdb->add(
+					array(
+						'storeid'=>$data['id'],
+						'f'=>$v,
+						'fname'=>$name['name']
+					)
+				);
+			}
+
+			//保存建材品牌数据到筛选表中
+			$mdb=M('mbrand');
+			foreach (I('post.b') as $k => $v) {
+				//获取对应的名称
+				$name=$mdb->field('id,name')->find($v);
+				$fdb->add(
+					array(
+						'storeid'=>$data['id'],
+						'b'=>$v,
+						'fname'=>$name['name']
+					)
+				);
+			}
+			//保存地区数据到筛选表中
+			$mdb=M('homezone');
+			foreach (I('post.z') as $k => $v) {
+				//获取对应的名称
+				$name=$mdb->field('id,zname')->find($v);
+				$fdb->add(
+					array(
+						'storeid'=>$data['id'],
+						'z'=>$v,
+						'fname'=>$name['zname']
+					)
+				);
+			}
+
+	}
 }

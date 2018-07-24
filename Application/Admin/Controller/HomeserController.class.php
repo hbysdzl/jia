@@ -203,7 +203,7 @@ class HomeserController extends BackController{
         if(!$id || !$model){
             $this->error('参数错误');
         }
-        switch(strtolower($method)){  //将参数同意转换为小写
+        switch(strtolower($method)){  //将参数统一转换为小写
         
             case "forbid":
                 $this->forbid($model,array('id'=>$id));

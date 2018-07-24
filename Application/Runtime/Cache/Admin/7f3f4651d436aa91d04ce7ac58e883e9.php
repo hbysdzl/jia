@@ -282,14 +282,17 @@
 		
         <!--body wrapper start-->
 		
+<style>
+.num{background:#34eb8a;margin:3px;width:20px;display:inline-block;padding-left:5px;color:#040906}
+</style>
  <div class="page-heading">
-<h3>文档分类列表—<?php echo ($title); ?>（<?php echo ($num); ?>）</h3>
-<ul class="breadcrumb">
- 	<li><a href="#">控制面板</a></li>
-    <li><a href="#">启用</a></li>
-    <li class="active">禁用</li>
-</ul>
+     <h3><?php echo ($title); ?></h3>
+        <ul class="breadcrumb"><li><a href="#">控制面板</a></li>
+            <li><a href="#">启用</a></li>
+            <li class="active">禁用</li>
+        </ul>
 </div>
+
         <div class="wrapper">
              <div class="row">
                 <div class="col-sm-12">
@@ -306,88 +309,58 @@
                 <div class="clearfix">
                     <div class="btn-group">
                         <button id="editable-sample_new" class="btn btn-primary">
-                          	<a href="<?php echo U('add','',false);?>/cat_id/<?php echo ($cat_id); ?>">新增 </a><i class="fa fa-plus"></i>
+                          	<a href="<?php echo U('picAdd');?>">新增 </a><i class="fa fa-plus"></i>
                         </button>
-                    </div>
+                    </div> 
                 </div>
-         <div style="float:right;">
-              <form action="/index.php/Admin/Article/index/cat_id/42" method="post">
-                <div class="clearfix" style="margin-bottom:10px;margin-top:-32px;">
-                	 <input type="text" name="document" size="30" value="请输入文档标题"/>
-                    <div class="btn-group"><button id="editable-sample_new" class="btn btn-primary" type="submit">搜索</button></div>
-                </div>
-              </form>
-        </div>
+            <div style="float:right;margin-top:-40px;">
+            	<form action="/index.php/Admin/Material/picIndex" method="post">
+	                <div class="clearfix" style="margin-bottom:15px;">
+	                	 <input type="text" name="picname" size="30" value="请输入相册名称"/>
+	                    <div class="btn-group">
+	                        <button id="editable-sample_new" class="btn btn-primary" type="submit">搜索</button>
+	                    </div>
+	                </div>
+      			</form>
+            </div>
+      
                 <div class="space15"></div>
                 <table class="table table-striped table-hover table-bordered" id="editable-sample">
-                <thead style="text-align:center;">
+                <thead>
                 <tr>
-                    <th style="width:50px;">编号</th>
-                    <th>标题</th>
-                    <th>类型</th>
-                    <th>优先级</th>
-                    <th>最后更新时间</th>
+                    <th style="width:50px;">ID</th>
+                    <th>相册名称</th>
+                    <th>商家名称</th>
                     <th>状态</th>
-                    <th>浏览</th>
-                    <th>评论</th>
                     <th>操作</th>
                 </tr>
                 </thead>
-                <tbody>
-                
-          <?php if(is_array($indexLst)): $i = 0; $__LIST__ = $indexLst;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="">
-                    <td style="width:20px;"><?php echo ($i); ?></td>
-                    <td><?php echo ($vo["title"]); ?></td>
-                    <td><?php echo ($vo["type"]); ?></td>
-                    <td><?php echo ($vo["level"]); ?></td>
-                    <td><?php echo date('Y-m-d H:i:s',$vo['update_time'])?></td>
-                    <td><?php echo $vo['status']==1?'启用':'禁用'?></td>
-                    <td><?php echo ($vo["view"]); ?></td>
-                    <td><?php echo ($vo["comment"]); ?></td>
+                <tbody> 
+          		<?php if(is_array($picmstoreList)): $i = 0; $__LIST__ = $picmstoreList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="">
+                    <td style="width:20px;"><?php echo ($vo["id"]); ?></td>
+                    <td><?php echo ($vo["picname"]); ?></td>
+                    <td><?php echo ($vo["storename"]); ?></td>
+                    <td>
+                    	<?php if($vo['status']==1): ?><span style="color: green;">正常</span>
+                    	<?php else: ?>
+                    		<span style="color: red;">禁用</span><?php endif; ?>
+                    </td>
                     <td style="color:green">
-                    	<span style="cursor:pointer;" ><a href="<?php echo U('edit','',false);?>/cat_id/<?php echo ($cat_id); ?>/id/<?php echo ($vo["id"]); ?>">修改</a></span> |
-                    	<span vo="<?php echo ($vo["id"]); ?>" class="del"style="cursor:pointer;" >删除</span>
-					</td>
+                    	
+                    <?php if($vo['status']==1): ?><span style="cursor:pointer;" id="<?php echo ($vo["id"]); ?>"><a href="javascript:void(0);" onclick='status("<?php echo U('setStatus','method=forbid&mo=mstorepic&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>禁用|</a></span> 
+                    <?php else: ?>
+                    <span style="cursor:pointer;" id="<?php echo ($vo["id"]); ?>"><a href="javascript:void(0);" onclick='status("<?php echo U('setStatus','method=resumew&mo=mstorepic&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>启用|</a></span><?php endif; ?>	
+                    	<span style="cursor:pointer;" ><a href="<?php echo U('picEdit','',false);?>/id/<?php echo ($vo["id"]); ?>">修改</a></span> |
+                    	<span id="<?php echo ($vo["id"]); ?>" class="del"style="cursor:pointer;" onclick='status("<?php echo U('setStatus','method=delete&mo=mstorepic&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>删除</span>
+                    </td> 
                 </tr><?php endforeach; endif; else: echo "" ;endif; ?>      
                 </tbody>
            </table>
+
+       <div style="margin-left:0px;"><?php echo $page_str;?></div>
         </div>
      </div>
-<style>
-.num{background:#34eb8a;margin:3px;width:25px;display:inline-block;padding-left:7px;color:#040906};
-</style>
-<div style="margin-left:15px;"><?php echo $page;?></div>
-<div id="tishi" style="width:1650px;height:50px;background:#f66b34;color:white;line-height:50px;position: absolute;top:0px;font-size:22px;padding-left:50px;display:none"></div>     
-</section>
-<script src="/Application/Admin/Public/js/jquery-1.10.2.min.js"></script>
-<script type="text/javascript">
-$('.del').click(function(){
-	var id=$(this).attr('vo');
-	var tr=$(this).parent().parent()
-	if(confirm('确定要删除吗？')){
-		$.ajax({
-			type:"get",
-			url:"<?php echo U('ajaxdelDoceument','',false);?>/id/"+id,
-			dataType:"json",
-			success:function(data){
-				if(data.ok==1){
-					tr.remove();
-					$('#tishi').html('删除成功！');
-					$('#tishi').fadeIn(1000);
-					$('#tishi').fadeOut(3000);
-				}else{
-					$('#tishi').html('删除失败!');
-					$('#tishi').fadeIn(1000);
-					$('#tishi').fadeOut(3000);
-				
-				}
-			}
-		});
-	
-	}	
-});
-</script>
-  
+</section>  
 		<footer>
             2018 &copy; AdminEx by <a href="http://www.jiajoo.com" target="_blank">家造网</a>
   		 </footer>       

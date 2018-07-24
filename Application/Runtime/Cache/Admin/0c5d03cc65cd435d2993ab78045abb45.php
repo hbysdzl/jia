@@ -282,15 +282,21 @@
 		
         <!--body wrapper start-->
 		
- <div class="page-heading">
-<h3>文档分类列表—<?php echo ($title); ?>（<?php echo ($num); ?>）</h3>
-<ul class="breadcrumb">
- 	<li><a href="#">控制面板</a></li>
-    <li><a href="#">启用</a></li>
-    <li class="active">禁用</li>
-</ul>
+<style type="text/css">
+table{margin-top: -30px;}
+tr{height: 35px;}
+th{font-weight: bold;padding-top:18px;font-family:'微软雅黑';}
+</style>
+<div class="page-heading">
+    <h3><?php echo ($title); ?></h3>
+       <ul class="breadcrumb">
+           <li><a href="javascript:void(0);">控制面板</a></li>
+           <li><a href="<?php echo U('Picindex');?>">返回</a></li>
+           <li class="active"> Editable Table </li>
+      </ul>
 </div>
-        <div class="wrapper">
+
+<div class="wrapper">
              <div class="row">
                 <div class="col-sm-12">
                 <section class="panel">
@@ -304,90 +310,81 @@
                 <div class="panel-body">
                 <div class="adv-table editable-table ">
                 <div class="clearfix">
-                    <div class="btn-group">
-                        <button id="editable-sample_new" class="btn btn-primary">
-                          	<a href="<?php echo U('add','',false);?>/cat_id/<?php echo ($cat_id); ?>">新增 </a><i class="fa fa-plus"></i>
-                        </button>
-                    </div>
+                   
                 </div>
-         <div style="float:right;">
-              <form action="/index.php/Admin/Article/index/cat_id/42" method="post">
-                <div class="clearfix" style="margin-bottom:10px;margin-top:-32px;">
-                	 <input type="text" name="document" size="30" value="请输入文档标题"/>
-                    <div class="btn-group"><button id="editable-sample_new" class="btn btn-primary" type="submit">搜索</button></div>
-                </div>
-              </form>
-        </div>
-                <div class="space15"></div>
-                <table class="table table-striped table-hover table-bordered" id="editable-sample">
-                <thead style="text-align:center;">
-                <tr>
-                    <th style="width:50px;">编号</th>
-                    <th>标题</th>
-                    <th>类型</th>
-                    <th>优先级</th>
-                    <th>最后更新时间</th>
-                    <th>状态</th>
-                    <th>浏览</th>
-                    <th>评论</th>
-                    <th>操作</th>
-                </tr>
-                </thead>
-                <tbody>
                 
-          <?php if(is_array($indexLst)): $i = 0; $__LIST__ = $indexLst;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="">
-                    <td style="width:20px;"><?php echo ($i); ?></td>
-                    <td><?php echo ($vo["title"]); ?></td>
-                    <td><?php echo ($vo["type"]); ?></td>
-                    <td><?php echo ($vo["level"]); ?></td>
-                    <td><?php echo date('Y-m-d H:i:s',$vo['update_time'])?></td>
-                    <td><?php echo $vo['status']==1?'启用':'禁用'?></td>
-                    <td><?php echo ($vo["view"]); ?></td>
-                    <td><?php echo ($vo["comment"]); ?></td>
-                    <td style="color:green">
-                    	<span style="cursor:pointer;" ><a href="<?php echo U('edit','',false);?>/cat_id/<?php echo ($cat_id); ?>/id/<?php echo ($vo["id"]); ?>">修改</a></span> |
-                    	<span vo="<?php echo ($vo["id"]); ?>" class="del"style="cursor:pointer;" >删除</span>
-					</td>
-                </tr><?php endforeach; endif; else: echo "" ;endif; ?>      
-                </tbody>
-           </table>
         </div>
      </div>
-<style>
-.num{background:#34eb8a;margin:3px;width:25px;display:inline-block;padding-left:7px;color:#040906};
-</style>
-<div style="margin-left:15px;"><?php echo $page;?></div>
-<div id="tishi" style="width:1650px;height:50px;background:#f66b34;color:white;line-height:50px;position: absolute;top:0px;font-size:22px;padding-left:50px;display:none"></div>     
+<form id="form_data" action="/index.php/Admin/Material/picEdit/id/8" method="post" enctype="multipart/form-data">
+	<input type="hidden" name="id" value="<?php echo ($editData["id"]); ?>">    
+<table  style="width:50%;height:300px;margin-left:20px;font-size:16px">
+    <tr><th>相册名称:</th></tr>
+    <tr><td><input type="text" name="picname" size="47" value="<?php echo ($editData["picname"]); ?>"/> </td></tr>
+   
+ 	  <tr><th>效果图展示图片(鼠标点击图片删除)</th></tr>
+	  <tr>
+	  	<td>
+	    <div style="border: 1px dashed; height:320px;width: 155%;text-align: center;background-color:#f3f3f3;">
+	    <div style="margin-top:10px;">
+	    	<?php if(is_array($resImg)): $i = 0; $__LIST__ = $resImg;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><span title="点击删除图片" id="<?php echo ($vo["id"]); ?>" class="pic" style="cursor: pointer;"><?php echo ShowImage($vo['img'],100);?></span>&nbsp&nbsp&nbsp;<?php endforeach; endif; else: echo "" ;endif; ?>
+	    </div>
+	  	<div style="width:98%;height: 90%;margin:10px auto;text-align: center;" id="pcs"></div>
+		<div style="margin-top:-100px;">
+	  	  <input onclick="$(this).parent().parent().find('#pcs').append('<span style=\'float:left\'><input  type=\'file\' name=\'pics[]\' id=\'file\' /><br/></span>')" type="button" value="点击添加图片" />
+	  	</div>
+	  </div>
+	 </td>
+	 </tr>
+   	<tr><th>商家名称:</th></tr>
+    <tr>
+      <td>
+        <select name="storename">
+          <option value="">--请选择商店--</option>
+          <?php if(is_array($ms)): $i = 0; $__LIST__ = $ms;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($editData['storeid']==$vo['id']){ $che='selected="selected"'; }else{ $che=''; } ?>
+          <option value="<?php echo ($vo["id"]); ?>-<?php echo ($vo["name"]); ?>" <?php echo ($che); ?>><?php echo ($vo["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+        </select>
+      </td>
+    </tr>
+   	<tr>
+      <td colspan=2><input type="submit"  value="提交"/> &nbsp &nbsp &nbsp<input type="reset"  value="重置" /></td>  
+   	</tr>   
+   	               
+</table>
+</form> 
 </section>
-<script src="/Application/Admin/Public/js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript">
-$('.del').click(function(){
-	var id=$(this).attr('vo');
-	var tr=$(this).parent().parent()
-	if(confirm('确定要删除吗？')){
+//ajax删除图片
+$('.pic').click(function(){
+	//获取id
+	var Id=$(this).attr('id');
+	var span=$(this);
+	//执行Ajax
+	if(confirm("确定删除吗")){
 		$.ajax({
-			type:"get",
-			url:"<?php echo U('ajaxdelDoceument','',false);?>/id/"+id,
-			dataType:"json",
-			success:function(data){
-				if(data.ok==1){
-					tr.remove();
-					$('#tishi').html('删除成功！');
-					$('#tishi').fadeIn(1000);
-					$('#tishi').fadeOut(3000);
-				}else{
-					$('#tishi').html('删除失败!');
-					$('#tishi').fadeIn(1000);
-					$('#tishi').fadeOut(3000);
-				
-				}
-			}
+			type:'get',
+		    url:"<?php echo U('ajaxDelImg','',false);?>/id/"+Id,
+		    dataType:"json",
+		    success:function(data){
+		    	if(data.ok==1){
+		    		alert('删除成功！您可以重新上传更新');
+		    		//将标签删除
+		    		span.remove();
+		    	}else{
+		    		alert(data.error);
+		    	}
+		    }
 		});
+	}
 	
-	}	
 });
+
+//jqureForm插件提交表单
+actionForm("<?php echo U('PicEdit');?>","<?php echo U('Picindex');?>");
 </script>
-  
+
+
+
+ 
 		<footer>
             2018 &copy; AdminEx by <a href="http://www.jiajoo.com" target="_blank">家造网</a>
   		 </footer>       

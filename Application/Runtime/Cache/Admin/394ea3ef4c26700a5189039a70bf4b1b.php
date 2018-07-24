@@ -314,7 +314,7 @@
                     </div> 
                 </div>
             <div style="float:right;margin-top:-40px;">
-          <form action="/index.php/Admin/Material/index.html" method="post">
+          <form action="/index.php/Admin/material/index" method="post">
 	                <div class="clearfix" style="margin-bottom:15px;">
 	                	 <input type="text" name="name" size="30" value="请输入名称"/>
 	                    <div class="btn-group">
@@ -352,12 +352,12 @@
                     </td>
                     <td style="color:green">
                     	
-                    <?php if($vo['status']==1): ?><span style="cursor:pointer;" id="<?php echo ($vo["id"]); ?>"><a href="javascript:void(0);" onclick='status("<?php echo U('setStatus','method=forbid&mo=homeman&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>禁用|</a></span> 
+                    <?php if($vo['status']==1): ?><span style="cursor:pointer;" id="<?php echo ($vo["id"]); ?>"><a href="javascript:void(0);" onclick='status("<?php echo U('setStatus','method=forbid&mo=mstore&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>禁用|</a></span> 
                     <?php else: ?>
-                    <span style="cursor:pointer;" id="<?php echo ($vo["id"]); ?>"><a href="javascript:void(0);" onclick='status("<?php echo U('setStatus','method=resumew&mo=homeman&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>启用|</a></span><?php endif; ?>
+                    <span style="cursor:pointer;" id="<?php echo ($vo["id"]); ?>"><a href="javascript:void(0);" onclick='status("<?php echo U('setStatus','method=resumew&mo=mstore&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>启用|</a></span><?php endif; ?>
                     	
                     	<span style="cursor:pointer;" ><a href="<?php echo U('edit','',false);?>/id/<?php echo ($vo["id"]); ?>">修改</a></span> |
-                    	<span id="<?php echo ($vo["id"]); ?>" class="del"style="cursor:pointer;" onclick='status("<?php echo U('setStatus','method=delete&mo=homeman&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>删除</span>
+                    	<span id="<?php echo ($vo["id"]); ?>" class="del"style="cursor:pointer;" onclick='status("<?php echo U('setStatus','method=delete&mo=mstore&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>删除</span>
                     </td> 
                 </tr><?php endforeach; endif; else: echo "" ;endif; ?>      
                 </tbody>

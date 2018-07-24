@@ -99,4 +99,192 @@
         $this->display();
     }
 
+    /*
+    ***建材商相册管理列表
+    */
+    public function picIndex(){
+
+        $this->assign(array('title'=>'商家相册管理','OneAuth'=>$this->OneAuth,'TowAuth'=>$this->TowAuth));
+        $Wdb=D('mstorepic');
+        $where['status']=array('egt',0);//没有被删除
+          
+        //搜索功能
+        if(IS_POST){
+             $name=I('post.picname');
+             if (empty($name) || $name=='请输入相册名称') {
+                 $this->error('请输入需要查找的相册名称');
+             }
+             $where['picname']=array('LIKE','%'.$name.'%');
+        }        
+        /**************************************设定分页****************/
+        $Wdb_num=$Wdb->where($where)->count();
+        $tatalPage=$Wdb_num;//总的记录数
+        $page=10;//每页显示的数量
+        $page_arr=getPage($Wdb_num,$page);  //调用公共函数分页       
+        $picmstoreList=$Wdb->where($where)->limit($page_arr['0'],$page_arr[1])->order('id desc')->select();
+        $this->assign('picmstoreList',$picmstoreList);
+        $this->assign('page_str',$page_arr[2]);  
+        $this->display();
+    }
+
+    /***
+    ****新增相册
+    ***/
+    public function picAdd(){
+        $this->assign(array('title'=>'新增相册','OneAuth'=>$this->OneAuth,'TowAuth'=>$this->TowAuth));
+        $picModel=M('mstorepic');
+        if(IS_POST){
+            if ($picModel->create(I('post.'),1)) {
+                $str=explode('-', $picModel->storename);
+                $picModel->storeid=$str[0];
+                $picModel->storename=$str[1];
+                if ($id=$picModel->add()) {
+                    //处理商家相册数据入库
+                   $pics=$_FILES['pics'];
+                   $arr=array();
+                   foreach ($pics['name'] as $k => $v) {
+                        $arr['name']=$v;
+                        $arr['type']=$pics['type'][$k];
+                        $arr['tmp_name']=$pics['tmp_name'][$k];
+                        $arr['error']=$pics['error'][$k];
+                        $arr['size']=$pics['error'][$k];
+                        $img[]=$arr;
+                   }
+                   $_FILES=$img;
+                   $imgModel=M('mstoreimg');
+                   foreach ($img as $k => $v) {
+                       $res=UploadOne($k,'shop/');
+                       $imgModel->add(array(
+                            'storeid'=>$str[0],
+                            'picid'=>$id,
+                            'img'=>$res['images'][0]
+                       ));
+                   }
+                    
+                    $this->ajaxReturn(array('status'=>1,'ok'=>'恭喜您，新增成功！'));
+                    die();
+                }
+            }
+            $this->ajaxReturn(array('status'=>0,'error'=>$picModel->getError()));
+        }
+        //取出商家名称及ID信息
+        $Mdb=D('Mstore');
+        $ms=$Mdb->field('id,name')->where(array('status'=>array('egt',0)))->select();
+        $this->assign('ms',$ms);
+        $this->display();
+    }
+
+    /***
+    ***相册编辑
+    ***/
+    public function PicEdit(){
+        $this->assign(array('title'=>'编辑相册','OneAuth'=>$this->OneAuth,'TowAuth'=>$this->TowAuth));
+        $picModel=M('mstorepic');
+        $imgModel=M('mstoreimg');
+        
+        if (IS_POST) {
+           if ($picModel->create(I('post'),2)) {
+                $picArr=explode('-', $picModel->storename);
+                $picModel->storeid=$picArr[0];
+                $picModel->storename=$picArr[1];
+                if ($picModel->save()!==false) {
+                    //处理相册图片表
+                    $arr=array();
+                    $imgs=$_FILES['pics'];
+                    if ($imgs!=null) {
+                        foreach ($imgs['name'] as $k => $v) {
+                            $arr['name']=$v;
+                            $arr['type']=$imgs['type'][$k];
+                            $arr['tmp_name']=$imgs['tmp_name'][$k];
+                            $arr['error']=$imgs['error'][$k];
+                            $arr['size']=$imgs['size'][$k];
+
+                            $pic_arr[]=$arr;
+                        }
+                        $_FILES=$pic_arr;
+                        foreach ($pic_arr as $k => $v) {
+                            $res=UploadOne($k,'shop/');
+                            $imgModel->add(array(
+                                    'storeid'=>$picArr[0],
+                                    'picid'=>I('post.id'),
+                                    'img'=>$res['images'][0]
+                            ));
+                        }
+                    }
+                   $this->ajaxReturn(array('status'=>1,'ok'=>'恭喜您！更新成功！')); 
+                }
+            } 
+            $this->ajaxReturn(array('status'=>0,'error'=>$picModel->getError()));
+        }
+        
+        $id=I('get.id');
+            if (!id) {
+                $this->error('参数错误');
+            }
+        //取出编辑的数据
+        $editData=$picModel->find($id);
+        $this->assign('editData',$editData);
+
+        //取出编辑的图片数据
+        $resImg=$imgModel->where(array('storeid'=>array('eq',$editData['storeid']),'picid'=>array('eq',$id)))->select();
+        $this->assign('resImg',$resImg);
+        //取出商家名称及ID信息
+        $Mdb=D('Mstore');
+        $ms=$Mdb->field('id,name')->where(array('status'=>array('egt',0)))->select();
+        $this->assign('ms',$ms);
+        $this->display();
+    }
+
+    /*
+    ***ajax删除相册图片
+    */
+    
+    public function ajaxDelImg(){
+            $id=I('id');
+            $imgModel=M('mstoreimg');
+            $imgurl=$imgModel->field('img')->find($id);
+            $imgurl=C('IMG_ROOTPATH').$imgurl['img'];
+            if(unlink($imgurl)){
+                if($imgModel->delete($id)){
+                    $this->ajaxReturn(array('ok'=>1));
+                    die();
+                }
+            }
+            $this->ajaxReturn(array('ok'=>0,'error'=>'删除失败！'));
+    }
+    
+    
+    /*
+     ***建材品牌管理
+    */
+    public function brandIndex(){
+         $this->assign(array('title'=>'建材品牌管理列表','OneAuth'=>$this->OneAuth,'TowAuth'=>$this->TowAuth));
+         $this->display();
+    }
+
+    /***
+    ***状态操作
+    ***/
+    public function setStatus($method=null){
+        $id=I('get.id');
+        $model=I('get.mo');
+        if(!$id || !$model){
+            $this->error('参数错误');
+        }
+        switch(strtolower($method)){  //将参数统一转换为小写
+        
+            case "forbid":
+                $this->forbid($model,array('id'=>$id));
+                break;
+            case "resumew":
+                $this->resumew($model,array('id'=>$id));
+                break;
+            case "delete":
+                $this->delete($model,array('id'=>$id));
+                break;
+            default:
+                $this->error('非法参数');
+        }
+    }
+
  }

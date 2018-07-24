@@ -1,0 +1,113 @@
+<layout name="Public/layout"/>
+<style type="text/css">
+table{margin-top: -30px;}
+tr{height: 35px;}
+th{font-weight: bold;padding-top:18px;font-family:'微软雅黑';}
+</style>
+<div class="page-heading">
+    <h3>{$title}</h3>
+       <ul class="breadcrumb">
+           <li><a href="javascript:void(0);">控制面板</a></li>
+           <li><a href="{:U('Picindex')}">返回</a></li>
+           <li class="active"> Editable Table </li>
+      </ul>
+</div>
+
+<div class="wrapper">
+             <div class="row">
+                <div class="col-sm-12">
+                <section class="panel">
+                <header class="panel-heading">
+                    Editable Table
+                    <span class="tools pull-right">
+                        <a href="javascript:;" class="fa fa-chevron-down"></a>
+                        <a href="javascript:;" class="fa fa-times"></a>
+                     </span>
+                </header>
+                <div class="panel-body">
+                <div class="adv-table editable-table ">
+                <div class="clearfix">
+                   
+                </div>
+                
+        </div>
+     </div>
+<form id="form_data" action="__SELF__" method="post" enctype="multipart/form-data">
+	<input type="hidden" name="id" value="{$editData.id}">    
+<table  style="width:50%;height:300px;margin-left:20px;font-size:16px">
+    <tr><th>相册名称:</th></tr>
+    <tr><td><input type="text" name="picname" size="47" value="{$editData.picname}"/> </td></tr>
+   
+ 	  <tr><th>效果图展示图片(鼠标点击图片删除)</th></tr>
+	  <tr>
+	  	<td>
+	    <div style="border: 1px dashed; height:320px;width: 155%;text-align: center;background-color:#f3f3f3;">
+	    <div style="margin-top:10px;">
+	    	<volist name="resImg" id="vo">
+	  		<span title="点击删除图片" id="{$vo.id}" class="pic" style="cursor: pointer;"><?php echo ShowImage($vo['img'],100);?></span>&nbsp&nbsp&nbsp;
+	  		</volist>
+	    </div>
+	  	<div style="width:98%;height: 90%;margin:10px auto;text-align: center;" id="pcs"></div>
+		<div style="margin-top:-100px;">
+	  	  <input onclick="$(this).parent().parent().find('#pcs').append('<span style=\'float:left\'><input  type=\'file\' name=\'pics[]\' id=\'file\' /><br/></span>')" type="button" value="点击添加图片" />
+	  	</div>
+	  </div>
+	 </td>
+	 </tr>
+   	<tr><th>商家名称:</th></tr>
+    <tr>
+      <td>
+        <select name="storename">
+          <option value="">--请选择商店--</option>
+          <volist name="ms" id="vo">
+            <?php 
+                if($editData['storeid']==$vo['id']){
+                    $che='selected="selected"';
+              }else{
+                    $che='';
+            }
+            ?>
+          <option value="{$vo.id}-{$vo.name}" {$che}>{$vo.name}</option>
+          </volist>
+        </select>
+      </td>
+    </tr>
+   	<tr>
+      <td colspan=2><input type="submit"  value="提交"/> &nbsp &nbsp &nbsp<input type="reset"  value="重置" /></td>  
+   	</tr>   
+   	               
+</table>
+</form> 
+</section>
+<script type="text/javascript">
+//ajax删除图片
+$('.pic').click(function(){
+	//获取id
+	var Id=$(this).attr('id');
+	var span=$(this);
+	//执行Ajax
+	if(confirm("确定删除吗")){
+		$.ajax({
+			type:'get',
+		    url:"{:U('ajaxDelImg','',false)}/id/"+Id,
+		    dataType:"json",
+		    success:function(data){
+		    	if(data.ok==1){
+		    		alert('删除成功！您可以重新上传更新');
+		    		//将标签删除
+		    		span.remove();
+		    	}else{
+		    		alert(data.error);
+		    	}
+		    }
+		});
+	}
+	
+});
+
+//jqureForm插件提交表单
+actionForm("{:U('PicEdit')}","{:U('Picindex')}");
+</script>
+
+
+
