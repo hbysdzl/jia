@@ -16,6 +16,7 @@ class MstoreModel extends Model{
 			array('info','require','请填写主营方向',1,'regex'),
 	);
 
+
 	//添加之前的处理
 	protected function _before_insert(&$data,$options){
 

@@ -283,12 +283,12 @@
         <!--body wrapper start-->
 		
 <style>
-.num{background:#34eb8a;margin:3px;width:20px;display:inline-block;padding-left:5px;color:#040906}
+.num{background:#34eb8a;margin:3px;width:20px;display:inline-block;padding-left:5px;color:#040906};
 </style>
  <div class="page-heading">
      <h3><?php echo ($title); ?></h3>
         <ul class="breadcrumb"><li><a href="#">控制面板</a></li>
-            <li><a href="javascript:void(0)">启用</a></li>
+            <li><a href="#">启用</a></li>
             <li class="active">禁用</li>
         </ul>
 </div>
@@ -309,14 +309,14 @@
                 <div class="clearfix">
                     <div class="btn-group">
                         <button id="editable-sample_new" class="btn btn-primary">
-                          	<a href="<?php echo U('brandAdd');?>">新增 </a><i class="fa fa-plus"></i>
+                          	<a href="<?php echo U('zoneadd');?>">新增 </a><i class="fa fa-plus"></i>
                         </button>
                     </div> 
                 </div>
             <div style="float:right;margin-top:-40px;">
-          <form action="/index.php/Admin/Material/brandIndex.html" method="post">
+            	<form action="/index.php/Admin/Material/classIndex" method="post">
 	                <div class="clearfix" style="margin-bottom:15px;">
-	                	 <input type="text" name="name" size="30" value="请输入品牌名称"/>
+	                	 <input type="text" name="zname" size="30" value="请输入名称"/>
 	                    <div class="btn-group">
 	                        <button id="editable-sample_new" class="btn btn-primary" type="submit">搜索</button>
 	                    </div>
@@ -329,36 +329,32 @@
                 <thead>
                 <tr>
                     <th style="width:50px;">ID</th>
-                    <th>品牌名称</th>
-                    <th>上级ID/名称</th>
-                    <th>品牌logo</th>
-                    <th>等级</th>
+                    <th>名称</th>
+                    <th>所属类别ID/名称</th>
                     <th>状态</th>
                     <th>操作</th>
                 </tr>
                 </thead>
                 <tbody>
                 
-          		<?php if(is_array($brList)): $i = 0; $__LIST__ = $brList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="">
+          		<?php if(is_array($HomList)): $i = 0; $__LIST__ = $HomList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="">
                     <td style="width:20px;"><?php echo ($vo["id"]); ?></td>
-                    <td><?php echo ($vo["name"]); ?></td>
+                    <td><?php echo ($vo["zname"]); ?></td>
                     <td><?php echo ($vo["fid"]); ?>/<?php echo ($vo["fname"]); ?></td>
-                    <td><?php ShowImage($vo['photo'],70);?></td>
-                    <td><?php echo ($vo["lev"]); ?></td>
                     <td>
                     	<?php if($vo['status']==1): ?><span style="color: green;">正常</span>
                     	<?php else: ?>
                     		<span style="color: red;">禁用</span><?php endif; ?>
                     </td>
                     <td style="color:green">
+                    	<?php if($vo['status']==1): ?><span style="cursor:pointer;" id="<?php echo ($vo["id"]); ?>" ><a href="javascript:void(0);" onclick='status("<?php echo U('setStatus','method=forbid&mo=homezone&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>禁用|</a></span> 
+                    		
+                    	<?php else: ?>
+                    	<span style="cursor:pointer;" id="<?php echo ($vo["id"]); ?>" ><a href="javascript:void(0);" onclick='status("<?php echo U('setStatus','method=resumew&mo=homezone&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>启用|</a></span><?php endif; ?>
                     	
-                    <?php if($vo['status']==1): ?><span style="cursor:pointer;" id="<?php echo ($vo["id"]); ?>"><a href="javascript:void(0);" onclick='status("<?php echo U('setStatus','method=forbid&mo=mbrand&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>禁用|</a></span> 
-                    <?php else: ?>
-                    <span style="cursor:pointer;" id="<?php echo ($vo["id"]); ?>"><a href="javascript:void(0);" onclick='status("<?php echo U('setStatus','method=resumew&mo=mbrand&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>启用|</a></span><?php endif; ?>
-                    	
-                    	<span style="cursor:pointer;" ><a href="<?php echo U('brandEdit','',false);?>/id/<?php echo ($vo["id"]); ?>">修改</a></span> |
-                    	<span id="<?php echo ($vo["id"]); ?>" class="del"style="cursor:pointer;" onclick='status("<?php echo U('setStatus','method=delete&mo=mbrand&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>删除</span>
-                    </td> 
+                    	<span style="cursor:pointer;" ><a href="<?php echo U('zoneedit','id='.$vo['id']);?>">修改</a></span> |
+                    	<span id="<?php echo ($vo["id"]); ?>" class="del"style="cursor:pointer;" onclick='status("<?php echo U('setStatus','method=delete&mo=homezone&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)' >删除</span>
+					</td>
                 </tr><?php endforeach; endif; else: echo "" ;endif; ?>      
                 </tbody>
            </table>
@@ -366,7 +362,8 @@
        <div style="margin-left:0px;"><?php echo $page_str;?></div>
         </div>
      </div>
-</section>  
+</section>
+  
 		<footer>
             2018 &copy; AdminEx by <a href="http://www.jiajoo.com" target="_blank">家造网</a>
   		 </footer>       

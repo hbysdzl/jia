@@ -259,7 +259,104 @@
     */
     public function brandIndex(){
          $this->assign(array('title'=>'建材品牌管理列表','OneAuth'=>$this->OneAuth,'TowAuth'=>$this->TowAuth));
+
+         //获取数据列表
+         $mdModel=D('mbrand');
+         //搜索功能
+         if (IS_POST) {
+            $sear=I('post.name');
+             if (empty($sear) || $sear=='请输入品牌名称') {
+                 $this->error('请输入品牌名称');
+             }
+
+         }
+         $totalNum=$mdModel->where($where)->count(); //获取符合条件的额记录数
+         $pageSize=10;
+         $res=getPage($totalNum,$pageSize);//调用封装的公共函数分页
+         $brList=$mdModel->alias('a')->field('a.*,b.name fname')->join('LEFT JOIN jia_mtype as b on a.fid=b.id')->where(array('a.status'=>array('egt',0),'a.name'=>array('LIKE','%'.$sear.'%')))->limit($res[0],$res[1])->order('id desc')->select();
+         $this->assign('brList',$brList);
+         $this->assign('page_str',$res[2]);
          $this->display();
+    }
+
+    /*
+    ***新增建材品牌
+    */
+    public function brandAdd(){
+        $this->assign(array('title'=>'新增品牌','OneAuth'=>$this->OneAuth,'TowAuth'=>$this->TowAuth));
+        $brandModel=D('mbrand');
+        if (IS_POST) {
+            if ($brandModel->create(I('post.'),1)) {
+                //处理logo上传
+                    $res=UploadOne('photo','shop/');
+                    if ($res['img']==1 && $res['images'][0]!='') {
+                        $brandModel->photo=$res['images'][0];
+                    }
+                    if ($brandModel->add()) {
+                        
+                        $this->ajaxReturn(array('status'=>1,'ok'=>'恭喜您，新增成功！'));
+                        die();
+                    }
+            }
+            $this->ajaxReturn(array('status'=>0,'error'=>$brandModel->getError()));
+        }
+        //获取品牌分类数据
+        $mtypeModel=M('mtype');
+        $mtype=$mtypeModel->where(array('status'=>array('egt',0)))->select();
+        $this->assign('mtype',$mtype);
+        $this->display();
+    }
+
+    /*
+    ***编辑建材品牌
+    */
+    public function brandEdit(){
+         $this->assign(array('title'=>'编辑品牌','OneAuth'=>$this->OneAuth,'TowAuth'=>$this->TowAuth));
+         $brandModel=D('mbrand');
+
+         if (IS_POST) {
+             if ($data=$brandModel->create(I('post.'),2)) {
+                 //处理logo上传
+                $res=UploadOne('pic','shop/');
+                    if ($res['images'][0]!=='') {
+                        $data['photo']=$res['images'][0];
+                        //需将硬盘上的旧图片删除
+                        $imgurl=$brandModel->field('photo')->find(I('post.id'));
+                        $imgurl=C('IMG_ROOTPATH').$imgurl['photo'];
+                        unlink($imgurl);    
+                    }
+                    if ($brandModel->save($data)!==false) {
+                        $this->ajaxReturn(array('status'=>1,'ok'=>'恭喜您！更新成功！'));
+                        die();
+                    }
+             }
+             $this->ajaxReturn(array('status'=>0,'error'=>$brandModel->getError()));
+             return;
+         }
+         $id=I('get.id');
+         if (!$id) {
+             $this->error('参数错误');
+         }
+         //获取编辑的数据
+         $editData=$brandModel->find($id);
+         $this->assign('editData',$editData);
+         //获取品牌分类数据
+         $mtypeModel=M('mtype');
+         $mtype=$mtypeModel->where(array('status'=>array('egt',0)))->select();
+         $this->assign('mtype',$mtype);
+         $brandModel=D('mbrand');
+         $this->display();
+    }
+
+    /*
+    ***建材分类管理列表
+    */
+    public function classIndex(){
+
+        $this->assign(array('title'=>'建材分类管理列表','OneAuth'=>$this->OneAuth,'TowAuth'=>$this->TowAuth));
+
+        
+        $this->display();
     }
 
     /***

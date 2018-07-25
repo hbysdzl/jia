@@ -282,18 +282,20 @@
 		
         <!--body wrapper start-->
 		
-<style>
-.num{background:#34eb8a;margin:3px;width:20px;display:inline-block;padding-left:5px;color:#040906}
+<style type="text/css">
+table{margin-top: -30px;}
+tr{height: 35px;}
+th{font-weight: bold;padding-top:18px;font-family:'微软雅黑';}
 </style>
- <div class="page-heading">
-     <h3><?php echo ($title); ?></h3>
-        <ul class="breadcrumb"><li><a href="#">控制面板</a></li>
-            <li><a href="javascript:void(0)">启用</a></li>
-            <li class="active">禁用</li>
-        </ul>
+<div class="page-heading">
+    <h3><?php echo ($title); ?></h3>
+       <ul class="breadcrumb">
+           <li><a href="javascript:void(0);">控制面板</a></li>
+           <li><a href="<?php echo U('brandIndex');?>">返回</a></li>
+           <li class="active"> Editable Table </li>
+      </ul>
 </div>
-
-        <div class="wrapper">
+<div class="wrapper">
              <div class="row">
                 <div class="col-sm-12">
                 <section class="panel">
@@ -307,66 +309,67 @@
                 <div class="panel-body">
                 <div class="adv-table editable-table ">
                 <div class="clearfix">
-                    <div class="btn-group">
-                        <button id="editable-sample_new" class="btn btn-primary">
-                          	<a href="<?php echo U('brandAdd');?>">新增 </a><i class="fa fa-plus"></i>
-                        </button>
-                    </div> 
+                   
                 </div>
-            <div style="float:right;margin-top:-40px;">
-          <form action="/index.php/Admin/Material/brandIndex.html" method="post">
-	                <div class="clearfix" style="margin-bottom:15px;">
-	                	 <input type="text" name="name" size="30" value="请输入品牌名称"/>
-	                    <div class="btn-group">
-	                        <button id="editable-sample_new" class="btn btn-primary" type="submit">搜索</button>
-	                    </div>
-	                </div>
-      			</form>
-            </div>
-      
-                <div class="space15"></div>
-                <table class="table table-striped table-hover table-bordered" id="editable-sample">
-                <thead>
-                <tr>
-                    <th style="width:50px;">ID</th>
-                    <th>品牌名称</th>
-                    <th>上级ID/名称</th>
-                    <th>品牌logo</th>
-                    <th>等级</th>
-                    <th>状态</th>
-                    <th>操作</th>
-                </tr>
-                </thead>
-                <tbody>
                 
-          		<?php if(is_array($brList)): $i = 0; $__LIST__ = $brList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="">
-                    <td style="width:20px;"><?php echo ($vo["id"]); ?></td>
-                    <td><?php echo ($vo["name"]); ?></td>
-                    <td><?php echo ($vo["fid"]); ?>/<?php echo ($vo["fname"]); ?></td>
-                    <td><?php ShowImage($vo['photo'],70);?></td>
-                    <td><?php echo ($vo["lev"]); ?></td>
-                    <td>
-                    	<?php if($vo['status']==1): ?><span style="color: green;">正常</span>
-                    	<?php else: ?>
-                    		<span style="color: red;">禁用</span><?php endif; ?>
-                    </td>
-                    <td style="color:green">
-                    	
-                    <?php if($vo['status']==1): ?><span style="cursor:pointer;" id="<?php echo ($vo["id"]); ?>"><a href="javascript:void(0);" onclick='status("<?php echo U('setStatus','method=forbid&mo=mbrand&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>禁用|</a></span> 
-                    <?php else: ?>
-                    <span style="cursor:pointer;" id="<?php echo ($vo["id"]); ?>"><a href="javascript:void(0);" onclick='status("<?php echo U('setStatus','method=resumew&mo=mbrand&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>启用|</a></span><?php endif; ?>
-                    	
-                    	<span style="cursor:pointer;" ><a href="<?php echo U('brandEdit','',false);?>/id/<?php echo ($vo["id"]); ?>">修改</a></span> |
-                    	<span id="<?php echo ($vo["id"]); ?>" class="del"style="cursor:pointer;" onclick='status("<?php echo U('setStatus','method=delete&mo=mbrand&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>删除</span>
-                    </td> 
-                </tr><?php endforeach; endif; else: echo "" ;endif; ?>      
-                </tbody>
-           </table>
-
-       <div style="margin-left:0px;"><?php echo $page_str;?></div>
         </div>
      </div>
-</section>  
+<form id="form_data" method="post" action="" enctype="multipart/form-data">    
+<table  style="width:50%;height:300px;margin-left:20px;font-size:16px">
+    <tr><th>品牌名称:</th></tr>
+    <tr><td><input type="text" name="name" size="47"/> </td></tr>
+   
+    <tr><th>上级分类:</th></tr>
+    <tr>
+      <td>
+        <select name="fid">
+          <?php if(is_array($mtype)): $i = 0; $__LIST__ = $mtype;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo["id"]); ?>">--<?php echo ($vo["name"]); ?>--</option><?php endforeach; endif; else: echo "" ;endif; ?>
+        </select>
+      </td>
+    </tr>
+    
+    <tr><th>品牌logo</th></tr>
+    <tr><td><input type="file" name="photo" id="picture"/></td></tr>
+    <tr><td><img src="" id="ps" width='100px'></td></tr>
+   
+    <tr><th>等级(越高排名越前):</th></tr>
+    <tr><td><input type="text" name="lev" size="47" /></td></tr>
+  
+  	<tr><th>评分（请填写数字1-10）</th>   
+    <tr><td><input type="text" name="fen" size="47"/></td></tr>
+   	
+   	<tr><th>一句话品牌（请输入汉字15个字符以内）</th>   
+    <tr><td><input type="text" name="adinfo" size="47"/></td></tr>
+
+   	<tr>
+      <td colspan=2><input type="submit"  value="提交"/> &nbsp &nbsp &nbsp<input type="reset"  value="重置" /></td>  
+   	</tr>   
+   	               
+</table>
+</form> 
+</section>
+<script type="text/javascript">
+	//表单提交
+	actionForm("<?php echo U('brandAdd');?>","<?php echo U('brandIndex');?>");
+
+//显示封面预览
+$('#picture').change(function(){
+	//获取图片文件
+	var pic_file=this.files[0];
+	//调用预览方法
+	preview_pic(pic_file);
+});
+
+//预览方法实现
+function preview_pic(pic){
+	//通过html5的FileReader对象
+	var r=new FileReader();
+	r.readAsDataURL(pic);
+	r.onload=function(){
+		$('#ps').attr('src',this.result).show();
+	}
+}
+</script> 
 		<footer>
             2018 &copy; AdminEx by <a href="http://www.jiajoo.com" target="_blank">家造网</a>
   		 </footer>       

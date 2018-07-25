@@ -1,11 +1,11 @@
 <layout name="Public/layout"/>
 <style>
-.num{background:#34eb8a;margin:3px;width:20px;display:inline-block;padding-left:5px;color:#040906}
+.num{background:#34eb8a;margin:3px;width:20px;display:inline-block;padding-left:5px;color:#040906};
 </style>
  <div class="page-heading">
      <h3>{$title}</h3>
         <ul class="breadcrumb"><li><a href="#">控制面板</a></li>
-            <li><a href="javascript:void(0)">启用</a></li>
+            <li><a href="#">启用</a></li>
             <li class="active">禁用</li>
         </ul>
 </div>
@@ -26,14 +26,14 @@
                 <div class="clearfix">
                     <div class="btn-group">
                         <button id="editable-sample_new" class="btn btn-primary">
-                          	<a href="{:U('brandAdd')}">新增 </a><i class="fa fa-plus"></i>
+                          	<a href="{:U('zoneadd')}">新增 </a><i class="fa fa-plus"></i>
                         </button>
                     </div> 
                 </div>
             <div style="float:right;margin-top:-40px;">
-          <form action="__SELF__" method="post">
+            	<form action="__SELF__" method="post">
 	                <div class="clearfix" style="margin-bottom:15px;">
-	                	 <input type="text" name="name" size="30" value="请输入品牌名称"/>
+	                	 <input type="text" name="zname" size="30" value="请输入名称"/>
 	                    <div class="btn-group">
 	                        <button id="editable-sample_new" class="btn btn-primary" type="submit">搜索</button>
 	                    </div>
@@ -46,23 +46,20 @@
                 <thead>
                 <tr>
                     <th style="width:50px;">ID</th>
-                    <th>品牌名称</th>
-                    <th>上级ID/名称</th>
-                    <th>品牌logo</th>
-                    <th>等级</th>
+                    <th>名称</th>
+                    <th>所属类别ID/名称</th>
                     <th>状态</th>
                     <th>操作</th>
                 </tr>
                 </thead>
                 <tbody>
                 
-          		<volist name="brList" id="vo">	
+          		<volist name="HomList" id="vo">
+				
                 <tr class="">
                     <td style="width:20px;">{$vo.id}</td>
-                    <td>{$vo.name}</td>
+                    <td>{$vo.zname}</td>
                     <td>{$vo.fid}/{$vo.fname}</td>
-                    <td><?php ShowImage($vo['photo'],70);?></td>
-                    <td>{$vo.lev}</td>
                     <td>
                     	<if condition="$vo['status']==1">
                     		<span style="color: green;">正常</span>
@@ -71,16 +68,17 @@
                     	</if>
                     </td>
                     <td style="color:green">
+                    	<if condition="$vo['status']==1">
+                    	<span style="cursor:pointer;" id="{$vo.id}" ><a href="javascript:void(0);" onclick='status("{:U('setStatus','method=forbid&mo=homezone&id='.$vo['id'])}",{$vo.id})'>禁用|</a></span> 
+                    		
+                    	<else/>
+                    	<span style="cursor:pointer;" id="{$vo.id}" ><a href="javascript:void(0);" onclick='status("{:U('setStatus','method=resumew&mo=homezone&id='.$vo['id'])}",{$vo.id})'>启用|</a></span>
+                    		
+                    	</if>
                     	
-                    <if condition="$vo['status']==1">
-                    <span style="cursor:pointer;" id="{$vo.id}"><a href="javascript:void(0);" onclick='status("{:U('setStatus','method=forbid&mo=mbrand&id='.$vo['id'])}",{$vo.id})'>禁用|</a></span> 
-                    <else/>
-                    <span style="cursor:pointer;" id="{$vo.id}"><a href="javascript:void(0);" onclick='status("{:U('setStatus','method=resumew&mo=mbrand&id='.$vo['id'])}",{$vo.id})'>启用|</a></span> 
-	                </if>
-                    	
-                    	<span style="cursor:pointer;" ><a href="{:U('brandEdit','',false)}/id/{$vo.id}">修改</a></span> |
-                    	<span id="{$vo.id}" class="del"style="cursor:pointer;" onclick='status("{:U('setStatus','method=delete&mo=mbrand&id='.$vo['id'])}",{$vo.id})'>删除</span>
-                    </td> 
+                    	<span style="cursor:pointer;" ><a href="{:U('zoneedit','id='.$vo['id'])}">修改</a></span> |
+                    	<span id="{$vo.id}" class="del"style="cursor:pointer;" onclick='status("{:U('setStatus','method=delete&mo=homezone&id='.$vo['id'])}",{$vo.id})' >删除</span>
+					</td>
                 </tr>
                 
             </volist>      
@@ -90,4 +88,5 @@
        <div style="margin-left:0px;"><?php echo $page_str;?></div>
         </div>
      </div>
-</section> 
+</section>
+ 
