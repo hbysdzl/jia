@@ -282,18 +282,20 @@
 		
         <!--body wrapper start-->
 		
-<style>
-.num{background:#34eb8a;margin:3px;width:20px;display:inline-block;padding-left:5px;color:#040906};
+<style type="text/css">
+table{margin-top: -30px;}
+tr{height: 35px;}
+th{font-weight: bold;padding-top:18px;font-family:'微软雅黑';}
 </style>
- <div class="page-heading">
-     <h3><?php echo ($title); ?></h3>
-        <ul class="breadcrumb"><li><a href="#">控制面板</a></li>
-            <li><a href="#">启用</a></li>
-            <li class="active">禁用</li>
-        </ul>
+<div class="page-heading">
+    <h3><?php echo ($title); ?></h3>
+       <ul class="breadcrumb">
+           <li><a href="javascript:void(0);">控制面板</a></li>
+           <li><a href="<?php echo U('zoneindex');?>">返回</a></li>
+           <li class="active"> Editable Table </li>
+      </ul>
 </div>
-
-        <div class="wrapper">
+<div class="wrapper">
              <div class="row">
                 <div class="col-sm-12">
                 <section class="panel">
@@ -307,93 +309,63 @@
                 <div class="panel-body">
                 <div class="adv-table editable-table ">
                 <div class="clearfix">
-                    <div class="btn-group">
-                        <button id="editable-sample_new" class="btn btn-primary">
-                          	<a href="<?php echo U('styleAdd');?>">新增 </a><i class="fa fa-plus"></i>
-                        </button>
-                    </div> 
+                   
                 </div>
-            <div style="float:right;margin-top:-40px;">
-            	<form action="/index.php/Admin/Personnel/styleIndex" method="post">
-	                <div class="clearfix" style="margin-bottom:15px;">
-	                	 <input type="text" name="name" size="30" value="请输入名称"/>
-	                    <div class="btn-group">
-	                        <button id="editable-sample_new" class="btn btn-primary" type="submit">搜索</button>
-	                    </div>
-	                </div>
-      			</form>
-            </div>
-      
-                <div class="space15"></div>
-                <table class="table table-striped table-hover table-bordered" id="editable-sample">
-                <thead>
-                <tr>
-                    <th style="width:50px;">ID</th>
-                    <th>名称</th>
-                    <th>所属类别ID/名称</th>
-                    <th>状态</th>
-                    <th>操作</th>
-                </tr>
-                </thead>
-                <tbody>
                 
-          		<?php if(is_array($wk_name)): $i = 0; $__LIST__ = $wk_name;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="">
-                    <td style="width:20px;"><?php echo ($vo["id"]); ?></td>
-                    <td><?php echo ($vo["name"]); ?></td>
-                    <td><?php echo ($vo["fid"]); ?>/<?php echo ($vo["fname"]); ?></td>
-                    <td>
-                    	<?php if($vo['status']==1): ?><span style="color: green;">正常</span>
-                    	<?php else: ?>
-                    		<span style="color: red;">禁用</span><?php endif; ?>
-                    </td>
-                    <td style="color:green">
-                    	<span style="cursor:pointer;" ><a href="<?php echo U('styleIndex','',false);?>/id/<?php echo ($vo["id"]); ?>/p/<?php echo I('get.p')?>">
-                    	<?php if($vo['status']==1): ?>禁用
-                    	<?php else: ?>
-                    		启用<?php endif; ?>
-                    	</a></span> |
-                    	<span style="cursor:pointer;" ><a href="<?php echo U('styleEdit','',false);?>/id/<?php echo ($vo["id"]); ?>">修改</a></span> |
-                    	<span vo="<?php echo ($vo["id"]); ?>" class="del"style="cursor:pointer;" >删除</span>
-					</td>
-                </tr><?php endforeach; endif; else: echo "" ;endif; ?>      
-                </tbody>
-           </table>
-
-       <div style="margin-left:0px;"><?php echo $page_str;?></div>
         </div>
      </div>
-
-<div id="tishi" style="width:1650px;height:50px;background:#f66b34;color:white;line-height:50px;position:fixed;top:80px;font-size:22px;padding-left:50px;display:none;"></div>     
+<form id="form_data" method="post" action="">
+	<input type="hidden" name="id" value="<?php echo ($dataEd["id"]); ?>">    
+<table  style="width:50%;height:300px;margin-left:20px;font-size:16px">
+    <tr><th>上级分类:</th></tr>
+    <tr>
+     	<td>
+     		<select name="fid">
+     			<option value="0">---顶级---</option>
+     			<?php if(is_array($fid)): $i = 0; $__LIST__ = $fid;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($dataEd['id']==$vo['id']){ continue; } ?>
+     			<?php if($dataEd['fid']==$vo['id']):?>
+     			<option value="<?php echo ($vo["id"]); ?>" selected="selected">---<?php echo ($vo["zname"]); ?>---</option>
+     			<?php else:?>
+     			<option value="<?php echo ($vo["id"]); ?>">---<?php echo ($vo["zname"]); ?>---</option>
+     			<?php endif; endforeach; endif; else: echo "" ;endif; ?>
+     		</select>
+	 	</td>
+	</tr>
+   
+    <tr><th>名称</th></tr>
+    <tr><td><input type="text" name="zname" value="<?php echo ($dataEd["zname"]); ?>"/></td></tr>
+   	
+   	<tr>
+      <td colspan=2><input type="submit"  value="提交" id="tijiao"/> &nbsp &nbsp &nbsp<input type="reset"  value="重置" /></td>  
+   	</tr>   
+   	               
+</table>
+</form> 
 </section>
-
-<script src="/Application/Admin/Public/js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript">
-$('.del').click(function(){
-	var id=$(this).attr('vo');
-	var tr=$(this).parent().parent();
-	if(confirm('确定要删除吗？')){
-		$.ajax({
-			type:"get",
-			url:"<?php echo U('ajaxStyledel','',false);?>/id/"+id,
+//jQureForm插件提交表单
+	$('form').submit(function(){
+		
+		$(this).ajaxSubmit({
+			type:"post",
+			url:"<?php echo U('zoneedit');?>",
 			dataType:"json",
-			success:function(data){
-				if(data.ok==1){
-					tr.remove();
-					$('#tishi').html('删除成功！');
-					$('#tishi').fadeIn(1000);
-					$('#tishi').fadeOut(3000);
+			success:function(msg){
+				if(msg.status==1){
+					layer.msg('恭喜您，修改成功！');
+					setTimeout(function(){
+						location.href="<?php echo U('zoneIndex');?>";
+					},800);
 				}else{
-					$('#tishi').html('删除失败!');
-					$('#tishi').fadeIn(1000);
-					$('#tishi').fadeOut(3000);				
+					layer.msg(msg.error);
 				}
 			}
 		});
-	
-	}	
-});
-</script>
-  
+		//阻止表单提交
+		return false;
+	});
+
+</script> 
 		<footer>
             2018 &copy; AdminEx by <a href="http://www.jiajoo.com" target="_blank">家造网</a>
   		 </footer>       

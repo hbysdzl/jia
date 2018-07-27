@@ -8,7 +8,7 @@ th{font-weight: bold;padding-top:18px;font-family:'微软雅黑';}
     <h3>{$title}</h3>
        <ul class="breadcrumb">
            <li><a href="javascript:void(0);">控制面板</a></li>
-           <li><a href="{:U('zoneIndex')}">返回</a></li>
+           <li><a href="{:U('classIndex')}">返回</a></li>
            <li class="active"> Editable Table </li>
       </ul>
 </div>
@@ -31,21 +31,29 @@ th{font-weight: bold;padding-top:18px;font-family:'微软雅黑';}
                 
         </div>
      </div>
-	<form id="form_data" method="post" action="">    
+	<form id="form_data" method="post" action="">
+		<input type="hidden" name="id" value="{$editData.id}">    
 		<table  style="width:50%;height:300px;margin-left:20px;font-size:16px">
 		    <tr><th>上级分类:</th></tr>
 		    <tr>
 		     	<td>
 		     		<select name="fid">
 		     			<option value="0">---顶级---</option>
-		     			<volist name="fid" id="vo">
-		     			<option value="{$vo.id}">---{$vo.zname}---</option>
+		     			<volist name="parentList" id="vo">
+	    	 				<?php
+	    	 					if($editData['fid']==$vo['id']){
+									$che='selected="selected"';	
+	     						}else{
+									$che='';
+	     						}
+		     				?>
+		     			<option value="{$vo.id}" {$che}>---{$vo.name}---</option>
 		     			</volist>
 		     		</select>
 			 	</td>
 			</tr>
 		    <tr><th>名称</th></tr>
-		    <tr><td><input type="text" name="zname"/></td></tr>
+		    <tr><td><input type="text" name="name" value="{$editData.name}" /></td></tr>
 		   	
 		   	<tr>
 		      <td colspan=2><input type="submit"  value="提交" /> &nbsp &nbsp &nbsp<input type="reset"  value="重置" /></td>  
@@ -56,26 +64,5 @@ th{font-weight: bold;padding-top:18px;font-family:'微软雅黑';}
 </section>
 <script type="text/javascript">
 	//jqureForm插件提交表单
-	$('form').submit(function(){
-		
-		$(this).ajaxSubmit({
-			
-			type:"post",
-			url:"{:U('zoneadd')}",
-			dataType:"json",
-			success:function(msg){
-				if(msg.status==1){
-					layer.msg('恭喜您，添加成功！');
-					setTimeout(function(){
-						location.href="{:U('zoneIndex')}";
-					},1000);
-				}else{
-					alert(msg.error);
-				}
-			}
-		});
-		//阻止表单提交
-		return false;
-	});
-
+	actionForm("{:U('classEdit')}","{:U('classIndex')}");
 </script>

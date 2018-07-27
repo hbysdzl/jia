@@ -283,12 +283,12 @@
         <!--body wrapper start-->
 		
 <style>
-.num{background:#34eb8a;margin:3px;width:20px;display:inline-block;padding-left:5px;color:#040906};
+.num{background:#34eb8a;margin:3px;width:20px;display:inline-block;padding-left:5px;color:#040906}
 </style>
  <div class="page-heading">
      <h3><?php echo ($title); ?></h3>
         <ul class="breadcrumb"><li><a href="#">控制面板</a></li>
-            <li><a href="#">启用</a></li>
+            <li><a href="javascript:void(0);">启用</a></li>
             <li class="active">禁用</li>
         </ul>
 </div>
@@ -309,12 +309,12 @@
                 <div class="clearfix">
                     <div class="btn-group">
                         <button id="editable-sample_new" class="btn btn-primary">
-                          	<a href="<?php echo U('styleAdd');?>">新增 </a><i class="fa fa-plus"></i>
+                          	<a href="<?php echo U('hdAdd');?>">新增 </a><i class="fa fa-plus"></i>
                         </button>
                     </div> 
                 </div>
             <div style="float:right;margin-top:-40px;">
-            	<form action="/index.php/Admin/Personnel/styleIndex" method="post">
+          <form action="/index.php/Admin/Material/hdIndex.html" method="post">
 	                <div class="clearfix" style="margin-bottom:15px;">
 	                	 <input type="text" name="name" size="30" value="请输入名称"/>
 	                    <div class="btn-group">
@@ -330,31 +330,41 @@
                 <tr>
                     <th style="width:50px;">ID</th>
                     <th>名称</th>
-                    <th>所属类别ID/名称</th>
+                    <th>品牌图片</th>
+                    <th>原价</th>
+                    <th>活动价</th>
+                    <th>活动时间</th>
+                    <th>活动期数</th>
+                    <th>优先级</th>
                     <th>状态</th>
                     <th>操作</th>
                 </tr>
                 </thead>
                 <tbody>
                 
-          		<?php if(is_array($wk_name)): $i = 0; $__LIST__ = $wk_name;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="">
+          		<?php if(is_array($goodsList)): $i = 0; $__LIST__ = $goodsList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="">
                     <td style="width:20px;"><?php echo ($vo["id"]); ?></td>
                     <td><?php echo ($vo["name"]); ?></td>
-                    <td><?php echo ($vo["fid"]); ?>/<?php echo ($vo["fname"]); ?></td>
+                    <td><?php ShowImage($vo['brandimg'],70);?></td>
+                    <td><?php echo ($vo["oprice"]); ?></td>
+                    <td><?php echo ($vo["nprice"]); ?></td>
+                    <td><?php echo date('Y-m-d H:i:s',$vo['time'])?></td>
+                    <td><?php echo ($vo["hdnum"]); ?></td>
+                    <td><?php echo ($vo["lev"]); ?></td>
                     <td>
                     	<?php if($vo['status']==1): ?><span style="color: green;">正常</span>
                     	<?php else: ?>
                     		<span style="color: red;">禁用</span><?php endif; ?>
                     </td>
                     <td style="color:green">
-                    	<span style="cursor:pointer;" ><a href="<?php echo U('styleIndex','',false);?>/id/<?php echo ($vo["id"]); ?>/p/<?php echo I('get.p')?>">
-                    	<?php if($vo['status']==1): ?>禁用
-                    	<?php else: ?>
-                    		启用<?php endif; ?>
-                    	</a></span> |
-                    	<span style="cursor:pointer;" ><a href="<?php echo U('styleEdit','',false);?>/id/<?php echo ($vo["id"]); ?>">修改</a></span> |
-                    	<span vo="<?php echo ($vo["id"]); ?>" class="del"style="cursor:pointer;" >删除</span>
-					</td>
+                    	
+                    <?php if($vo['status']==1): ?><span style="cursor:pointer;" id="<?php echo ($vo["id"]); ?>"><a href="javascript:void(0);" onclick='status("<?php echo U('setStatus','method=forbid&mo=jcgoods&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>禁用|</a></span> 
+                    <?php else: ?>
+                    <span style="cursor:pointer;" id="<?php echo ($vo["id"]); ?>"><a href="javascript:void(0);" onclick='status("<?php echo U('setStatus','method=resumew&mo=jcgoods&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>启用|</a></span><?php endif; ?>
+                    	
+                    	<span style="cursor:pointer;" ><a href="<?php echo U('edit','',false);?>/id/<?php echo ($vo["id"]); ?>">修改</a></span> |
+                    	<span id="<?php echo ($vo["id"]); ?>" class="del"style="cursor:pointer;" onclick='status("<?php echo U('setStatus','method=delete&mo=jcgoods&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>删除</span>
+                    </td> 
                 </tr><?php endforeach; endif; else: echo "" ;endif; ?>      
                 </tbody>
            </table>
@@ -362,38 +372,7 @@
        <div style="margin-left:0px;"><?php echo $page_str;?></div>
         </div>
      </div>
-
-<div id="tishi" style="width:1650px;height:50px;background:#f66b34;color:white;line-height:50px;position:fixed;top:80px;font-size:22px;padding-left:50px;display:none;"></div>     
-</section>
-
-<script src="/Application/Admin/Public/js/jquery-1.10.2.min.js"></script>
-<script type="text/javascript">
-$('.del').click(function(){
-	var id=$(this).attr('vo');
-	var tr=$(this).parent().parent();
-	if(confirm('确定要删除吗？')){
-		$.ajax({
-			type:"get",
-			url:"<?php echo U('ajaxStyledel','',false);?>/id/"+id,
-			dataType:"json",
-			success:function(data){
-				if(data.ok==1){
-					tr.remove();
-					$('#tishi').html('删除成功！');
-					$('#tishi').fadeIn(1000);
-					$('#tishi').fadeOut(3000);
-				}else{
-					$('#tishi').html('删除失败!');
-					$('#tishi').fadeIn(1000);
-					$('#tishi').fadeOut(3000);				
-				}
-			}
-		});
-	
-	}	
-});
-</script>
-  
+</section>  
 		<footer>
             2018 &copy; AdminEx by <a href="http://www.jiajoo.com" target="_blank">家造网</a>
   		 </footer>       

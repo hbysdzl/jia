@@ -354,8 +354,136 @@
     public function classIndex(){
 
         $this->assign(array('title'=>'建材分类管理列表','OneAuth'=>$this->OneAuth,'TowAuth'=>$this->TowAuth));
-
+        //获取分类信息
+        $Mdb=D('mtype');
+        $where['status']=array('egt',0);//没有被删除
+        //搜索功能
+        if(IS_POST){
+            $name=I('post.name');
+            if (empty($name) || $name=='请输入名称') {
+                $this->error('请输入搜索的名称');
+            }
+            $where['name']=array('LIKE','%'.$name.'%');
+        }
         
+        /**************************************设定分页****************/
+        $totalPage=$Mdb->where($where)->count();//总的记录数
+        $page=10;//每页显示的数量
+        //调用分页公用函数
+        $pageArr=getPage($totalPage,$page);
+        $MtyList= $Mdb->where($where)->limit($pageArr[0],$pageArr[1])->order('id desc')->select();
+        //获取父ID及名称
+        foreach ($MtyList as $k=>$v){
+            if ($v['fid']==0){
+                $MtyList[$k]['fname']="顶级";
+            }else{
+                //取出它的父级名称
+                $res=$Mdb->field('name')->find($v['fid']);
+                $MtyList[$k]['fname']=$res['name'];
+            }
+        }
+        
+        $this->assign('MtyList',$MtyList);
+        $this->assign('page_str',$pageArr[2]);
+        $this->display();
+    }
+
+    /***
+    ***新增建材分类
+    **/
+    public function classAdd(){
+        $this->assign(array('title'=>'新增建材分类','OneAuth'=>$this->OneAuth,'TowAuth'=>$this->TowAuth));
+        $mMdoel=M('mtype');
+        if (IS_POST) {
+            if ($mMdoel->create(I('post.'),1)) {
+                if ($mMdoel->add()) {
+                    $this->ajaxReturn(array('status'=>1,'ok'=>'恭喜您，新增成功！'));
+                    die();
+                }
+            }
+            $this->ajaxReturn(array('status'=>0,'error'=>$mMdoel->getError()));
+            return;
+        }
+        //取出顶级分类
+        $parentList=$mMdoel->where(array('status'=>array('egt',0),'fid'=>array('eq',0)))->select();
+        $this->assign('parentList',$parentList);
+        $this->display();
+    }
+
+    /***
+    ***编辑建材分类
+    **/
+    public function classEdit(){
+        $this->assign(array('title'=>'新增建材分类','OneAuth'=>$this->OneAuth,'TowAuth'=>$this->TowAuth));
+        $mMdoel=M('mtype');
+
+        if (IS_POST) {
+            if ($mMdoel->create(I('post.'),2)) {
+                if ($mMdoel->save()!==false) {
+                    $this->ajaxReturn(array('status'=>1,'ok'=>'恭喜您！更新成功！'));
+                    die();
+                }
+            }
+            $this->ajaxReturn(array('status'=>0,'error'=>$mMdoel->getError()));
+        }
+        //获取编辑的数据
+        $id=I('get.id');
+        if (!$id) {
+            $this->error('参数错误');
+        }
+        $editData=$mMdoel->find($id);
+        $this->assign('editData',$editData);
+        //取出顶级分类
+        $parentList=$mMdoel->where(array('status'=>array('egt',0),'fid'=>array('eq',0)))->select();
+        $this->assign('parentList',$parentList);
+        $this->display();
+    }
+
+    /**
+    ***建材活动管理
+    */
+    public function hdIndex(){
+        //根据用户权限显示菜单！
+         $this->assign(array('title'=>'建材活动管理列表','OneAuth'=>$this->OneAuth,'TowAuth'=>$this->TowAuth));
+         $goodsDb=D('Jcgoods');
+         $where['status']=array('egt',0);//没有被删除
+          
+         //搜索功能
+         if(IS_POST){
+             $name=I('post.name');
+             if (empty($name) || $name=='请输入名称') {
+                 $this->error('请输入需要查找的名称');
+             }
+             $where['name']=array('LIKE','%'.$name.'%');
+         }        
+         /**************************************设定分页****************/
+         $tatalPage=$goodsDb->where($where)->count();//总的记录数
+         $page=10;//每页显示的数量
+         $page_arr=getPage($tatalPage,$page);  //调用公共函数分页       
+         $goodsList=$goodsDb->where($where)->limit($page_arr['0'],$page_arr[1])->order('time desc')->select();
+         $this->assign('goodsList',$goodsList);
+         $this->assign('page_str',$page_arr[2]);         
+         $this->display();
+    }
+
+    /*
+    ***新增建材活动
+    *
+    */
+    public function hdAdd(){
+        $this->assign(array('title'=>'新增活动','OneAuth'=>$this->OneAuth,'TowAuth'=>$this->TowAuth));
+        $goodsDb=D('Jcgoods');
+        if (IS_POST) {
+            if ($goodsDb->create(I('post.'),1)) {
+                if ($goodsDb->add()) {
+                    $this->ajaxReturn(array('status'=>1,'ok'=>'恭喜您，新增成功！'));
+                    die();
+                }
+            }
+            $this->ajaxReturn(array('status'=>0,'error'=>$goodsDb->getError()));
+            return;
+        }
+
         $this->display();
     }
 

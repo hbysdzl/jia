@@ -311,7 +311,7 @@
                     </div>
                 </div>
                 
-              <form action="/index.php/Admin/Category/cateList" method="post">
+              <form action="/index.php/Admin/Category/cateList.html" method="post">
                 <div class="clearfix" style="margin-bottom:15px;">
                 	 <input type="text" name="cat_title" size="30" value="请输入类别名称"/>
                     <div class="btn-group">

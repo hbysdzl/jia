@@ -282,18 +282,21 @@
 		
         <!--body wrapper start-->
 		
-<style>
-.num{background:#34eb8a;margin:3px;width:20px;display:inline-block;padding-left:5px;color:#040906};
+<style type="text/css">
+table{margin-top: -30px;}
+tr{height: 35px;}
+th{font-weight: bold;padding-top:18px;font-family:'微软雅黑';}
 </style>
- <div class="page-heading">
-     <h3><?php echo ($title); ?></h3>
-        <ul class="breadcrumb"><li><a href="#">控制面板</a></li>
-            <li><a href="#">启用</a></li>
-            <li class="active">禁用</li>
-        </ul>
+<div class="page-heading">
+    <h3><?php echo ($title); ?></h3>
+       <ul class="breadcrumb">
+           <li><a href="javascript:void(0);">控制面板</a></li>
+           <li><a href="<?php echo U('hdIndex');?>">返回</a></li>
+           <li class="active"> Editable Table </li>
+      </ul>
 </div>
 
-        <div class="wrapper">
+<div class="wrapper">
              <div class="row">
                 <div class="col-sm-12">
                 <section class="panel">
@@ -307,93 +310,110 @@
                 <div class="panel-body">
                 <div class="adv-table editable-table ">
                 <div class="clearfix">
-                    <div class="btn-group">
-                        <button id="editable-sample_new" class="btn btn-primary">
-                          	<a href="<?php echo U('styleAdd');?>">新增 </a><i class="fa fa-plus"></i>
-                        </button>
-                    </div> 
+                   
                 </div>
-            <div style="float:right;margin-top:-40px;">
-            	<form action="/index.php/Admin/Personnel/styleIndex" method="post">
-	                <div class="clearfix" style="margin-bottom:15px;">
-	                	 <input type="text" name="name" size="30" value="请输入名称"/>
-	                    <div class="btn-group">
-	                        <button id="editable-sample_new" class="btn btn-primary" type="submit">搜索</button>
-	                    </div>
-	                </div>
-      			</form>
-            </div>
-      
-                <div class="space15"></div>
-                <table class="table table-striped table-hover table-bordered" id="editable-sample">
-                <thead>
-                <tr>
-                    <th style="width:50px;">ID</th>
-                    <th>名称</th>
-                    <th>所属类别ID/名称</th>
-                    <th>状态</th>
-                    <th>操作</th>
-                </tr>
-                </thead>
-                <tbody>
                 
-          		<?php if(is_array($wk_name)): $i = 0; $__LIST__ = $wk_name;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="">
-                    <td style="width:20px;"><?php echo ($vo["id"]); ?></td>
-                    <td><?php echo ($vo["name"]); ?></td>
-                    <td><?php echo ($vo["fid"]); ?>/<?php echo ($vo["fname"]); ?></td>
-                    <td>
-                    	<?php if($vo['status']==1): ?><span style="color: green;">正常</span>
-                    	<?php else: ?>
-                    		<span style="color: red;">禁用</span><?php endif; ?>
-                    </td>
-                    <td style="color:green">
-                    	<span style="cursor:pointer;" ><a href="<?php echo U('styleIndex','',false);?>/id/<?php echo ($vo["id"]); ?>/p/<?php echo I('get.p')?>">
-                    	<?php if($vo['status']==1): ?>禁用
-                    	<?php else: ?>
-                    		启用<?php endif; ?>
-                    	</a></span> |
-                    	<span style="cursor:pointer;" ><a href="<?php echo U('styleEdit','',false);?>/id/<?php echo ($vo["id"]); ?>">修改</a></span> |
-                    	<span vo="<?php echo ($vo["id"]); ?>" class="del"style="cursor:pointer;" >删除</span>
-					</td>
-                </tr><?php endforeach; endif; else: echo "" ;endif; ?>      
-                </tbody>
-           </table>
-
-       <div style="margin-left:0px;"><?php echo $page_str;?></div>
         </div>
      </div>
+<form id="form_data" action=" " method="post" enctype="multipart/form-data">    
+ <table  style="width:50%;height:300px;margin-left:20px;font-size:16px">
+    <tr><th>活动名称:</th></tr>
+    <tr><td><input type="text" name="name" size="47"/> </td></tr>
+    
+    <tr><th>活动期数:</th></tr>
+    <tr><td><input type="number" name="hdnum" min="1" max="30" /> </td></tr>
+    
+    <tr><th>活动有效时间:</th></tr>
+    <tr><td><input type="date" name="time" size="47"/> </td></tr>
+  
+    <tr><th>原价:</th></tr>
+    <tr><td><input type="text" name="oprice" size="47"/> </td></tr>
 
-<div id="tishi" style="width:1650px;height:50px;background:#f66b34;color:white;line-height:50px;position:fixed;top:80px;font-size:22px;padding-left:50px;display:none;"></div>     
+    <tr><th>现实优惠价:</th></tr>
+    <tr><td><input type="text" name="nprice" size="47"/> </td></tr>
+ 	  
+    <tr><th>效果图展示图片</th></tr>
+	  <tr>
+	  	<td>
+	  <div style="border: 1px dashed; height:320px;width: 155%;text-align: center;background-color:#f3f3f3;">
+	  	<div style="width:98%;height: 90%;margin:10px auto;text-align: center;" id="pcs"></div>
+		<div style="margin-top:-50px;">
+	  	  <input onclick="$(this).parent().parent().find('#pcs').append('<span style=\'float:left\'><input  type=\'file\' name=\'pics[]\' id=\'file\' /><br/></span>')" type="button" value="点击添加图片" />
+	  	</div>
+	  </div>
+	 </td>
+	 </tr>
+   <tr><th>品牌logo图片</th></tr>
+   <tr><td><input type="file" name="brandimg" id="picture"/><img src="" id="ps" width='70px'></td></tr>
+    
+    <tr><th>活动列表单图片</th></tr>
+    <tr><td><input type="file" name="listimg" id="logo"/><img src="" id="po" width='70px'></td></tr>
+    
+    <tr><th>商品参数图片</th></tr>
+    <tr><td><input type="file" name="pimg" id="pic"/><img src="" id="pi" width='70px'></td></tr>
+
+    <tr><th>等级（请填写数字，越高排名越前）:</th></tr>
+    <tr><td><input type="text" name="lev" size="47"/> </td></tr>
+    
+    <tr><th>商品详情描述:</th></tr>
+    <tr><td><textarea name="content" id="content"></textarea></td></tr>
+  <tr>
+    <td colspan=2><input type="submit"  value="提交"/> &nbsp &nbsp &nbsp<input type="reset"  value="重置" /></td>
+ 	</tr>   
+   	               
+</table>
+</form> 
 </section>
-
-<script src="/Application/Admin/Public/js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript">
-$('.del').click(function(){
-	var id=$(this).attr('vo');
-	var tr=$(this).parent().parent();
-	if(confirm('确定要删除吗？')){
-		$.ajax({
-			type:"get",
-			url:"<?php echo U('ajaxStyledel','',false);?>/id/"+id,
-			dataType:"json",
-			success:function(data){
-				if(data.ok==1){
-					tr.remove();
-					$('#tishi').html('删除成功！');
-					$('#tishi').fadeIn(1000);
-					$('#tishi').fadeOut(3000);
-				}else{
-					$('#tishi').html('删除失败!');
-					$('#tishi').fadeIn(1000);
-					$('#tishi').fadeOut(3000);				
-				}
-			}
-		});
-	
-	}	
+//jquerForm插件提交
+actionForm("<?php echo U('hdAdd');?>","<?php echo U('hdIndex');?>");
+
+//显示封面预览
+$('#pic').change(function(){
+  //获取图片文件
+  var pic_file=this.files[0];
+  //调用预览方法
+  preview_pic(pic_file,'pi');
+});
+
+//显示封面预览
+$('#picture').change(function(){
+  //获取图片文件
+  var pic_file=this.files[0];
+  //调用预览方法
+  preview_pic(pic_file,'ps');
+});
+
+//显示封面预览
+$('#logo').change(function(){
+  //获取图片文件
+  var pic_file=this.files[0];
+  //调用预览方法
+  preview_pic(pic_file,'po');
+});
+
+//预览方法实现
+function preview_pic(pic,s2){
+  //通过html5的FileReader对象
+  var r=new FileReader();
+  r.readAsDataURL(pic);
+  r.onload=function(){
+    $('#'+s2).attr('src',this.result).show();
+  }
+}
+
+//在线编辑器
+UE.getEditor('content', {
+  "initialFrameWidth" : "90%",   // 宽
+  "initialFrameHeight" : 400,      // 高
+  "maximumWords" : 3000,// 最大可以输入的字符数量
+  'scaleEnabled':true
 });
 </script>
-  
+
+
+
+ 
 		<footer>
             2018 &copy; AdminEx by <a href="http://www.jiajoo.com" target="_blank">家造网</a>
   		 </footer>       

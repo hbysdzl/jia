@@ -314,7 +314,7 @@
                     </div> 
                 </div>
             <div style="float:right;margin-top:-40px;">
-            	<form action="/index.php/Admin/Homeser/index.html" method="post">
+            	<form action="/index.php/Admin/Homeser/index" method="post">
 	                <div class="clearfix" style="margin-bottom:15px;">
 	                	 <input type="text" name="name" size="30" value="请输入人员名称"/>
 	                    <div class="btn-group">

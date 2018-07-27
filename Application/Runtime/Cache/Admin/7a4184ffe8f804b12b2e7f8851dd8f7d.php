@@ -311,7 +311,7 @@
                     </div>
                 </div>
          <div style="float:right;">
-              <form action="/index.php/Admin/Article/index/cat_id/42" method="post">
+              <form action="/index.php/Admin/Article/index/cat_id/40" method="post">
                 <div class="clearfix" style="margin-bottom:10px;margin-top:-32px;">
                 	 <input type="text" name="document" size="30" value="请输入文档标题"/>
                     <div class="btn-group"><button id="editable-sample_new" class="btn btn-primary" type="submit">搜索</button></div>

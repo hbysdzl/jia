@@ -24,15 +24,17 @@
   <link href="/Application/Admin/Public/css/style-responsive.css" rel="stylesheet">
 
   <script src="/Application/Admin/Public/js/jquery-1.10.2.min.js"></script>
+  
   <!-- jquery form表单提交插件 -->
   <script src="/Application/Admin/Public/js/form/jquery-1.8.3.min.js"></script>
   <script src="/Application/Admin/Public/js/form/jquery.form.js"></script>
   <script src="/Application/Admin/Public/js/layer/layer.js"></script>  
-  	
+  <!-- ajax状态操作 -->
+  <script src="/Application/Admin/Public/js/status.js"></script>
   <!-- 在线编辑器 -->
-<script type="text/javascript" charset="utf-8" src="/Application/Admin/Public/ueditor/ueditor.config.js"></script>
-<script type="text/javascript" charset="utf-8" src="/Application/Admin/Public/ueditor/ueditor.all.min.js"> </script>
-<script type="text/javascript" charset="utf-8" src="/Application/Admin/Public/ueditor/lang/zh-cn/zh-cn.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/Application/Admin/Public/ueditor/ueditor.config.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/Application/Admin/Public/ueditor/ueditor.all.min.js"> </script>
+  <script type="text/javascript" charset="utf-8" src="/Application/Admin/Public/ueditor/lang/zh-cn/zh-cn.js"></script>
 </head>
 
 <body class="sticky-header">
@@ -306,7 +308,7 @@
                 <div class="adv-table editable-table ">
                 
             <div style="float:left;>
-            	<form action="/index.php/Admin/Postuser/index" method="post">
+            	<form action="/index.php/Admin/Postuser/index/p/1.html" method="post">
 	                <div class="clearfix" style="margin-bottom:15px;">
 	                	 <input type="text" name="name" size="30" value="请输入名称"/>
 	                    <div class="btn-group">

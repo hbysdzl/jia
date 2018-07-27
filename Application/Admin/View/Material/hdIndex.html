@@ -1,6 +1,6 @@
 <layout name="Public/layout"/>
 <style>
-.num{background:#34eb8a;margin:3px;width:20px;display:inline-block;padding-left:5px;color:#040906};
+.num{background:#34eb8a;margin:3px;width:20px;display:inline-block;padding-left:5px;color:#040906}
 </style>
  <div class="page-heading">
      <h3>{$title}</h3>
@@ -26,12 +26,12 @@
                 <div class="clearfix">
                     <div class="btn-group">
                         <button id="editable-sample_new" class="btn btn-primary">
-                          	<a href="{:U('classAdd')}">新增 </a><i class="fa fa-plus"></i>
+                          	<a href="{:U('hdAdd')}">新增 </a><i class="fa fa-plus"></i>
                         </button>
                     </div> 
                 </div>
             <div style="float:right;margin-top:-40px;">
-            	<form action="__SELF__" method="post">
+          <form action="__SELF__" method="post">
 	                <div class="clearfix" style="margin-bottom:15px;">
 	                	 <input type="text" name="name" size="30" value="请输入名称"/>
 	                    <div class="btn-group">
@@ -47,19 +47,29 @@
                 <tr>
                     <th style="width:50px;">ID</th>
                     <th>名称</th>
-                    <th>所属类别ID/名称</th>
+                    <th>品牌图片</th>
+                    <th>原价</th>
+                    <th>活动价</th>
+                    <th>活动时间</th>
+                    <th>活动期数</th>
+                    <th>优先级</th>
                     <th>状态</th>
                     <th>操作</th>
                 </tr>
                 </thead>
                 <tbody>
                 
-          		<volist name="MtyList" id="vo">
+          		<volist name="goodsList" id="vo">
 				
                 <tr class="">
                     <td style="width:20px;">{$vo.id}</td>
                     <td>{$vo.name}</td>
-                    <td>{$vo.fid}/{$vo.fname}</td>
+                    <td><?php ShowImage($vo['brandimg'],70);?></td>
+                    <td>{$vo.oprice}</td>
+                    <td>{$vo.nprice}</td>
+                    <td><?php echo date('Y-m-d H:i:s',$vo['time'])?></td>
+                    <td>{$vo.hdnum}</td>
+                    <td>{$vo.lev}</td>
                     <td>
                     	<if condition="$vo['status']==1">
                     		<span style="color: green;">正常</span>
@@ -68,17 +78,16 @@
                     	</if>
                     </td>
                     <td style="color:green">
-                    	<if condition="$vo['status']==1">
-                    	<span style="cursor:pointer;" id="{$vo.id}" ><a href="javascript:void(0);" onclick='status("{:U('setStatus','method=forbid&mo=mtype&id='.$vo['id'])}",{$vo.id})'>禁用|</a></span> 
-                    		
-                    	<else/>
-                    	<span style="cursor:pointer;" id="{$vo.id}" ><a href="javascript:void(0);" onclick='status("{:U('setStatus','method=resumew&mo=mtype&id='.$vo['id'])}",{$vo.id})'>启用|</a></span>
-                    		
-                    	</if>
                     	
-                    	<span style="cursor:pointer;" ><a href="{:U('classEdit','id='.$vo['id'])}">修改</a></span> |
-                    	<span id="{$vo.id}" class="del"style="cursor:pointer;" onclick='status("{:U('setStatus','method=delete&mo=mtype&id='.$vo['id'])}",{$vo.id})' >删除</span>
-					</td>
+                    <if condition="$vo['status']==1">
+                    <span style="cursor:pointer;" id="{$vo.id}"><a href="javascript:void(0);" onclick='status("{:U('setStatus','method=forbid&mo=jcgoods&id='.$vo['id'])}",{$vo.id})'>禁用|</a></span> 
+                    <else/>
+                    <span style="cursor:pointer;" id="{$vo.id}"><a href="javascript:void(0);" onclick='status("{:U('setStatus','method=resumew&mo=jcgoods&id='.$vo['id'])}",{$vo.id})'>启用|</a></span> 
+	                </if>
+                    	
+                    	<span style="cursor:pointer;" ><a href="{:U('edit','',false)}/id/{$vo.id}">修改</a></span> |
+                    	<span id="{$vo.id}" class="del"style="cursor:pointer;" onclick='status("{:U('setStatus','method=delete&mo=jcgoods&id='.$vo['id'])}",{$vo.id})'>删除</span>
+                    </td> 
                 </tr>
                 
             </volist>      
@@ -88,5 +97,4 @@
        <div style="margin-left:0px;"><?php echo $page_str;?></div>
         </div>
      </div>
-</section>
- 
+</section> 
