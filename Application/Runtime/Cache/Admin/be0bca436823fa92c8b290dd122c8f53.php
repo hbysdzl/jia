@@ -348,7 +348,7 @@
                     <td><?php ShowImage($vo['brandimg'],70);?></td>
                     <td><?php echo ($vo["oprice"]); ?></td>
                     <td><?php echo ($vo["nprice"]); ?></td>
-                    <td><?php echo date('Y-m-d H:i:s',$vo['time'])?></td>
+                    <td><?php echo ($vo["time"]); ?></td>
                     <td><?php echo ($vo["hdnum"]); ?></td>
                     <td><?php echo ($vo["lev"]); ?></td>
                     <td>
@@ -362,7 +362,7 @@
                     <?php else: ?>
                     <span style="cursor:pointer;" id="<?php echo ($vo["id"]); ?>"><a href="javascript:void(0);" onclick='status("<?php echo U('setStatus','method=resumew&mo=jcgoods&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>启用|</a></span><?php endif; ?>
                     	
-                    	<span style="cursor:pointer;" ><a href="<?php echo U('edit','',false);?>/id/<?php echo ($vo["id"]); ?>">修改</a></span> |
+                    	<span style="cursor:pointer;" ><a href="<?php echo U('hdEdit','id='.$vo['id']);?>">修改</a></span> |
                     	<span id="<?php echo ($vo["id"]); ?>" class="del"style="cursor:pointer;" onclick='status("<?php echo U('setStatus','method=delete&mo=jcgoods&id='.$vo['id']);?>",<?php echo ($vo["id"]); ?>)'>删除</span>
                     </td> 
                 </tr><?php endforeach; endif; else: echo "" ;endif; ?>      

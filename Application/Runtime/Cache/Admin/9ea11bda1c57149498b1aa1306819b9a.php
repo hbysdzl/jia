@@ -286,6 +286,7 @@
 table{margin-top: -30px;}
 tr{height: 35px;}
 th{font-weight: bold;padding-top:18px;font-family:'微软雅黑';}
+.yourclass{width: 300px;height: 150px;background: #5fb15b;text-align:center;color:white}
 </style>
 <div class="page-heading">
     <h3><?php echo ($title); ?></h3>
@@ -315,27 +316,31 @@ th{font-weight: bold;padding-top:18px;font-family:'微软雅黑';}
                 
         </div>
      </div>
-<form id="form_data" action=" " method="post" enctype="multipart/form-data">    
+<form id="form_data" action=" " method="post" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="<?php echo ($editData["id"]); ?>">    
  <table  style="width:50%;height:300px;margin-left:20px;font-size:16px">
     <tr><th>活动名称:</th></tr>
-    <tr><td><input type="text" name="name" size="47"/> </td></tr>
+    <tr><td><input type="text" name="name" size="47" value="<?php echo ($editData["name"]); ?>" /> </td></tr>
     
     <tr><th>活动期数:</th></tr>
-    <tr><td><input type="number" name="hdnum" min="1" max="30" /> </td></tr>
+    <tr><td><input type="number" name="hdnum" min="1" max="30" value="<?php echo ($editData["hdnum"]); ?>" /> </td></tr>
     
     <tr><th>活动有效时间:</th></tr>
-    <tr><td><input type="date" name="time" size="47"/> </td></tr>
+    <tr><td><input type="date" name="time" size="47" value="<?php echo ($editData["time"]); ?>" /> </td></tr>
   
     <tr><th>原价:</th></tr>
-    <tr><td><input type="text" name="oprice" size="47"/> </td></tr>
+    <tr><td><input type="text" name="oprice" size="47" value="<?php echo ($editData["oprice"]); ?>" /> </td></tr>
 
     <tr><th>现实优惠价:</th></tr>
-    <tr><td><input type="text" name="nprice" size="47"/> </td></tr>
+    <tr><td><input type="text" name="nprice" size="47" value="<?php echo ($editData["nprice"]); ?>" /> </td></tr>
  	  
-    <tr><th>商品图片（尺寸：490px*490px；最多6张）</th></tr>
+    <tr><th>商品图片（点击进行删除，尺寸：490px*490px；最多6张）</th></tr>
 	  <tr>
 	  	<td>
 	  <div style="border: 1px dashed; height:320px;width: 155%;text-align: center;background-color:#f3f3f3;">
+      <div style="margin-top:10px;">
+        <?php if(is_array($imgData)): $i = 0; $__LIST__ = $imgData;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><span title="点击删除图片" id="<?php echo ($vo["id"]); ?>" class="pic" style="cursor: pointer;"><img src='/Public/Upload/<?php echo ($vo["img"]); ?>' width='100'></span><?php endforeach; endif; else: echo "" ;endif; ?>
+      </div>
 	  	<div style="width:98%;height: 90%;margin:10px auto;text-align: center;" id="pcs"></div>
 		<div style="margin-top:-50px;">
 	  	  <input onclick="$(this).parent().parent().find('#pcs').append('<span style=\'float:left\'><input  type=\'file\' name=\'pics[]\' id=\'file\' /><br/></span>')" type="button" value="点击添加图片" />
@@ -344,19 +349,19 @@ th{font-weight: bold;padding-top:18px;font-family:'微软雅黑';}
 	 </td>
 	 </tr>
    <tr><th>品牌logo图片</th></tr>
-   <tr><td><input type="file" name="brandimg" id="picture"/><img src="" id="ps" width='70px'></td></tr>
+   <tr><td><input type="file" name="brandimg" id="picture"/><img src="/Public/Upload/<?php echo ($editData["brandimg"]); ?>" id="ps" width='70px'></td></tr>
     
     <tr><th>活动列表单图片</th></tr>
-    <tr><td><input type="file" name="listimg" id="logo"/><img src="" id="po" width='70px'></td></tr>
+    <tr><td><input type="file" name="listimg" id="logo"/><img src="/Public/Upload/<?php echo ($editData["listimg"]); ?>" id="po" width='70px'></td></tr>
     
     <tr><th>商品参数图片</th></tr>
-    <tr><td><input type="file" name="pimg" id="pic"/><img src="" id="pi" width='70px'></td></tr>
+    <tr><td><input type="file" name="pimg" id="pic"/><img src="/Public/Upload/<?php echo ($editData["pimg"]); ?>" id="pi" width='70px'></td></tr>
 
     <tr><th>等级（请填写数字，越高排名越前）:</th></tr>
-    <tr><td><input type="text" name="lev" size="47"/> </td></tr>
+    <tr><td><input type="text" name="lev" size="47" value="<?php echo ($editData["lev"]); ?>" /> </td></tr>
     
     <tr><th>商品详情描述:</th></tr>
-    <tr><td><textarea name="content" id="content"></textarea></td></tr>
+    <tr><td><textarea name="content" id="content"><?php echo ($editData["content"]); ?></textarea></td></tr>
   <tr>
     <td colspan=2><input type="submit"  value="提交"/> &nbsp &nbsp &nbsp<input type="reset"  value="重置" /></td>
  	</tr>   
@@ -366,7 +371,7 @@ th{font-weight: bold;padding-top:18px;font-family:'微软雅黑';}
 </section>
 <script type="text/javascript">
 //jquerForm插件提交
-actionForm("<?php echo U('hdAdd');?>","<?php echo U('hdIndex');?>");
+actionForm("<?php echo U('hdEdit');?>","<?php echo U('hdIndex');?>");
 
 //显示封面预览
 $('#pic').change(function(){
@@ -401,6 +406,43 @@ function preview_pic(pic,s2){
     $('#'+s2).attr('src',this.result).show();
   }
 }
+
+//ajax删除单张图片数据
+$('.pic').click(function(){
+  if (confirm('确定要删除吗？')) {
+        var id=$(this).attr('id');
+        var sp=$(this);
+        $.ajax({
+          type:"get",
+          url:"<?php echo U('ajaxDelImg','',false);?>/id/"+id+"/model/jcimg",
+          dataType:"json",
+          success:function(data){
+              if(data.ok==1){
+                     layer.open({
+                      type: 1,
+                      title:false,
+                      closeBtn: 1,
+                      shadeClose: true,
+                      skin: 'yourclass',
+                      content: '<h4 style="line-height:110px;">恭喜你,删除成功！</h4>'
+                    });
+                  //将该标签删除
+                  sp.remove();
+              }else{
+                     layer.open({
+                      type: 1,
+                      title:false,
+                      closeBtn: 1,
+                      shadeClose: true,
+                      skin: 'yourclass',
+                      content: '<h3 style="line-height:105px;">删除失败！</h3>'
+                    });
+              }
+          }
+        });
+  }
+  
+});
 
 //在线编辑器
 UE.getEditor('content', {

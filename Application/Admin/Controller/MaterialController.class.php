@@ -234,26 +234,7 @@
         $this->assign('ms',$ms);
         $this->display();
     }
-
-    /*
-    ***ajax删除相册图片
-    */
-    
-    public function ajaxDelImg(){
-            $id=I('id');
-            $imgModel=M('mstoreimg');
-            $imgurl=$imgModel->field('img')->find($id);
-            $imgurl=C('IMG_ROOTPATH').$imgurl['img'];
-            if(unlink($imgurl)){
-                if($imgModel->delete($id)){
-                    $this->ajaxReturn(array('ok'=>1));
-                    die();
-                }
-            }
-            $this->ajaxReturn(array('ok'=>0,'error'=>'删除失败！'));
-    }
-    
-    
+ 
     /*
      ***建材品牌管理
     */
@@ -487,6 +468,41 @@
         $this->display();
     }
 
+    
+    /*
+    ***建材活动更新
+    */
+    public function hdEdit(){
+        $this->assign(array('title'=>'更新活动','OneAuth'=>$this->OneAuth,'TowAuth'=>$this->TowAuth));
+        
+        $JcgoodsModel=D('Jcgoods');
+        if (IS_POST) {
+             if ($JcgoodsModel->create(I('post.'),2)) {
+                    if ($JcgoodsModel->save()!==false) {
+                        $this->ajaxReturn(array('status'=>1,'ok'=>'恭喜您，更新成功！'));
+                        die();
+                    }
+                }
+                $this->ajaxReturn(array(status=>0,'error'=>$JcgoodsModel->getError()));   
+        }
+        
+        //取出待更新的数据
+        $id=I('get.id');
+        if (!$id) {
+            $this->error('参数错误！');    
+        }
+        
+        
+        $editData=$JcgoodsModel->find($id);
+        //取出图片数据
+        $jcimgModel=D('jcimg');
+        $imgData=$jcimgModel->where('gid='.$id)->select();
+        $this->assign('imgData',$imgData);
+        $this->assign('editData',$editData);
+        $this->display();
+    }
+   
+
     /***
     ***状态操作
     ***/
@@ -510,6 +526,25 @@
             default:
                 $this->error('非法参数');
         }
+    }
+
+     /*
+    ***ajax删除相册图片
+    */
+    
+    public function ajaxDelImg(){
+            $id=I('id');
+            $model=I('model');
+            $imgModel=M($model);
+            $imgurl=$imgModel->field('img')->find($id);
+            $imgurl=C('IMG_ROOTPATH').$imgurl['img'];
+            if(unlink($imgurl)){
+                if($imgModel->delete($id)){
+                    $this->ajaxReturn(array('ok'=>1));
+                    die();
+                }
+            }
+            $this->ajaxReturn(array('ok'=>0));
     }
 
  }

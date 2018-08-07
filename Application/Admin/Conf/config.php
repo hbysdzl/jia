@@ -7,6 +7,7 @@ return array(
         '__CSS__'  =>   '/Application/Admin/Public/css',
         '__IMG__'  =>   '/Application/Admin/Public/images',
         '__JS__'  =>    '/Application/Admin/Public/js',
+        '__PIC__' =>    '/Public/Upload',
     
     ),
 );

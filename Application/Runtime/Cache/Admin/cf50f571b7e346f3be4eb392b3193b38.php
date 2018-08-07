@@ -315,7 +315,7 @@ th{font-weight: bold;padding-top:18px;font-family:'微软雅黑';}
                 
         </div>
      </div>
-<form id="form_data" action="/index.php/Admin/Drawing/edit/id/114" method="post" enctype="multipart/form-data">
+<form id="form_data" action="/index.php/Admin/Drawing/edit/id/136" method="post" enctype="multipart/form-data">
 	<input type="hidden" name="id" value="<?php echo ($res["id"]); ?>">    
 <table  style="width:50%;height:300px;margin-left:20px;font-size:16px">
     <tr><th>效果图名称:</th></tr>

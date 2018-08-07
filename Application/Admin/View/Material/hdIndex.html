@@ -67,7 +67,7 @@
                     <td><?php ShowImage($vo['brandimg'],70);?></td>
                     <td>{$vo.oprice}</td>
                     <td>{$vo.nprice}</td>
-                    <td><?php echo date('Y-m-d H:i:s',$vo['time'])?></td>
+                    <td>{$vo.time}</td>
                     <td>{$vo.hdnum}</td>
                     <td>{$vo.lev}</td>
                     <td>
@@ -85,7 +85,7 @@
                     <span style="cursor:pointer;" id="{$vo.id}"><a href="javascript:void(0);" onclick='status("{:U('setStatus','method=resumew&mo=jcgoods&id='.$vo['id'])}",{$vo.id})'>启用|</a></span> 
 	                </if>
                     	
-                    	<span style="cursor:pointer;" ><a href="{:U('edit','',false)}/id/{$vo.id}">修改</a></span> |
+                    	<span style="cursor:pointer;" ><a href="{:U('hdEdit','id='.$vo['id'])}">修改</a></span> |
                     	<span id="{$vo.id}" class="del"style="cursor:pointer;" onclick='status("{:U('setStatus','method=delete&mo=jcgoods&id='.$vo['id'])}",{$vo.id})'>删除</span>
                     </td> 
                 </tr>
