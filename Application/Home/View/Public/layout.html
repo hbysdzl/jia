@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{:C('WEB_SITE_TITLE')}</title>
+    <meta name="keywords" content="中山装修，中山装饰公司，中山装饰，中山装修网，中山装修报价，中山家装公司，中山装修公司">
+    <meta name="description" content="特色698全包套餐,装修分期,45天标准工期,材料工厂直接采购,无中间商赚差价,免费一对一设计,各个镇区均配有体验店,一站式解决您的装修难题.服务热线:400-838-2229">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="__IMG__/icon/favicon.ico" media="screen">
+    <link rel="stylesheet" type="text/css" href="__CSS__/style.css?v=1.0.7">
+    <link rel="stylesheet" type="text/css" href="__CSS__/index.css?v=1.0.8">
+    <link rel="stylesheet" type="text/css" href="__CSS__/stywor.css?v=1.0.1">
+    <link rel="stylesheet" type="text/css" href="__CSS__/effect_sub.css?v=1.1.9">
+    <link rel="stylesheet" type="text/css" href="__CSS__/college.css?v=1.0.1">
+    <link rel="stylesheet" type="text/css" href="__CSS__/news.css?v=1.0.3">
+    <link rel="stylesheet" type="text/css" href="__CSS__/special.css?v=1.1.4">
+    <link rel="stylesheet" type="text/css" href="__CSS__/stytea.css?v=1.0.1">
+    <link rel="stylesheet" type="text/css" href="__CSS__/build.css?v=1.0.1">
+    <link rel="stylesheet" type="text/css" href="__CSS__/brand.css?v=1.0.4" /> 
+    <script type="text/javascript" src="__JS__/jquery.min.js?v=1.0.0"></script>
+    <script type="text/javascript" src="__JS__/banner.js?1.0.2"></script>
+    <script type="text/javascript" src="__JS__/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="__JS__/jquery.lazyload.min.js?v=1.0.0"></script>
+    <script type="text/javascript" src="__JS__/scroll.js?v=1.0.2"></script>
+      
+<script>
+    window.onload = function(){
+        var ms = document.getElementById("mysteve");
+        var add = document.getElementById("add");
+        ms.onmouseover = function(){
+            add.style.display = "block";
+        };
+        add.onmouseover = function(){
+            add.style.display = "block";
+        };
+        ms.onmouseout = function(){
+            add.style.display = "none";
+        };
+        add.onmouseout = function(){
+            add.style.display = "none";
+        };
+    };
+</script>
+</head>
+<body>
+    <div class="head_top">
+        <div>
+            <div class="user_login">
+             <?php  if(session('uid')){ ?>      
+                    <a href="#" id="hear_user"><span>您好, <?php echo session('nickname'); ?>!</span></a>
+                    <a href="<?php echo U('Member/logout');?>" id="hear_exit"><span>退出</span></a>
+            <?php  }else{ ?>     
+                
+                    <a href="<?php echo U('Member/register');?>" id="hear_reg"><span>注册</span></a>
+                    <a href="javascript:fromaaUrl()" id="hear_login"><span>登录</span></a>
+            <?php } ?> 
+            </div>
+            <div class="head_memu">
+                <a href="https://mall.jd.com/index-738854.html">京东旗舰店</a>
+                <a href="{:U('Hd/stages')}" target="_blank">装修贷</a>
+                <a href="{:U('Hd/act868')}" target="_blank">868套餐</a>
+                <a href="http://www.kujiale.com/v/show/Jiajoo" rel="nofollow" target="_blank">效果图</a>
+                <a href="{:U('Hd/brand')}" target="_blank">品牌故事</a>
+                <a href="javascript:;" class="head_memu_wx">关注微信<img src="__IMG__/icon/adr_wx.jpg" width="100" /></a>
+                <a href="{:U('article/invite')}" target="_blank">招贤纳士</a>
+                <a target="_blank" class="head_memu_wx">加盟热线：400-838-2229</a>
+            </div>
+        </div> 
+    </div>
+    <div class="header">
+        <!-- 主菜单 -->
+        <div class="logo clearfix">
+            <h1><a href="{:U('Index/index')}"><img src="__IMG__/icon/logo.jpg" alt="家造网"></a></h1>
+            <p><span style="letter-spacing: 1.7px;">O2O一站式时尚家装平台</span><span>设计 / 主材 / 配送 / 施工 / 售后</span></p>
+            <div class="telephone">
+                <span>服务热线：</span>
+                <a href="tel:4008382229">400-838-2229</a>
+            </div>
+        </div>
+        <div class="menu_div clearfix">
+            <ul class="menu" id="menu">
+                <i class="scrollBottom"></i>
+                <li class="menu_one"><a class="menu01" href="{:U('Index/index')}">首页</a></li>
+                <li class="menu_other">
+                    <a class="menu03" onclick="return false;" href="javascript:void(0)" target="_blank">全包套餐<img class="new-smdw" src="__IMG__/head_por/new-sm.gif"><span class="menu_icon"></span></a>
+                    <div>
+                        <a href="{:U('Hd/newact868')}" target="_blank">868套餐<img class="new-cmdw" src="__IMG__/head_por/new-cm.gif"></a>
+                        <a href="{:U('Hd/newact698')}" target="_blank">698套餐</a>
+                        <a href="{:U('Hd/custom')}" target="_blank">个性定制</a>
+                    </div>
+                </li>
+                <li class="menu_other">
+                    <a class="menu04" href="{:U('Xgtu/effect?fg=30')}" target="_blank">装修案例<span class="menu_icon"></span></a>
+                    <div>
+                        <a href="{:U('Xgtu/effect?fg=30')}" target="_blank">平面效果</a>
+                        <a href="http://www.kujiale.com/v/show/Jiajoo" rel="nofollow" target="_blank">VR效果</a>
+                    </div>
+                </li>
+                <li><a class="menu07" href="{:U('Hd/standards')}" target="_blank">装修标准</a></li>
+                <li><a class="menu02" href="{:U('Hd/stages')}" target="_blank">装修贷</a></li>
+                <li><a class="menu06" href="{:U('Article/gonglve')}" target="_blank">装修攻略</a></li>
+                <li><a class="menu08" href="{:U('Hd/join')}" target="_blank">招商加盟</a></li>
+                
+                <li class="menu_other">
+                    <a class="menu09" href="{:U('Hd/brand')}" target="_blank">关于家造网<span class="menu_icon"></span></a>
+                    <div>
+                        <a href="{:U('Sg/shopnbclist')}" target="_blank">线下体验馆</a>
+                        <a href="{:U('Hd/college')}" target="_blank">商学院</a>
+                        <a href="{:U('Article/news')}" target="_blank">公司新闻</a>
+                        <a href="{:U('Hd/brand')}" target="_blank">品牌故事</a>
+                        <a href="{:U('article/invite')}" target="_blank">招贤纳士</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="award clearfix">
+                <div class="bd">
+                    <ul>
+                        <li><a href="https://jiajoo.jd.com/" target="_blank"><img src="__IMG__/icon/aw_03.gif?122" alt="9.9微礼包" /></a></li>
+                        <li><a href="{:U('Hd/listing')}" target="_blank"><img src="__IMG__/icon/aw_02.png?123" alt="家造网挂牌科技版" style="margin-top: 16px;" /></a></li>
+                        <li><a href="javascript:;"><img src="__IMG__/icon/aw_01.png?123" alt="中国好声音全国海选优秀赞助商" style="margin-top: 16px;" /></a></li>
+                    </ul>
+                </div>
+                <a href="javascript:;" class="prev"></a>
+                <a href="javascript:;" class="next"></a>
+            </div>
+        </div>
+    </div>
+
+
+{__CONTENT__}
+
+<div id="footer">
+    <div class="footer clearfix">
+        <div class="footer_rela">
+            <em class="f_cont_title">联系我们</em>
+            <p>地址：广东省中山市火炬开发区孙文东路851号鼎峰时代大厦三楼</p>
+            <p>服务热线：400-838-2229&nbsp;&nbsp;&nbsp;&nbsp;售后电话：0760-85338839</p>
+            <p>加盟热线：400-838-2229</p>
+            <p>E-mail：jsd@jiajoo.com</p>
+        </div>
+        <div class="f_ewm">
+            <p><em class="f_cont_title f_title">关注我们</em></p>
+            <p>
+                <span><img src="__IMG__/icon/jdsc.jpg" width="83">京东商城</span>
+                <span><img src="__IMG__/icon/adr_wx.jpg" width="83">官方微信</span>
+                <span><img src="__IMG__/icon/adr_weibo.jpg" width="83">官方微博</span>
+            </p>
+        </div>
+    </div>
+    <div class="footer_friend">
+        友情连接：
+        <!-- <a rel="nofollow" href="http://wpa.qq.com/msgrd?V=1&amp;uin=3245038281&amp;Site=-&amp;Menu=yes" target="_blank" style="float:right;margin:0;"> <span></span>友链合作&gt;&gt;</a> -->
+        <br />
+        <!-- 模板中实例化控制器 -->
+        {:R('Footlink/linkList','','Widget')}
+    </div>
+</div>
+<div class="footer_font">
+    <div class="footer_bot clearfix">
+        <span>Copyright © 2015 广东家时代装饰科技股份有限公司  版权所有</span>
+        <span>
+            <a href="http://www.miitbeian.gov.cn/" rel="nofollow" target="_blank">粤ICP备15087169号-3</a>
+        </span>
+    </div>
+</div>
+<div class="man_menu">
+    <a href="javascript:;" onclick="hz6d_is_exist('setIsinvited()%3Bwindow.open(#liyc#https%3A%2F%2Fwww16.53kf.com%2FwebCompany.php%3Farg%3D10164577%26style%3D1%26language%3Dzh-cn%26charset%3Dgbk%26kflist%3Doff%26kf%3D826088521%40qq.com%2C3245038281%40qq.com%26zdkf_type%3D1%26referer%3Dhttp%253A%252F%252Fwww.abc.com%252Fhome%252Fxgtu%252Feffect.html%2523%2523%2523%26keyword%3D%26tfrom%3D1%26tpl%3Dcrystal_blue%26uid%3D98acce75e985e4778e6ee2ea71e571d3#liyc#%2C%20#liyc#_blank#liyc#%2C%20#liyc#height%3D600%2Cwidth%3D800%2Ctop%3D50%2Cleft%3D200%2Cstatus%3Dyes%2Ctoolbar%3Dno%2Cmenubar%3Dno%2Cresizable%3Dyes%2Cscrollbars%3Dno%2Clocation%3Dno%2Ctitlebar%3Dno#liyc#)');"  rel="nofollow" class="man_se">
+        <i></i>
+        <span>在线客服</span>
+    </a>
+    <a href="{:U('Hd/subdes')}" target="_blank" class="man_dis">
+        <i></i>
+        <span>免费设计</span>
+    </a>
+    <a href="{:U('Hd/quote')}" target="_blank" class="man_quo">
+        <i></i>
+        <span>免费报价</span>
+    </a>
+    <a href="javascript:;" class="man_wx">
+        <i></i>
+        <span>关注我们</span>
+        <div>
+            <img src="__IMG__/icon/adr_wx.jpg" />
+            <span>关注我们了解更多装修知识</span>
+        </div>
+    </a>
+    <a href="javascript:;" class="pro_subs">
+        <i></i>
+        <span>立即预约</span>
+    </a>
+    <a href="javascript:;" class="go_top">
+        <i></i>
+        <span>返回顶部</span>
+    </a>
+</div>
+</body>
+</html>
+
+<script>
+(function() {var _53code = document.createElement("script");_53code.src = "https://tb.53kf.com/code/code/10164577/1";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(_53code, s);})();
+</script>
+
+<script>
+// 荣誉滚动  
+jQuery(".award").slide({mainCell:".bd ul",autoPlay:true,mouseOverStop:true,interTime:5000});
+
+// 登陆获取来源链接
+function fromaaUrl(){
+    self.location = "<?php echo U('Member/login');?>?ReturnUrl=" + encodeURIComponent(location.href);
+}
+
+(function(){
+
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+
+$(function() {
+    $("img[data-src]").lazyload({effect: "fadeIn"});
+});
+</script>
+<script type="text/javascript" src="__JS__/style.js?v=1.0.2"></script>
+<script type="text/javascript" src="__JS__/index.js?v=1.0.2"></script>
+<script type="text/javascript" src="__JS__/scrollBar.js?v=1.0.0"></script>
+<script>
+    /**百度统计**/
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?eada5bbc482e16b735054cd49e54fee4";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+    /**百度统计**/
+</script>

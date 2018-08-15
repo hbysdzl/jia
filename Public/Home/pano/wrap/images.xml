@@ -1,0 +1,185 @@
+<krpano>
+
+<style name="hsStyle" capture="false" handcursor="true" fillcolor="0xffffff" fillalpha="0.00" bordercolor="0xffffff" borderalpha="0.07"
+		onover="tween(fillalpha, 0.5, 0.25);"
+		onout="tween(fillalpha, 0.0, 0.25);"
+		onhover="showtext(get(title),STYLE4)"
+		onclick="hsClick()"
+		/>
+<!-- 所需功能核心代码区 -->
+	
+	<events name="zoom" keep="true" onmousewheel="mZoomImage()" onresize="if(layer[ctZoom].visible, delayedcall(0.05, zoomInitial()));" />
+	 <!-- 容器 -->	
+	<layer name="ctZoom" keep="true" zorder="10" type="container" align="center" width="100%" height="100%" bgcolor="0x000000" bgalpha="0.5" bgroundedge="5" bgborder="1 0xffffff 1.0" visible="false" alpha="0.0"
+		onhover="set(control.mousefovchange, 0); set(control.touchzoom, false);"
+		onout="set(control.mousefovchange, 1); set(control.touchzoom, true);"				
+		>
+		
+			 <layer name="ctZoom1" keep="true" zorder="3" url="images/bg.png" align="center" width="100%" height="100%" bgcolor="0xffffff" bgalpha="1" 
+			 alpha="0.5" onover="tween(alpha,1);" onout="tween(alpha,0.5);"
+			   onclick="tween(layer[ctZoom].alpha, 0); tween(layer[zoomImage].alpha, 0); delayedcall(0.5, set(layer[ctZoom].visible, false));"
+		/>
+		<!-- 关闭按钮 -->	
+		<layer name="btnZoomClose" zorder="10" url="images/btnZMclose.png" align="righttop" alpha="0.5" onover="tween(alpha,1);" onout="tween(alpha,1);"
+			onclick="tween(layer[ctZoom].alpha, 0); tween(layer[zoomImage].alpha, 0); delayedcall(0.5, set(layer[ctZoom].visible, false));"
+			/> 
+			<!--连接按钮onclick="openurl('http://www.qq.com', _blank);"
+		<layer name="btnZoomClose" zorder="10" url="skin/shop.png" align="center" alpha="0.5"  
+		onclick="hsClick1()"
+			 />		
+			 -->	
+		<!-- 按钮 -->	   
+		<layer name="btnZoomIn" zorder="10" url="images/btnZMin.png"    x="100" y="5" align="leftbottom" alpha="1" scale="1.0"
+			onover="tween(alpha,1);" onout="tween(alpha,1);"
+			ondown="imageZoomIn(); onover();"
+			onup="onout();"/>
+		<!-- 按钮 -->	
+		<layer name="btnZoomOut" zorder="10" url="images/btnZMout.png"   x="100" y="5" align="rightbottom" alpha="1" scale="1.0"
+			onover="tween(alpha,1);" onout="tween(alpha,1);"
+			ondown="imageZoomOut(); onover(); "
+			onup="onout();"/>
+			
+		<!-- scrollarea官方插件 -->			
+		<layer name="zoomScrollarea" zorder="5" url="%SWFPATH%/plugins/scrollarea.swf" alturl="%SWFPATH%/plugins/scrollarea.js" align="center" direction="all" mwheel="false" scalechildren="true">
+		 
+			<layer name="zoomImage" align="top" alpha="0"   onloaded="zoomInitial()" onclick="tween(layer[ctZoom].alpha, 0); tween(layer[zoomImage].alpha, 0); delayedcall(0.5, set(layer[ctZoom].visible, false));"/>
+			
+		</layer>
+		
+		<layer name="zoomLoading" zorder="10" url="%SWFPATH%/plugins/textfield.swf"
+			background="false" align="center" visible="false" alpha="0.0"
+			css="color:#ffffff; font-weight:bold; font-size:14px; font-family:arial" html="图片加载中..."
+			
+			/>
+	</layer>
+	 <action name="hsClick1">
+	 if(get(plugin[btnClose1].visible,delayedcall(0.5, plugin[btnClose1].visible, false),delayedcall(0.5, plugin[btnClose1].visible, false);)
+	 
+ 
+	 }
+	 
+	 </action>
+	<action name="hsClick">
+		txtadd(layer[zoomImage].url, '', get(pic), '');		
+	 
+		set(layer[ctZoom].visible, true);
+		set(layer[zoomLoading].visible, true);
+		tween(layer[ctZoom].alpha, 1, 0.5);
+		tween(layer[zoomLoading].alpha, 1, 0.1);
+		checkZoomLoaded();
+		
+		
+	</action>
+	
+	<action name="checkZoomLoaded">
+		if(layer[zoomImage].loaded,
+			tween(layer[zoomLoading].alpha, 0, 0.3, linear, set(layer[zoomLoading].visible, false); );
+			tween(layer[zoomImage].alpha, 1.0, 1.0);
+			zoomInitial();,
+			delayedcall(0.1, checkZoomLoaded());
+		);
+	</action>
+	
+	<action name="mZoomImage">
+		if(layer[ctZoom].hovering,
+			if(wheeldelta GT 0, imageZoomIn();, imageZoomOut(););
+		);
+	</action>
+	
+	<action name="imageZoomIn">		
+	 
+		set(newZoomScale, get(layer[zoomImage].scale));
+		roundval(newZoomScale, 2);
+		add(newZoomScale, imageZoomStep);
+		if(newZoomScale GT imageZoomMax, copy(newZoomScale, imageZoomMax); );
+		adaptScrollarea();
+		set(layer[zoomImage].scale, get(newZoomScale));
+	</action>
+	
+	<action name="imageZoomOut"> 
+     	
+		set(newZoomScale, get(layer[zoomImage].scale));
+		roundval(newZoomScale, 2);
+		sub(newZoomScale, imageZoomStep);
+		if(newZoomScale LT imageZoomMin, copy(newZoomScale, imageZoomMin); );
+		adaptScrollarea();
+		set(layer[zoomImage].scale, get(newZoomScale));
+		 
+	</action>
+	
+	<action name="adaptScrollarea">
+		copy(layer[zoomScrollarea].scale, newZoomScale);
+	</action>
+	
+	<action name="zoomInitial">
+	 
+		 
+		copy(layer[zoomScrollarea].width, layer[zoomImage].imagewidth);
+		copy(layer[zoomScrollarea].height, layer[zoomImage].imageheight);
+		<!--
+		div(imageScale, layer[zoomImage].imageheight, layer[zoomImage].imagewidth);
+		div(zoomScale, layer[ctZoom].pixelheight, layer[ctZoom].pixelwidth);
+		-->
+		if(imageScale LT zoomScale,
+			div(newZoomScale, 1,1);,
+			div(newZoomScale,1,1);
+		);
+		
+		copy(layer[zoomImage].scale, newZoomScale);
+		adaptScrollarea();
+		<!-- 调整初始显示图像的位置 -->
+		mul(newZoomHeight, newZoomScale, layer[zoomImage].imageheight);		
+		if(newZoomHeight GT layer[ctZoom].pixelheight,
+			sub(newZoomY, newZoomHeight, layer[ctZoom].pixelheight);
+			div(newZoomY, 2);
+			mul(newZoomY, -1);
+			layer[zoomScrollarea].setcenter(0, get(newZoomY));,
+			layer[zoomScrollarea].setcenter(0,0);
+		);		
+		<!-- 设定缩放边际 -->
+		copy(imageZoomMin, newZoomScale);
+		set(imageZoomMax, 2);
+		<!--if(imageZoomMin GT 1, copy(imageZoomMax, newZoomScale););-->
+		set(imageZoomStep, 0.05);
+		roundval(imageZoomMin, 1);
+		roundval(imageZoomMax, 2);
+	</action>
+	
+	
+	
+	<!-- mouse wheel event for zooming -->
+	<events name="image_zoom_events"  onmousewheel="image_onmousewheel();" />
+
+	<!-- the action for zooming either via the mouse wheel for via touch gestures -->
+	<action name="image_onmousewheel">
+		if(iszoom,
+			if(wheeldelta_touchscale GT 0,
+				<!-- touch zoom -->
+				if(startzoom,
+					set(startzoom,false);
+					copy(start_wheeldelta_touchscale, wheeldelta_touchscale);
+					copy(start_imagescale, layer[image].scale);
+				  );
+
+				div(tmp, wheeldelta_touchscale, start_wheeldelta_touchscale);
+				mul(layer[image].scale, start_imagescale, tmp);
+			  ,
+				<!-- mouse wheel zoom -->
+				mul(sit,get(wheeldelta),0.05);
+				mul(sit,layer[image].scale);
+				add(layer[image].scale,sit);
+			  );
+		);
+	</action>
+	<!--krpano devices="mobile">
+	<layer name="ctZoom">
+		 
+			<layer name="btnZoomIn"   scale="0.7" />
+			<layer name="btnZoomOut"     scale="0.7" />
+			
+			
+			
+			<layer name="skin_btn_show"   scale="1" x="0" y="-58" />
+		</layer>
+	</krpano-->
+</krpano>

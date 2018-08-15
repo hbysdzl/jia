@@ -1,1 +1,1 @@
-open_basedir="D:\UPUPW_NP5.4\htdocs\test\;D:\UPUPW_NP5.4\memcached\;D:\UPUPW_NP5.4\phpmyadmin\;D:\UPUPW_NP5.4\temp\;C:\Windows\Temp\"
+open_basedir="D:\UPUPW_NP5.4\htdocs\myjia\;D:\UPUPW_NP5.4\memcached\;D:\UPUPW_NP5.4\phpmyadmin\;D:\UPUPW_NP5.4\temp\;C:\Windows\Temp\"

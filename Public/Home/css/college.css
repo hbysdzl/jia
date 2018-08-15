@@ -1,0 +1,35 @@
+.college{width: 1200px; margin: 0 auto; color: #343434; font-size: 16px; }
+.college>div{padding: 50px 0; border-bottom: 1px solid #e2e2e2; }
+.college p{text-indent: 2rem; }
+.college h2,
+.college h3{text-align: center; font-size: 26px; margin: 15px 0 25px; }
+.college h2::before,
+.college h3::before{content: ""; display: inline-block; width: 25px; height: 25px; margin-bottom: -4px; margin-right: 10px; background: url(../img/college/coll.png) center center no-repeat; }
+.college_school p{line-height: 32px; margin-top: 25px; }
+.college_school img{margin-top: 35px; }
+
+.college_wq1 img,
+.college_wq2 img,
+.college_wq3 img,
+.college_wq4 img{width: 578px; height: 316px; }
+.college_wq1 p,
+.college_wq2 p,
+.college_wq3 p,
+.college_wq4 p{line-height: 28px; }
+.college_wq1 div,
+.college_wq2 div,
+.college_wq3 div,
+.college_wq4 div{width: 592px; }
+.college_wq1 div{float: left; }
+.college_wq1 img{float: right; }
+.college_wq2 div{float: right; }
+.college_wq2 h3{margin-top: 0; }
+.college_wq2 img{float: left; margin-top: 53px; }
+.college_wq3 div{float: left; }
+.college_wq3 h3{margin-top: 0; }
+.college_wq3 img{float: right; margin-top: 55px; }
+.college_wq4 div{float: right; }
+.college_wq4 h3{margin-top: 0; }
+.college_wq4 img{float: left; }
+
+

@@ -1,0 +1,1 @@
+<?php if (!defined('THINK_PATH')) exit(); if(is_array($urllist)): $i = 0; $__LIST__ = $urllist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><a href="<?php echo ($vo["url"]); ?>" target="_blank"><?php echo ($vo["linkname"]); ?></a><?php endforeach; endif; else: echo "" ;endif; ?>

@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<krpano showerrors="false" onstart="action(start);action(fixfov);"  idletime="20" now_play="">
+ 
+    <include url="%SWFPATH%/base.xml" />
+    <include url="%SWFPATH%/plugins/showtext.xml" />
+    <plugin name="skin_gyro" keep="true" url="%SWFPATH%/plugins/gyro.js" devices="html5+!firefox" enabled="true" camroll="true" friction="0" velastic="0" onavailable="if(device.fullscreensupport, if(device.mobile,add(layer[skin_btn_gyro].x,40),add(layer[skin_btn_gyro].x,20));); set(layer[skin_btn_gyro].visible,true);" />
+    <action name="start">
+        loadscene(scene1, null, MERGE);
+                if(autorotate.enabled == true ,bombtimer(0););
+            </action>
+
+    <plugin name="soundinterface"
+        url="%SWFPATH%/plugins/soundinterface.swf"
+        alturl="%SWFPATH%/plugins/soundinterface.js"
+    rootpath="" preload="true" keep="true" loops="1" />
+
+    
+    
+    <autorotate enabled="true" waittime="5" speed="3" accel="1" horizon="0" tofov="100" />
+    
+    <include url="%SWFPATH%/ui/ui_007/skin/skin.xml" /> <include url="%SWFPATH%/krpanocms.xml?1493693275" />
+    <include url="%SWFPATH%/gundongzimu.xml?1493693275" />
+    <include url="%SWFPATH%/cms_config.xml?1493693275" />
+    <include url="%SWFPATH%/html.xml?1493693275" />
+    <include url="%SWFPATH%/images.xml?1493693275" />
+    <include url="%SWFPATH%/shuoyishuo.xml?1493693275" />   
+    <include url="%SWFPATH%/hotspotComment.xml?1493693275" />   <include url="%SWFPATH%/video-player.xml?1493693275" />
+
+<events onclick="screentosphere(mouse.x,mouse.y,h,v);trace(h);" />
+<events onxmlcomplete="set(control.mousetype, moveto);" />
+<skin_settings openautonext="1" thumbs_width="120" thumbs_height="90" thumbs_padding="10" thumbs_crop="" krpanocms="true" domainlink="http://vr.91smy.com" groupid="1" webvr="true" bgmusic="false" bgyunyin="false" erweima="true" opennews="false" news="" opentel="false" tel="openurl('tel://',_blank)" openhttp="false" http="openurl('',_blank )" opendaohang="false" daohang="openurl('http://apis.map.qq.com/uri/v1/geocoder?coord=',_blank )" opencard="false" ope_bdmap="" bd_map="" openzan="true" pano_id="31"></skin_settings>
+<lensflareset name="DEFAULT" url="%SWFPATH%/lensflare/flares.jpg"/>
+
+
+
+
+<style name="cms_view" url="%SWFPATH%/plugins/textfield.swf" zorder="0" align="lefttop" x="20" oy="30" keep="true" backgroundcolor="0xFFFFFF" backgroundalpha="0.0" roundedge="0" css="font-family:黑体; font-size:16px; color:#FFFFFF;"  width="300" autoheight="" />
+<layer name="cms_view_html" style="cms_view" html=""/>
+<action name="cms_view_html">
+set(layer[cms_view_html].html,%1);
+</action>
+
+
+<layer name="Iframe_close" keep="true" url="/Public/pano/images/fx.png" align="righttop" edge="righttop" width="25" height="25" x="8" y="8" onclick="closeIframe()" zorder="1" visible="false" />
+<action name="Iframe_bg">
+if(layer[openIframe_bg],'',
+    <!-- step one - add a background layer and fade it in -->
+    set(layer[Iframe_close].visible, true);
+    addlayer(openIframe_bg);
+    set(layer[openIframe_bg].type, container);
+    set(layer[openIframe_bg].zindex, 999999);
+    set(layer[openIframe_bg].align, lefttop);
+    set(layer[openIframe_bg].width, 100%);
+    set(layer[openIframe_bg].height, 100%);
+    set(layer[openIframe_bg].bgcolor, 0x000000);
+    set(layer[openIframe_bg].bgalpha, 0.5);
+    set(layer[openIframe_bg].bgcapture, true);
+    set(layer[openIframe_bg].handcursor, false);
+    set(layer[openIframe_bg].alpha, 0.0);
+    set(layer[openIframe_bg].onclick, closeIframe());   
+    tween(layer[openIframe_bg].alpha, 1.0, 0.5, default);
+);
+</action>
+<action name="openIframe">
+Iframe_bg();
+js(openIframe(%1,%2,%3,1));
+</action>
+
+<krpano devices="mobile">
+<action name="openIframe">
+txtadd(openurl,%3,'/m_type/1');
+openwindow(get(openurl),100%,100%);
+</action>
+</krpano>
+
+<action name="openLink">
+js(openLink(%1));
+</action>
+<action name="closeIframe">
+set(layer[openIframe_bg].onclick, null);
+js(closeIframe());
+tween(layer[openIframe_bg].alpha, 0.0, 0.5, default,
+    removelayer(openIframe_bg);
+    set(layer[Iframe_close].visible, false);
+);
+</action>
+
+
+<krpano devices="mobile">
+<layer name="zj-logo" x="10" y="45" scale="0.5" altscale="0.5"/>
+<layer name="ui_logo" y="50" scale="0.5" altscale="0.5" />
+<layer name="welcome" scale="0.2" altscale="0.2"/>
+<style name="cms_view" x="10" css="font-family:黑体; font-size:12px; color:#FFFFFF;" />
+</krpano>
+
+
+
+    
+    
+     
+
+    
+    
+    <scene name="scene1" title="大厅" thumburl="../wx/scene/scene1/thumb.jpg" onstart="newsceneevent();" firsttime="true">
+                    <events name="viewevent" />
+            <view hlookat="0" vlookat="0" fov="80" fisheye="0" fovmin="80" fovmax="100" />            
+            <preview url="../wx/scene/scene1/view/preview.jpg" />
+                <image type="CUBE">
+                    <cube url="../wx/scene/scene1/view/pano_%s.jpg" />
+                </image>            
+            
+                                        
+            <hotspot style="skin_hotspotstyle" title="展厅1" devices="all" name="spot422" alpha="1" ath="154.69603611616" scale="0.63"
+                    atv="21.618640784033" url="%SWFPATH%/spot/spot8.png"
+                    align="center" edge="center" zorder="2"
+                    onloaded="showtxt_action();"                            
+                    onclick="ifnot(device.html5,moveto(154.69603611616,21.618640784033,smooth());loadscene(scene2, view.vlookat=0&amp;view.hlookat=0, MERGE,ZOOMBLEND(1,3));,loadscene(scene2, view.hlookat=0, MERGE,ZOOMBLEND(1,3)););"                    />
+                    
+                        <!-- shipinredian -->
+                            
+            <!-- shipinredian for mobile -->
+                        <!-- musicredian -->
+                
+
+
+
+
+            
+            
+            
+
+            
+
+            
+            <!-- requtanshipin -->
+                        
+
+
+            <!-- shipinrequ -->
+                                    
+
+            
+            
+            
+                        
+            <action name="newsceneevent">
+                                                    if(scene[0].firsttime,
+                        becomestar();
+                        set(scene[0].firsttime,false);
+                    delayedcall(2, normalview(0,0,80)));                                            </action>
+
+                        <events onviewchange= "set(plugin[luopanbox].visible,false);set(plugin[luopan_bang].visible,false);"/>
+        </scene>        <scene name="scene2" title="展示1" thumburl="../wx/scene/scene2/thumb.jpg" onstart="newsceneevent();">            <events name="viewevent" />
+            <view hlookat="0" vlookat="0" fov="80" fisheye="0" fovmin="80" fovmax="100" />            
+            <preview url="../wx/scene/scene2/view/preview.jpg" />
+                <image type="CUBE">
+                    <cube url="../wx/scene/scene2/view/pano_%s.jpg" />
+                </image>            
+            
+                                        
+            <hotspot style="skin_hotspotstyle" title="展厅2" devices="all" name="spot423" alpha="1" ath="-26.307399325188" scale="1"
+                    atv="27.077742111405" url="%SWFPATH%/spot/spot2.png"
+                    align="center" edge="center" zorder="2"
+                    onloaded="showtxt_action();"                            
+                    onclick="ifnot(device.html5,moveto(-26.307399325188,27.077742111405,smooth());loadscene(scene3, view.vlookat=0&amp;view.hlookat=0, MERGE,ZOOMBLEND(1,3));,loadscene(scene3, view.hlookat=0, MERGE,ZOOMBLEND(1,3)););"                    />
+                    <hotspot style="skin_hotspotstyle" title="大厅" devices="all" name="spot428" alpha="1" ath="29.558510325361" scale="0.34"
+                    atv="8.806107123123" url="%SWFPATH%/spot/spot6.png"
+                    align="center" edge="center" zorder="2"
+                    onloaded="showtxt_action();"                            
+                    onclick="ifnot(device.html5,moveto(29.558510325361,8.806107123123,smooth());loadscene(scene1, view.vlookat=0&amp;view.hlookat=0, MERGE,ZOOMBLEND(1,3));,loadscene(scene1, view.hlookat=0, MERGE,ZOOMBLEND(1,3)););"                    />
+                    
+                        <!-- shipinredian -->
+                            
+            <!-- shipinredian for mobile -->
+                        <!-- musicredian -->
+                
+
+
+
+
+            
+            
+            
+
+            
+
+            
+            <!-- requtanshipin -->
+                        
+
+
+            <!-- shipinrequ -->
+                                    
+
+            
+            
+            
+                        
+            <action name="newsceneevent">
+                                                                            </action>
+
+                        <events onviewchange= "set(plugin[luopanbox].visible,false);set(plugin[luopan_bang].visible,false);"/>
+        </scene>        <scene name="scene3" title="展示2" thumburl="../wx/scene/scene3/thumb.jpg" onstart="newsceneevent();">            <events name="viewevent" />
+            <view hlookat="0" vlookat="0" fov="80" fisheye="0" fovmin="80" fovmax="100" />            
+            <preview url="../wx/scene/scene3/view/preview.jpg" />
+                <image type="CUBE">
+                    <cube url="../wx/scene/scene3/view/pano_%s.jpg" />
+                </image>            
+            
+                                        
+            <hotspot style="skin_hotspotstyle" title="展厅3" devices="all" name="spot424" alpha="1" ath="-0.53019510420665" scale="1"
+                    atv="22.819778895709" url="%SWFPATH%/spot/spot1.png"
+                    align="center" edge="center" zorder="2"
+                    onloaded="showtxt_action();"                            
+                    onclick="ifnot(device.html5,moveto(-0.53019510420665,22.819778895709,smooth());loadscene(scene4, view.vlookat=0&amp;view.hlookat=0, MERGE,ZOOMBLEND(1,3));,loadscene(scene4, view.hlookat=0, MERGE,ZOOMBLEND(1,3)););"                    />
+                    <hotspot style="skin_hotspotstyle" title="展厅4" devices="all" name="spot426" alpha="1" ath="-16.560642348798" scale="1"
+                    atv="31.128826220572" url="%SWFPATH%/spot/spot2.png"
+                    align="center" edge="center" zorder="2"
+                    onloaded="showtxt_action();"                            
+                    onclick="ifnot(device.html5,moveto(-16.560642348798,31.128826220572,smooth());loadscene(scene5, view.vlookat=0&amp;view.hlookat=0, MERGE,ZOOMBLEND(1,3));,loadscene(scene5, view.hlookat=0, MERGE,ZOOMBLEND(1,3)););"                    />
+                    <hotspot style="skin_hotspotstyle" title="展厅1" devices="all" name="spot429" alpha="1" ath="-177.10851583154" scale="0.94"
+                    atv="45.366557901721" url="%SWFPATH%/spot/spot1.png"
+                    align="center" edge="center" zorder="2"
+                    onloaded="showtxt_action();"                            
+                    onclick="ifnot(device.html5,moveto(-177.10851583154,45.366557901721,smooth());loadscene(scene2, view.vlookat=0&amp;view.hlookat=0, MERGE,ZOOMBLEND(1,3));,loadscene(scene2, view.hlookat=0, MERGE,ZOOMBLEND(1,3)););"                    />
+                    
+                        <!-- shipinredian -->
+                            
+            <!-- shipinredian for mobile -->
+                        <!-- musicredian -->
+                
+
+
+
+
+            
+            
+            
+
+            
+
+            
+            <!-- requtanshipin -->
+                        
+
+
+            <!-- shipinrequ -->
+                                    
+
+            
+            
+            
+                        
+            <action name="newsceneevent">
+                                                                            </action>
+
+                        <events onviewchange= "set(plugin[luopanbox].visible,false);set(plugin[luopan_bang].visible,false);"/>
+        </scene>        <scene name="scene4" title="展示3" thumburl="../wx/scene/scene4/thumb.jpg" onstart="newsceneevent();">            <events name="viewevent" />
+            <view hlookat="0" vlookat="0" fov="80" fisheye="0" fovmin="80" fovmax="100" />            
+            <preview url="../wx/scene/scene4/view/preview.jpg" />
+                <image type="CUBE">
+                    <cube url="../wx/scene/scene4/view/pano_%s.jpg" />
+                </image>            
+            
+                                        
+            <hotspot style="skin_hotspotstyle" title="返回" devices="all" name="spot425" alpha="1" ath="54.108559531877" scale="0.59"
+                    atv="17.586040210237" url="%SWFPATH%/spot/spot8.png"
+                    align="center" edge="center" zorder="2"
+                    onloaded="showtxt_action();"                            
+                    onclick="ifnot(device.html5,moveto(54.108559531877,17.586040210237,smooth());loadscene(scene3, view.vlookat=0&amp;view.hlookat=0, MERGE,ZOOMBLEND(1,3));,loadscene(scene3, view.hlookat=0, MERGE,ZOOMBLEND(1,3)););"                    />
+                    
+                        <!-- shipinredian -->
+                            
+            <!-- shipinredian for mobile -->
+                        <!-- musicredian -->
+                
+
+
+
+
+            
+            
+            
+
+            
+
+            
+            <!-- requtanshipin -->
+                        
+
+
+            <!-- shipinrequ -->
+                                    
+
+            
+            
+            
+                        
+            <action name="newsceneevent">
+                                                                            </action>
+
+                        <events onviewchange= "set(plugin[luopanbox].visible,false);set(plugin[luopan_bang].visible,false);"/>
+        </scene>        <scene name="scene5" title="展示4" thumburl="../wx/scene/scene5/thumb.jpg" onstart="newsceneevent();">            <events name="viewevent" />
+            <view hlookat="0" vlookat="0" fov="80" fisheye="0" fovmin="80" fovmax="100" />            
+            <preview url="../wx/scene/scene5/view/preview.jpg" />
+                <image type="CUBE">
+                    <cube url="../wx/scene/scene5/view/pano_%s.jpg" />
+                </image>            
+            
+                                        
+            <hotspot style="skin_hotspotstyle" title="返回大厅" devices="all" name="spot427" alpha="1" ath="-168.88512520656" scale="1.04"
+                    atv="23.858299081266" url="%SWFPATH%/spot/spot2.png"
+                    align="center" edge="center" zorder="2"
+                    onloaded="showtxt_action();"                            
+                    onclick="ifnot(device.html5,moveto(-168.88512520656,23.858299081266,smooth());loadscene(scene3, view.vlookat=0&amp;view.hlookat=0, MERGE,ZOOMBLEND(1,3));,loadscene(scene3, view.hlookat=0, MERGE,ZOOMBLEND(1,3)););"                    />
+                    
+                        <!-- shipinredian -->
+                            
+            <!-- shipinredian for mobile -->
+                        <!-- musicredian -->
+                
+
+
+
+
+            
+            
+            
+
+            
+
+            
+            <!-- requtanshipin -->
+                        
+
+
+            <!-- shipinrequ -->
+                                    
+
+            
+            
+            
+                        
+            <action name="newsceneevent">
+                                                                            </action>
+
+                        <events onviewchange= "set(plugin[luopanbox].visible,false);set(plugin[luopan_bang].visible,false);"/>
+        </scene>
+    <plugin name="luopanbox" url="%SWFPATH%/toolbox/luopan/none.png" keep="true" zorder="1" children="false" align="righttop" edge="center" x="80" y="80" scale="1" scalechildren="true" destscale="1.0" alpha="1" visible="true" capture="true" handcursor="true" enabled="true"/>
+    <plugin name="luopan" url="%SWFPATH%/toolbox/luopan/kedu.png" keep="true" handcursor="false" parent="luopanbox" zorder="1" alpha="1"  y="0" align="center" mask="plugin[luopan_mask]" visible="true" enabled="false"/>
+    <plugin name="luopan_mask" url="%SWFPATH%/toolbox/luopan/luopan_mask.png" keep="true" zorder="4" parent="luopanbox" align="center" blendmode="normal" visible="false" capture="false" handcursor="true" enabled="false" />
+    <plugin name="luopan_quan" url="%SWFPATH%/toolbox/luopan/quan.png" alpha="1" keep="true" enabled="false" visible="true" parent="luopanbox" zorder="4" align="center" capture="false" handcursor="false"/>
+    <plugin name="luopan_hover" url="%SWFPATH%/toolbox/luopan/hover.png" keep="true" enabled="false" visible="true" parent="luopanbox" zorder="3" align="center" capture="false" handcursor="false" mask="plugin[luopan_mask]"/>
+    <plugin name="luopan_v" url="%SWFPATH%/toolbox/luopan/luopanv.png" keep="true" enabled="false" visible="true" parent="luopanbox" zorder="2" align="top" capture="false" handcursor="false" y="-37" />
+
+    <plugin name="luopan_bang" url="%SWFPATH%/toolbox/luopan/none.png" keep="true" zorder="8" align="righttop" edge="center" width="100" height="100" x="80" y="80" handcursor="false" alpha="1" />
+    <plugin name="luopan_bangdou" url="%SWFPATH%/toolbox/luopan/bang.png" keep="true" zorder="2" align="center" parent="luopan_bang"  x="0" y="0" ondown="startluopanslider();" onup="stopluopanslider();"/>
+    <krpano devices="mobile">               
+    <plugin name="luopanbox" scale="0.5" altscale="0.5" />
+    </krpano>
+
+    <action name="startluopanslider">
+    set(plugin[luopan_bangdou].backup_align, get(plugin[luopan_bangdou].align));
+    set(plugin[luopan_bangdou].backup_edge,  get(plugin[luopan_bangdou].edge));
+    plugin[luopan_bangdou].changeorigin(center,center);
+    sub(mouse_x_offset, plugin[luopan_bangdou].x, mouse.x);
+    sub(mouse_y_offset, plugin[luopan_bangdou].y, mouse.y);
+    set(image_dragging,true);
+    luopanslider();r\n";
+    </action>
+
+    <action name="stopluopanslider">
+    set(image_dragging, false);
+    set(plugin[luopan_bangdou].x, 0);
+    set(plugin[luopan_bangdou].y, 0);
+    </action>
+
+    <action name="luopanslider">
+    if(image_dragging,
+    add(ypos, mouse.y, mouse_y_offset);
+    add(xpos, mouse.x, mouse_x_offset);
+    if(ypos LT -35, set(ypos,-35));
+
+    if(ypos GT 35, set(ypos,35));
+    if(xpos LT -35, set(xpos,-35));
+    if(xpos GT 35, set(xpos,35));
+    copy(plugin[luopan_bangdou].y, ypos);
+    copy(plugin[luopan_bangdou].x, xpos);
+    setblend(get(val));
+    div(ypos , ypos , 40);
+    div(xpos , xpos , 15);
+    add(valx, xpos , 0);
+    add(valy, ypos , 0);
+    add(view.vlookat , valy , get(view.vlookat) );
+    add(view.hlookat , valx , get(view.hlookat) );
+    delayedcall(0.01, luopanslider() );
+    ,
+    plugin[luopan_bangdou].changeorigin(get(plugin[luopan_bangdou].backup_align), get(plugin[luopan_bangdou].backup_edge));
+    );
+    </action>
+</krpano>
+
+<!-- 本程序由唯一QQ：540924692独家开发 淘宝连接 https://item.taobao.com/item.htm?id=540368482310 非本店销售都是盗版，非本店出售不提供任何服务  -->
