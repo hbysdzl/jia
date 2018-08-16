@@ -16,6 +16,6 @@ class FootlinkWidget extends Controller{
 		$where['status']=1;
 		$urllist=$urldb->where($where)->order('id')->select();
 		$this->assign('urllist',$urllist);
-		$this->display();
+		$this->display('Footlink/linkList');
 	}
 }
