@@ -8,9 +8,11 @@
     <link rel="shortcut icon" type="image/x-icon" href="__IMG__/icon/favicon.ico" media="screen">
     <link rel="stylesheet" type="text/css" href="__CSS__/style.css?v=1.0.2" />
     <link rel="stylesheet" type="text/css" href="__CSS__/login.css?v=1.0.1" />
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script> 
     <script type="text/javascript" src="__JS__/jquery.min.js?v=1.0.0"></script>
-    <script type="text/javascript" src="__JS__/index.js?v=1.0.0"></script>
-   
+    <script type="text/javascript" src="__JS__/jquery.form.js"></script>
+    <script type="text/javascript" src="__JS__/register.js"></script>
+
 </head>
 <body>
 <div class="logo clearfix">
@@ -21,51 +23,53 @@
     <div class="member_warp clearfix">
         <div class="member_register">
             <h3>手机号注册</h3>
-            <form action="{:U('Member/register')}" id="register" class="register" method="post" autocomplete="off" >
+            <form action=" " id="register" class="register" method="post" autocomplete="off" >
                 <label>
-                    <input type="text" name="name" placeholder="用户名" autocomplete="off" maxlength="8"/>
-                    <span class="placeholderA">用户名</span>
+                    <input type="text" name="name" id="name" placeholder="用户名" autocomplete="off"/>
+                    <!-- <span class="placeholderA">用户名</span> -->
                 </label>
                 <!-- 提示语 -->
-                <p class="register_hint register_name"><span></span></p>
+                <p><span></span></p>
 
                 <label>
-                    <input type="text" id="mobile" name="mobile" placeholder="手机号码"/>
-                    <span class="placeholderA">手机号码</span>
+                    <input type="text" name="mobile" id="mobile" placeholder="手机号码"/>
+                    <!-- <span class="placeholderA">手机号码</span> -->
                 </label>
                 <!-- 提示语 -->
-                <p class="register_hint register_mob"><span></span></p>
+                <p class=""><span></span></p>
 
                 <label>
-                    <input type="password" name="password" placeholder="密码" autocomplete="off"/>
-                    <span class="placeholderA">密码</span>
+                    <input type="password" name="password" id="password" placeholder="密码" autocomplete="off"/>
+                    <!-- <span class="placeholderA">密码</span> -->
                 </label>
                 <!-- 提示语 -->
-                <p class="register_hint register_pass"><span></span></p>
+                <p class=""><span></span></p>
 
                 <label>
-                    <input type="password" name="password2" placeholder="确认密码" autocomplete="off"/>
-                    <span class="placeholderA">确认密码</span>
+                    <input type="password" name="password2" id="password2" placeholder="确认密码" autocomplete="off"/>
+                    <!-- <span class="placeholderA">确认密码</span> -->
                 </label>
-                <p class="register_hint register_pass2"><span></span></p>
+                
+                <p class=""><span></span></p>
 
                 <label class="regVerify">
                     <input type="text" name="verify" placeholder="验证码" id="verify"/><a href="javascript:;" class="refrVerify refrVerify1">换一张</a>
-                    <span class="placeholderA placeho_ver">验证码</span>
+                    <!-- <span class="placeholderA placeho_ver">验证码</span> -->
                 </label>
-                <p class="register_hint register_ver"><span></span></p>
+               <!--  提示语 -->
+                <p class=""><span id="e"></span></p>
                 <!-- 验证码 -->
-                <img class="refreshImg refrVerify1" src="{:U('Member/verify')}"/>
-
-                <label class="regNoteVerify">
-                    <input type="text" name="cap" placeholder="短信验证码" id="cap" />
-                    <a href="javascript:;" class="refrVerify refrVerify2">获取验证码</a>
-                    <span class="placeholderA placeho_ver">短信验证码</span>
-                </label>
-                <p class="register_hint register_note"><span></span></p>
+                  
+                  <img class="refrVerify1" src="{:U('Member/verify')}" onclick="this.src='{:U('Member/verify')}'" />
+                 <label class="regNoteVerify" style="display: none;">
+                    <input type="text" name="cap" placeholder="短信验证码" /><a href="javascript:;" id="btn">发送短信</a>
+                    <!-- <span class="placeholderA placeho_ver">短信验证码</span> -->
+                 </label>
+                 <!-- 提示语 -->
+                <p><span id="cap"></span></p>
                 
                 <label>
-                    <input type="button" value="注&nbsp;&nbsp;册" class="registerBtn" >
+                    <input type="submit" value="注&nbsp;&nbsp;册" class="registerBtn" >
                 </label>
             </form>
             <p class="newReg">已注册账号，<a href="{:U('Member/login')}">立即登陆</a></p>
@@ -81,22 +85,10 @@
 </div>
 </body>
 </html>
-
 <script type="text/javascript">
+//点击切换验证码
+ $('.refrVerify ').click(function(){
+     $('.refrVerify1').attr('src',"{:U('Member/verify')}");
+ });
 
-    //父子派生选择器（不考虑层次）在#register内部获得input节点对象
-    var username=$("#register input[name='name']");
-    var usermob=$("#register input[name='mobile']");
-    var usrpwd=$("#register input[name='password']");
-    var usrpwd2=$("#register input[name='password2']");
-    var regver=$("#register input[name='verify']");
-    var usercap=$("#register input[name='cap']"); //短信验证码框
-
-    //正则表达式
-
-    /*
-    var regAname = /^[A-Za-z0-9_\-\u4e00-\u9fa5]{4,8}$/;
-    var regAmob = /^1[3|4|5|7|8][0-9]\d{4,8}$/;
-    var regApass = /^[A-Za-z0-9_\-?\-!\-,\-.\/]{6,14}$/;
-    */
 </script>
